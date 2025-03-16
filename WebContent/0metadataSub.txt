@@ -1,0 +1,419 @@
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// TOPICS FOR CHAPTER 1: Introduction to Computing
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//........................ Section 01: Computing ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#Computing
+// Folder path
+IntroductionToComputing/Computing
+// Name in ToC
+Computing
+// List of HTML files and/or references to other topics
+-Title.html
+-ComputingHistory.html
+-ComputingUsage.html
+-ComputingLimitedResources.html
+-ComputingPerformance.html
+-ComputingBenchmark.html
+#END
+
+//........................ Section 02: Python ...............................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#Python
+// Folder path
+IntroductionToComputing/Python
+// Name in ToC
+Source Code Development
+// List of HTML files and/or references to other topics
+-Title.html
+-ProgrammingLanguages.html
+-Python.html
+-PythonExecutionInTerminal.html
+-PythonCodingInTextEditor.html
+-PyCharm.html
+-Comments.html
+-MultilineStatements.html
+#END
+
+//........................ Section 03: Turtle Graphics ...............................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#TurtleGraphics
+// Folder path
+IntroductionToComputing/TurtleGraphics
+// Name in ToC
+Turtle Graphics
+// List of HTML files and/or references to other topics
+-Title.html 
+-DrawingASquare.html
+-DrawingTwoSquares.html
+-DrawingSquaresInTheCenter.html
+-PythonFoundations.html
+-Functions.html
+-MoreFunctions.html
+-EvenMoreFunctions.html
+-TurtleWithVariables.html
+-AssignmentStatements.html
+-AssignmentOperators.html
+-FunctionReturnValue.html
+-AdditionalPractice.html
+#END
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// TOPICS FOR CHAPTER 2: BASIC MATHS AND IO
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//........................ Section 01: Basic Maths................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#BasicMaths
+// Folder path
+BasicMathsAndIO/BasicMaths
+// Name in ToC
+Basic Maths
+// List of HTML files and/or references to other topics
+-Title.html
+-MathOperators.html
+-CelsiusToFahrenheit.html
+-FahrenheitToCelsius.html
+-PrecedenceInMathOperations.html
+#END
+
+//........................ Section 02: Text IO ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#TextIO
+// Folder path
+BasicMathsAndIO/TextIO
+// Name in ToC
+Text Input and Output
+// List of HTML files and/or references to other topics
+-Title.html
+-TextOutputAndStringLiteral.html
+-TextInput.html
+-SimpleMathsWithInput.html
+-IntAndInputFunctions.html
+-FileProcessing.html
+#END
+
+//........................ Section 03: Drawing With Input ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#DrawingWithInput
+// Folder path
+BasicMathsAndIO/DrawingWithInput
+// Name in ToC
+Drawing With Input
+// List of HTML files and/or references to other topics
+-Title.html
+-DrawingCircles.html
+-DrawingCirclesWithInitialRadius.html
+-AdditionalPractice.html
+#END
+
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// TOPICS FOR CHAPTER 3: CONTROL FLOW - IF ELSE STATEMENTS
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//........................ Section 01: if elif else ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#ifElifElse
+// Folder path
+ControlFlow_IfElseStatements/ifElifElse
+// Name in ToC
+if elif else
+// List of HTML files and/or references to other topics
+-Title.html
+-if-else.html
+-NumericComparison.html
+-if-elif-else.html
+-if-elif-else-multiple.html
+#END
+
+//........................ Section 02: Logic ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#Logic
+// Folder path
+ControlFlow_IfElseStatements/Logic
+// Name in ToC
+Logic
+// List of HTML files and/or references to other topics
+-Title.html
+-Logic.html
+-Logic_CalculateFare.html
+-Logic_TruthTable.html
+#END
+
+
+//........................ Section 03: Recursive Functions ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#RecursiveFunctions
+// Folder path
+ControlFlow_IfElseStatements/RecursiveFunctions
+// Name in ToC
+Recursive Functions
+// List of HTML files and/or references to other topics
+-Title.html
+-RecursiveFunctions.html
+-RecursiveFactorial.html
+-RecursiveFibonacci.html
+-RecursiveFibonacciImproved.html
+#END
+
+
+
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// TOPICS FOR CHAPTER 4: CONTROL FLOW - FOR LOOPS
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//........................ Section 01: Repeating Instructions ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#RepeatingInstructions
+// Folder path
+ControlFlow_ForLoops/RepeatingInstructions
+// Name in ToC
+Repeating Instructions
+// List of HTML files and/or references to other topics
+-Title.html
+-DrawingSquares.html
+-DrawingN-Gons.html
+-ChainOfRings.html
+-DrawingADashedCircle.html
+#END
+
+//........................ Section 02: for Loops In Detail ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#forLoopsInDetail
+// Folder path
+ControlFlow_ForLoops/forLoopsInDetail
+// Name in ToC
+for Loops in Detail
+// List of HTML files and/or references to other topics
+-Title.html
+-forLoopStatement.html
+-BlockScope.html
+-forLoopFactorialFunction.html
+-forElse.html
+#END
+
+//........................ Section 03: Printing Console Shapes With for Loops  ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#PrintingConsoleShapesWithForLoops
+// Folder path
+ControlFlow_ForLoops/PrintingConsoleShapesWithForLoops
+// Name in ToC
+Printing Console Shapes With for Loops
+// List of HTML files and/or references to other topics
+-Title.html
+-NestedForLoops.html
+-Exercise-DashedShapes.html
+-RectangleOffsetting.html
+-Triangle.html
+-IsoscelesTriangle.html
+-OffsetIsoscelesTriangle.html
+-DrawingATree.html
+#END
+
+//........................ Section 04: Random Numbers and Tuples ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#RandomNumbersTuplesLists
+// Folder path
+ControlFlow_ForLoops/RandomNumbersTuplesLists
+// Name in ToC
+Random Numbers, Tuples, and Lists
+// List of HTML files and/or references to other topics
+-Title.html
+-RandomNumbers.html
+-Tuples.html
+-Lists.html
+-IsOperator.html
+-MoreRandomNumbers.html
+-AdditionalPractice.html
+#END
+
+
+
+
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// TOPICS FOR CHAPTER 5: CONTROL FLOW - CONDITIONAL LOOP AND DATA STRUCTURES
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+//........................ Section 01: Algorithms ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#Algorithms
+// Folder path
+ControlFlow_ConditionalLoop/Algorithms
+// Name in ToC
+Algorithms
+// List of HTML files and/or references to other topics
+-Title.html
+-Algorithms.html
+-RoboticArm.html
+-ServerClientCommunication.html
+#END
+
+//........................ Section 02: Data Structures ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#DataStructures
+// Folder path
+ControlFlow_ConditionalLoop/DataStructures
+// Name in ToC
+Data Structures
+// List of HTML files and/or references to other topics
+-Title.html
+-FindMinMax.html
+-Dictionary.html
+-LenListTupleSet.html
+-Sort.html
+-MultidimensionalLists.html
+-AdditionalPractice.html
+#END
+
+
+//........................ Section 03: Conditional Loop ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#ConditionalLoop
+// Folder path
+ControlFlow_ConditionalLoop/ConditionalLoop
+// Name in ToC
+Conditional Loop
+// List of HTML files and/or references to other topics
+-Title.html
+-WhileLoop.html
+-RandomShapes.html
+-NumberGuessing.html
+-AdditionalPractice.html
+#END
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// TOPICS FOR CHAPTER 6: CONTAINER DATA STRUCTURES
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+//........................ Section 01: Strings in Detail ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#StringsInDetail
+// Folder path
+Containers/StringsInDetail
+// Name in ToC
+Strings in Detail
+// List of HTML files and/or references to other topics
+-Title.html
+-Strings.html
+-StringSlicing.html
+-StringMethods.html
+-StringFormatting.html
+#END
+
+//........................ Section 02: Lists in Detail ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#ListsAndTuples
+// Folder path
+Containers/ListsAndTuples
+// Name in ToC
+Lists And Tuples
+// List of HTML files and/or references to other topics
+-Title.html
+-ListsAndTuples.html
+-Slicing.html
+-Methods.html
+-Sorting.html
+-Operations.html
+#END
+
+//........................ Section 03: Dictionaries in Detail ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#DictionariesAndSets
+// Folder path
+Containers/DictionariesAndSets
+// Name in ToC
+Dictionaries And Sets
+// List of HTML files and/or references to other topics
+-Title.html
+-Dictionaries.html
+-DictionaryMethods.html
+-DictionaryOperations.html
+#END
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// TOPICS FOR CHAPTER 7: ANIMATIONS
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//........................ Section 01: Animating Shapes ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#AnimatingShapes
+// Folder path
+Animations/AnimatingShapes
+// Name in ToC
+Animating Shapes
+// List of HTML files and/or references to other topics
+-Title.html
+-PrimeNumbers.html
+-SingleSpiral.html
+-SpiralPairs.html
+-Animation.html
+-BouncingBalls.html
+-AnimatingSpiralWeb.html
+-AdditionalPractice.html
+#END
+
+//........................ Section 02: Interactive Programming ................................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#InteractiveProgramming
+// Folder path
+Animations/InteractiveProgramming
+// Name in ToC
+Interactive Programming
+// List of HTML files and/or references to other topics
+-Title.html
+-InteractiveProgramming.html
+-InteractiveProgrammingClickColors.html
+-InteractiveProgrammingClickCircles.html
+-InteractiveProgrammingClickKeys.html
+#END
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// TOPICS FOR CHAPTER 8: OBJECT ORIENTED PROGRAMMING
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+//........................ Section 01: OOP Workshop ............................
+// Symbolic name for topic (probably a section in a chapter or a subsection in another section)
+#OOPWorkshop
+// Folder path
+ObjectOrientedProgramming/OOPWorkshop
+// Name in ToC
+Object Oriented Programming Workshop
+// List of HTML files and/or references to other topics
+-Title.html
+-OOP_class.html
+-OOP_constructor.html
+-OOP_baseDrawButtonShapeMethod.html
+-OOP_baseDrawButtonMethod.html
+-OOP_baseDrawShapeMethod.html
+-OOP_baseButtonSelectMethod.html
+-OOP_baseGetColorMethod.html
+-OOP_initButton.html
+-OOP_updateButtonsMethod.html
+-OOP_checkButtonClicks.html
+-OOP_updatedScreenClickMethod.html
+-OOP_Version1_singleShape.html
+-OOP_rectangleButton.html
+-OOP_Version2_rectangleButton.html
+-OOP_triangleButton.html
+-OOP_circleButton.html
+-OOP_Version3_triangleAndCircleButtons.html
+-OOP_randomColorButton.html
+-OOP_redButtonBoundary.html
+-OOP_Version4_colorButtons.html
+-OOP_keyboardInteraction.html
+-OOP_Version5_final.html
+-AdditionalPractice.html
+#END
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// TOPICS FOR CHAPTER 9: WORKSHOPS AND FURTHER LEARNING
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+
+
+
+

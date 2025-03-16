@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+<code>is</code>&nbsp;Operator 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Python is an object oriented programming language. Each object-data type, i.e. <code>class</code>, can be used to create individual instances. Recall that when we define functions they are not executed until a function call statement is encountered in the program. Similarly the <code>class</code>&nbsp;instances are definitions of different types such as student, course, homework, etc. When an instance is to be created from the student class, that instance is used for keeping the individual data of an actual student, where two different student instances will have different <span class="tcEmp">values</span> for the same data types such as <code>student_number</code>, <code>student_name</code>, <code>email_address</code>, and so on.</p> 
+<p>Two data type instance can be compared to each other to check whether the two are the same instances in the program using the boolean <code>is</code> operator:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">a</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;banana&quot;</span>
+<span class="pl-s1">b</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;banana&quot;</span>
+
+<span class="pl-k">if</span> (<span class="pl-s1">a</span> <span class="pl-c1">is</span> <span class="pl-s1">b</span>):
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;a is the same instance as b&quot;</span>)
+
+<span class="pl-s1">a</span> <span class="pl-c1">=</span> [<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>]
+<span class="pl-s1">b</span> <span class="pl-c1">=</span> [<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>]
+
+<span class="pl-k">if</span> (<span class="pl-s1">a</span> <span class="pl-c1">is</span> <span class="pl-c1">not</span> <span class="pl-s1">b</span>):
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;a is not the same instance as b&quot;</span>)</pre>
+</div> 
+<p>Although the two lists contain the same elements, they are different list instances, hence <code>is</code>&nbsp;evaluates to <code>False</code> and <code>is not</code>&nbsp;evaluates to <code>True</code>. On the other hand, strings are mutable data structures which means any two strings having the same sequence of characters are treated as a single instance. If an existing string is modified, then it is automatically assigned to a different location in memory.</p> 
+<div class="tcDivRemark"> 
+<p>Two tuples or lists can be compared using the comparison operators where the result is based on the comparison of respective items in the tuples:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-en">print</span> ((<span class="pl-c1">0</span>, <span class="pl-c1">1</span>, <span class="pl-c1">2</span>) <span class="pl-c1">&gt;</span> (<span class="pl-c1">0</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>))         <span class="pl-c"># False</span>
+<span class="pl-en">print</span> ([<span class="pl-c1">0</span>, <span class="pl-c1">1</span>, <span class="pl-c1">2</span>] <span class="pl-c1">&gt;</span> [<span class="pl-c1">0</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>])         <span class="pl-c"># False</span>
+<span class="pl-en">print</span> ((<span class="pl-c1">0</span>, <span class="pl-c1">1</span>, <span class="pl-c1">2000000</span>) <span class="pl-c1">&gt;</span>  (<span class="pl-c1">0</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>))  <span class="pl-c"># False</span></pre>
+</div> 
+</div> 
+<br /> 
+<p>Recall that multiple variables can be assigned in a single statement, the same is applicable to assignment to and from the tuples and lists:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">my_list</span> <span class="pl-c1">=</span> [ <span class="pl-s">'have'</span>, <span class="pl-s">'fun'</span>]
+
+(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>) <span class="pl-c1">=</span> <span class="pl-s1">my_list</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">x</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">y</span>)
+
+<span class="pl-s1">list_of_tuples</span> <span class="pl-c1">=</span> [(<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>), (<span class="pl-s">&quot;p&quot;</span>, <span class="pl-s">&quot;q&quot;</span>)]
+
+<span class="pl-s1">a</span>, <span class="pl-s1">b</span> <span class="pl-c1">=</span> <span class="pl-s1">list_of_tuples</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">a</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">b</span>)</pre>
+</div> 
+<br /> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

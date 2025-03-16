@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>for</code> Loops 
+  </p> 
+  <p class="tcTitleSlide"> 
+<code>for</code> Loop Statement 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>The <span class="tcEmp">for</span> loop will assign the next number in the given <span class="tcEmp">list</span> to the variable <code>_</code> and execute the statements in the loop body until the given list is exhausted. Try the next one as a practice:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">number_sequence_list</span> <span class="pl-c1">=</span> [<span class="pl-c1">0</span>, <span class="pl-c1">2</span>, <span class="pl-c1">15</span>, <span class="pl-c1">34</span>, <span class="pl-c1">456</span>, <span class="pl-c1">73</span>, <span class="pl-c1">42</span>]
+
+<span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> <span class="pl-s1">number_sequence_list</span> : 
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;value of _ is &quot;</span>, <span class="pl-s1">_</span>)</pre>
+</div> 
+<p>To sum a list of consecutive numbers in <code>range(n)</code>&nbsp;:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">sum</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">5</span>):    
+    <span class="pl-s1">sum</span> <span class="pl-c1">=</span> <span class="pl-s1">sum</span> <span class="pl-c1">+</span> <span class="pl-s1">i</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">sum</span>)</pre>
+</div> 
+<p>Yes, n(n+1)/2 is also applicable in the form (n-1)n/2 for this example, but that is not the discussion at the moment.</p> 
+<p>Similar example with user input is as follows:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">n</span> <span class="pl-c1">=</span> <span class="pl-en">int</span> ( <span class="pl-en">input</span>(<span class="pl-s">&quot;Enter a number please: &quot;</span>) )  
+
+<span class="pl-s1">sum</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">n</span>):    
+    <span class="pl-s1">sum</span> <span class="pl-c1">=</span> <span class="pl-s1">sum</span> <span class="pl-c1">+</span> <span class="pl-s1">i</span>
+    
+<span class="pl-en">print</span>(<span class="pl-s1">sum</span>)
+</pre>
+</div> 
+<br /> 
+<p>We can also define a function for doing the sum and call it whenever we need, fixing the sum to include the input number <code>n</code> :</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">def</span> <span class="pl-en">sum_function</span>(<span class="pl-s1">number</span>):
+
+    <span class="pl-s1">total</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+
+    <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">number</span>): 
+        <span class="pl-s1">total</span> <span class="pl-c1">=</span> <span class="pl-s1">total</span> <span class="pl-c1">+</span> <span class="pl-s1">i</span>
+
+    <span class="pl-k">return</span> <span class="pl-s1">total</span>
+
+
+<span class="pl-s1">n</span> <span class="pl-c1">=</span> <span class="pl-en">int</span> ( <span class="pl-en">input</span>(<span class="pl-s">&quot;Enter a number please: &quot;</span>) )  
+
+<span class="pl-en">print</span>(<span class="pl-en">sum_function</span>(<span class="pl-s1">n</span><span class="pl-c1">+</span><span class="pl-c1">1</span>))
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ForLoops" 
+    data-softdev4u-filePath="SumWithForLoops.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Sum with Loops)"> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

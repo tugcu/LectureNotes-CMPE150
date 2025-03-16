@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Container Data Structures 
+  </p> 
+  <p class="tcTitleSlide"> 
+String Formatting 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Strings can be concatenated with each other as in :</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">int_course_header</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Introduction to Programming&quot;</span>
+<span class="pl-s1">adv_course_header</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Advanced Programming&quot;</span>
+
+<span class="pl-s1">language_list</span> <span class="pl-c1">=</span> [<span class="pl-s">&quot;C/C++&quot;</span>,<span class="pl-s">&quot;Java&quot;</span>,<span class="pl-s">&quot;Python&quot;</span>]
+
+<span class="pl-k">for</span> <span class="pl-s1">language</span> <span class="pl-c1">in</span> <span class="pl-s1">language_list</span>:
+    <span class="pl-en">print</span>(<span class="pl-s1">int_course_header</span> <span class="pl-c1">+</span> <span class="pl-s">&quot; with &quot;</span> <span class="pl-c1">+</span> <span class="pl-s1">language</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="StringConcatenation.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (String Concatenation)"> 
+</div> 
+<p>However, strings cannot be concatenated with numbers directly:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course_header</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Introduction to Programming with Python&quot;</span>
+
+<span class="pl-s1">version_list</span> <span class="pl-c1">=</span> [<span class="pl-c1">2</span>, <span class="pl-c1">3</span>]
+
+<span class="pl-k">for</span> <span class="pl-s1">version</span> <span class="pl-c1">in</span> <span class="pl-s1">version_list</span>:
+    <span class="pl-en">print</span>(<span class="pl-s1">course_header</span> <span class="pl-c1">+</span> <span class="pl-s1">version</span>)
+    <span class="pl-c">#print(course_header + str(version))</span></pre>
+</div> 
+<p>It is possible to format the string as a template and fill in the gaps <code>{}</code> later with numbers:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course_header</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Introduction to Programming with Python{}&quot;</span>
+
+<span class="pl-s1">version_list</span> <span class="pl-c1">=</span> [<span class="pl-c1">2</span>, <span class="pl-c1">3</span>]
+
+<span class="pl-k">for</span> <span class="pl-s1">version</span> <span class="pl-c1">in</span> <span class="pl-s1">version_list</span>:
+    <span class="pl-en">print</span>(<span class="pl-s1">course_header</span>.<span class="pl-en">format</span>(<span class="pl-s1">version</span>))
+    </pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="StringFormatting.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (String Formatting)"> 
+</div> 
+<p>Formatting can be applied to multiple placeholders <code>{}</code> in the strings:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course_header</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Introduction to Programming with Python{} for {} {}&quot;</span>
+
+<span class="pl-s1">version_list</span> <span class="pl-c1">=</span> [<span class="pl-c1">2</span>, <span class="pl-c1">3</span>]
+
+<span class="pl-k">for</span> <span class="pl-s1">semester</span> <span class="pl-c1">in</span> [<span class="pl-s">&quot;Spring&quot;</span>, <span class="pl-s">&quot;Summer&quot;</span>, <span class="pl-s">&quot;Fall&quot;</span>]:
+    <span class="pl-k">for</span> <span class="pl-s1">year</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">2021</span>,<span class="pl-c1">2025</span>):
+        <span class="pl-k">for</span> <span class="pl-s1">version</span> <span class="pl-c1">in</span> <span class="pl-s1">version_list</span>:
+            <span class="pl-en">print</span>(<span class="pl-s1">course_header</span>.<span class="pl-en">format</span>(<span class="pl-s1">version</span>, <span class="pl-s1">semester</span>, <span class="pl-s1">year</span>))</pre>
+</div> 
+<p>Additionally, the order of placeholders can be specified manually, if necessary:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course_header</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Introduction to Programming with Python{0} for {2} {1}&quot;</span>
+
+<span class="pl-s1">version_list</span> <span class="pl-c1">=</span> [<span class="pl-c1">2</span>, <span class="pl-c1">3</span>]
+
+<span class="pl-k">for</span> <span class="pl-s1">semester</span> <span class="pl-c1">in</span> [<span class="pl-s">&quot;Spring&quot;</span>, <span class="pl-s">&quot;Summer&quot;</span>, <span class="pl-s">&quot;Fall&quot;</span>]:
+    <span class="pl-k">for</span> <span class="pl-s1">year</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">2021</span>,<span class="pl-c1">2025</span>):
+        <span class="pl-k">for</span> <span class="pl-s1">version</span> <span class="pl-c1">in</span> <span class="pl-s1">version_list</span>:
+            <span class="pl-en">print</span>(<span class="pl-s1">course_header</span>.<span class="pl-en">format</span>(<span class="pl-s1">version</span>, <span class="pl-s1">semester</span>, <span class="pl-s1">year</span>))</pre>
+</div> 
+<p>The following formatting will also produce a similar output with the <code>format operator &quot;%&quot;</code>:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course_header</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Introduction to Programming with Python %d for %s  %d&quot;</span>
+
+<span class="pl-s1">version_list</span> <span class="pl-c1">=</span> [<span class="pl-c1">2</span>, <span class="pl-c1">3</span>]
+
+<span class="pl-k">for</span> <span class="pl-s1">semester</span> <span class="pl-c1">in</span> [<span class="pl-s">&quot;Spring&quot;</span>, <span class="pl-s">&quot;Summer&quot;</span>, <span class="pl-s">&quot;Fall&quot;</span>]:
+    <span class="pl-k">for</span> <span class="pl-s1">year</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">2021</span>,<span class="pl-c1">2025</span>):
+        <span class="pl-k">for</span> <span class="pl-s1">version</span> <span class="pl-c1">in</span> <span class="pl-s1">version_list</span>:
+            <span class="pl-en">print</span>(<span class="pl-s1">course_header</span> <span class="pl-c1">%</span> (<span class="pl-s1">version</span>, <span class="pl-s1">semester</span>, <span class="pl-s1">year</span>))</pre>
+</div> 
+<p>where <code>%d</code> is used as an integer numeric placeholder (truncating decimal part of floats) and <code>%s</code>&nbsp;is used for a text placeholder.</p> 
+<p><code>%f</code>&nbsp;can be used for floating point numbers where we can specify the length of the decimal part as in</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">account_balance</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Balance: %f&quot;</span>
+<span class="pl-s1">account_balance_2</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Balance: %.2f&quot;</span>
+<span class="pl-s1">account_balance_3</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Balance: %.3f&quot;</span>
+
+<span class="pl-s1">account_balance_10_2</span><span class="pl-c1">=</span> <span class="pl-s">&quot;Balance: %10.2f&quot;</span>
+
+<span class="pl-s1">balance</span> <span class="pl-c1">=</span> <span class="pl-c1">145.6753424</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">account_balance</span> <span class="pl-c1">%</span> <span class="pl-s1">balance</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">account_balance_2</span> <span class="pl-c1">%</span> <span class="pl-s1">balance</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">account_balance_3</span> <span class="pl-c1">%</span> <span class="pl-s1">balance</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">account_balance_10_2</span> <span class="pl-c1">%</span> <span class="pl-s1">balance</span>)
+<span class="pl-en">print</span>()
+
+<span class="pl-s1">balance_list</span><span class="pl-c1">=</span>[<span class="pl-c1">1.2356</span>, <span class="pl-c1">12.67899</span>, <span class="pl-c1">2676.67544</span>, <span class="pl-c1">45.4538</span>, <span class="pl-c1">67785.4334</span>]
+
+<span class="pl-s1">total</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+<span class="pl-k">for</span> <span class="pl-s1">bal</span> <span class="pl-c1">in</span> <span class="pl-s1">balance_list</span>:
+    <span class="pl-s1">total</span> <span class="pl-c1">+=</span> <span class="pl-s1">bal</span>
+    <span class="pl-en">print</span>(<span class="pl-s1">account_balance_10_2</span> <span class="pl-c1">%</span> <span class="pl-s1">bal</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;Total:%13.2f&quot;</span> <span class="pl-c1">%</span> <span class="pl-s1">total</span>)
+
+<span class="pl-en">print</span>()
+
+<span class="pl-s1">balance_dict</span> <span class="pl-c1">=</span> {<span class="pl-s">&quot;Harry Potter&quot;</span>:<span class="pl-c1">345.3456</span>, <span class="pl-s">&quot;Frodo&quot;</span>:<span class="pl-c1">5642.44432</span>, <span class="pl-s">&quot;Batman&quot;</span>:<span class="pl-c1">1334566.4332</span>}
+
+<span class="pl-k">for</span> <span class="pl-s1">key</span> <span class="pl-c1">in</span> <span class="pl-s1">balance_dict</span>.<span class="pl-en">keys</span>():
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;Balance of %15s is %10.2f&quot;</span> <span class="pl-c1">%</span> (<span class="pl-s1">key</span>, <span class="pl-s1">balance_dict</span>[<span class="pl-s1">key</span>]))</pre>
+</div> 
+<p>where <code>%10.2f</code> means that python will reserve a total length of 10 characters for the output, leaving spaces before printing the number if necessary. This is useful in printing values to console or paper in a structured format where you would need your numbers to be aligned correctly in the same column.</p> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="NumberFormatting.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Number Formatting)"> 
+</div> 
+<p>Output:</p> 
+<pre><code>Balance: 145.675342
+Balance: 145.68
+Balance: 145.675
+Balance:     145.68
+
+Balance:       1.24
+Balance:      12.68
+Balance:    2676.68
+Balance:      45.45
+Balance:   67785.43
+Total:     70521.48
+
+Balance of    Harry Potter is     345.35
+Balance of           Frodo is    5642.44
+Balance of          Batman is 1334566.43
+</code></pre> 
+<p>Try aligning the numbers to the left of the reserved area and leaving the necessary spaces afterwards. Please share the solution on moodle or in class groups.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

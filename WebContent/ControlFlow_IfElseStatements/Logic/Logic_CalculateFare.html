@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+Calculate Fare 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Consider the following public transportation fare table:</p> 
+<table> 
+ <tbody>
+  <tr> 
+   <th>Type</th> 
+   <th>Distance ≤ 10 km</th> 
+   <th>Distance &gt; 10 km Additional</th> 
+  </tr> 
+  <tr> 
+   <td>Regular</td> 
+   <td>0.5</td> 
+   <td>0.3</td> 
+  </tr> 
+  <tr> 
+   <td>Student</td> 
+   <td>0.3</td> 
+   <td>0.1</td> 
+  </tr> 
+  <tr> 
+   <td>Teacher</td> 
+   <td>0.4</td> 
+   <td>0.2</td> 
+  </tr> 
+  <tr> 
+   <td>Senior Citizens</td> 
+   <td>0.3</td> 
+   <td>0.2</td> 
+  </tr> 
+ </tbody>
+</table> 
+<p>Let's define a function that returns a price of travel to be used for refund, with respect to the given table. If the distance is less than 10 km the users will be charged according to the left column of the table and for any distance more than 10 km, additional charges will apply with respect to the right column for the excess distance traveled.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">def</span> <span class="pl-en">calculateFare</span>(<span class="pl-s1">distance</span>, <span class="pl-s1">student</span>, <span class="pl-s1">teacher</span>, <span class="pl-s1">senior</span>):    
+    
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">10</span> <span class="pl-c1">and</span> (<span class="pl-s1">student</span> <span class="pl-c1">or</span> <span class="pl-s1">senior</span>)):
+        <span class="pl-k">return</span> <span class="pl-s1">distance</span> <span class="pl-c1">*</span> <span class="pl-c1">0.3</span>    
+    
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">10</span> <span class="pl-c1">and</span> <span class="pl-s1">teacher</span>):
+        <span class="pl-k">return</span> <span class="pl-s1">distance</span> <span class="pl-c1">*</span> <span class="pl-c1">0.4</span>    
+  
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">10</span>):
+        <span class="pl-k">return</span> <span class="pl-s1">distance</span> <span class="pl-c1">*</span> <span class="pl-c1">0.5</span>    
+    
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">10</span> <span class="pl-c1">and</span> <span class="pl-s1">student</span>):
+       <span class="pl-k">return</span> <span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-s1">student</span>, <span class="pl-s1">teacher</span>, <span class="pl-s1">senior</span>) <span class="pl-c1">+</span> (<span class="pl-s1">distance</span> <span class="pl-c1">-</span> <span class="pl-c1">10</span>) <span class="pl-c1">*</span> <span class="pl-c1">0.1</span>    
+    
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">10</span> <span class="pl-c1">and</span> (<span class="pl-s1">teacher</span> <span class="pl-c1">or</span> <span class="pl-s1">senior</span>)):
+       <span class="pl-k">return</span> <span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-s1">student</span>, <span class="pl-s1">teacher</span>, <span class="pl-s1">senior</span>) <span class="pl-c1">+</span> (<span class="pl-s1">distance</span> <span class="pl-c1">-</span> <span class="pl-c1">10</span>) <span class="pl-c1">*</span> <span class="pl-c1">0.2</span>       
+  
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">10</span>):
+       <span class="pl-k">return</span> <span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-s1">student</span>, <span class="pl-s1">teacher</span>, <span class="pl-s1">senior</span>) <span class="pl-c1">+</span> (<span class="pl-s1">distance</span> <span class="pl-c1">-</span> <span class="pl-c1">10</span>) <span class="pl-c1">*</span> <span class="pl-c1">0.3</span>
+  
+
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-c1">False</span>, <span class="pl-c1">False</span>, <span class="pl-c1">False</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-c1">False</span>, <span class="pl-c1">False</span>, <span class="pl-c1">True</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-c1">False</span>, <span class="pl-c1">True</span>, <span class="pl-c1">False</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-c1">False</span>, <span class="pl-c1">True</span>, <span class="pl-c1">True</span>))
+<span class="pl-en">print</span>()
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-c1">True</span>, <span class="pl-c1">False</span>, <span class="pl-c1">False</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-c1">True</span>, <span class="pl-c1">False</span>, <span class="pl-c1">True</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-c1">True</span>, <span class="pl-c1">True</span>, <span class="pl-c1">False</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-c1">True</span>, <span class="pl-c1">True</span>, <span class="pl-c1">True</span>))
+<span class="pl-en">print</span>()
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">20</span>, <span class="pl-c1">False</span>, <span class="pl-c1">False</span>, <span class="pl-c1">False</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">20</span>, <span class="pl-c1">False</span>, <span class="pl-c1">False</span>, <span class="pl-c1">True</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">20</span>, <span class="pl-c1">False</span>, <span class="pl-c1">True</span>, <span class="pl-c1">False</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">20</span>, <span class="pl-c1">False</span>, <span class="pl-c1">True</span>, <span class="pl-c1">True</span>))
+<span class="pl-en">print</span>()
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">20</span>, <span class="pl-c1">True</span>, <span class="pl-c1">False</span>, <span class="pl-c1">False</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">20</span>, <span class="pl-c1">True</span>, <span class="pl-c1">False</span>, <span class="pl-c1">True</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">20</span>, <span class="pl-c1">True</span>, <span class="pl-c1">True</span>, <span class="pl-c1">False</span>))
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">20</span>, <span class="pl-c1">True</span>, <span class="pl-c1">True</span>, <span class="pl-c1">True</span>))</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ConditionalFlow" 
+    data-softdev4u-filePath="CalculateFare.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Fare Calculation)"> 
+</div> 
+<p>Changing the order of conditional statements in the code may result in a different calculation, e.g. check the case for a senior teacher with the modified code below where the first two conditional controls are swapped:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">def</span> <span class="pl-en">calculateFare</span>(<span class="pl-s1">distance</span>, <span class="pl-s1">student</span>, <span class="pl-s1">teacher</span>, <span class="pl-s1">senior</span>):    
+
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">10</span> <span class="pl-c1">and</span> <span class="pl-s1">teacher</span>):
+        <span class="pl-k">return</span> <span class="pl-s1">distance</span> <span class="pl-c1">*</span> <span class="pl-c1">0.4</span>    
+      
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">10</span> <span class="pl-c1">and</span> (<span class="pl-s1">student</span> <span class="pl-c1">or</span> <span class="pl-s1">senior</span>)):
+        <span class="pl-k">return</span> <span class="pl-s1">distance</span> <span class="pl-c1">*</span> <span class="pl-c1">0.3</span>    
+  
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">10</span>):
+        <span class="pl-k">return</span> <span class="pl-s1">distance</span> <span class="pl-c1">*</span> <span class="pl-c1">0.5</span>    
+    
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">10</span> <span class="pl-c1">and</span> <span class="pl-s1">student</span>):
+       <span class="pl-k">return</span> <span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-s1">student</span>, <span class="pl-s1">teacher</span>, <span class="pl-s1">senior</span>) <span class="pl-c1">+</span> (<span class="pl-s1">distance</span> <span class="pl-c1">-</span> <span class="pl-c1">10</span>) <span class="pl-c1">*</span> <span class="pl-c1">0.1</span>    
+    
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">10</span> <span class="pl-c1">and</span> (<span class="pl-s1">teacher</span> <span class="pl-c1">or</span> <span class="pl-s1">senior</span>)):
+       <span class="pl-k">return</span> <span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-s1">student</span>, <span class="pl-s1">teacher</span>, <span class="pl-s1">senior</span>) <span class="pl-c1">+</span> (<span class="pl-s1">distance</span> <span class="pl-c1">-</span> <span class="pl-c1">10</span>) <span class="pl-c1">*</span> <span class="pl-c1">0.2</span>       
+  
+    <span class="pl-k">if</span>(<span class="pl-s1">distance</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">10</span>):
+       <span class="pl-k">return</span> <span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-s1">student</span>, <span class="pl-s1">teacher</span>, <span class="pl-s1">senior</span>) <span class="pl-c1">+</span> (<span class="pl-s1">distance</span> <span class="pl-c1">-</span> <span class="pl-c1">10</span>) <span class="pl-c1">*</span> <span class="pl-c1">0.3</span>
+  
+
+
+<span class="pl-en">print</span> (<span class="pl-en">calculateFare</span>(<span class="pl-c1">10</span>, <span class="pl-c1">False</span>, <span class="pl-c1">True</span>, <span class="pl-c1">True</span>))
+</pre>
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Random Numbers, Tuples, and Lists 
+  </p> 
+  <p class="tcTitleSlide"> 
+Tuples 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Tuples are ordered data containers, which cannot be modified after they are assigned.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+<span class="pl-k">import</span> <span class="pl-s1">random</span>
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">speed</span>(<span class="pl-c1">9</span>)
+
+<span class="pl-s1">colors</span> <span class="pl-c1">=</span> (<span class="pl-s">&quot;Green&quot;</span>, <span class="pl-s">&quot;Blue&quot;</span>, <span class="pl-s">&quot;Orange&quot;</span>, <span class="pl-s">&quot;Pink&quot;</span>, <span class="pl-s">&quot;Red&quot;</span>, <span class="pl-s">&quot;Purple&quot;</span>, <span class="pl-s">&quot;Magenta&quot;</span>, <span class="pl-s">&quot;Cyan&quot;</span>, <span class="pl-s">&quot;Yellow&quot;</span>, <span class="pl-s">&quot;Black&quot;</span>)
+
+<span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">100</span>):
+    <span class="pl-s1">color_index</span> <span class="pl-c1">=</span> <span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">0</span>, <span class="pl-en">len</span>(<span class="pl-s1">colors</span>)<span class="pl-c1">-</span><span class="pl-c1">1</span>)
+    <span class="pl-s1">color</span> <span class="pl-c1">=</span> <span class="pl-s1">colors</span>[<span class="pl-s1">color_index</span>]
+    <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s1">color</span>)
+    
+    <span class="pl-s1">turtle</span>.<span class="pl-en">pensize</span>(<span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">2</span>, <span class="pl-c1">7</span>))
+    
+    <span class="pl-s1">radius</span> <span class="pl-c1">=</span> <span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">20</span>, <span class="pl-c1">200</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">circle</span>(<span class="pl-s1">random</span>.<span class="pl-en">choice</span>([<span class="pl-c1">-</span><span class="pl-c1">1</span>, <span class="pl-c1">1</span>]) <span class="pl-c1">*</span> <span class="pl-s1">radius</span>)
+
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ForLoops" 
+    data-softdev4u-filePath="ForLoopsTuples.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Tuples)"> 
+</div> 
+<p>The <code>random.randint()</code> is a built-in function for obtaining a random integer number between the two numbers given as arguments, both included.</p> 
+<p>When accessing an element in a tuple, one has to provide an index number inside the pair of brackets following the name of the tuple variable. The first element of the tuple resides in position <code>[0]</code>. If there are <span class="tcEmp">n</span> elements in a tuple, the last element resides in position <code>[n-1]</code>.</p> 
+<p>The <code>random.choice()</code>&nbsp;method returns a single element from a sequence of items, including tuples.</p> 
+<p>The code section</p> 
+<div class="highlight highlight-source-python">
+ <pre>    <span class="pl-s1">color_index</span> <span class="pl-c1">=</span> <span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">0</span>, <span class="pl-en">len</span>(<span class="pl-s1">colors</span>)<span class="pl-c1">-</span><span class="pl-c1">1</span>)
+    <span class="pl-s1">color</span> <span class="pl-c1">=</span> <span class="pl-s1">colors</span>[<span class="pl-s1">color_index</span>]
+    <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s1">color</span>)</pre>
+</div> 
+<p>above can simply be replaced by</p> 
+<div class="highlight highlight-source-python">
+ <pre>    <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s1">random</span>.<span class="pl-en">choice</span>(<span class="pl-s1">colors</span>))</pre>
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

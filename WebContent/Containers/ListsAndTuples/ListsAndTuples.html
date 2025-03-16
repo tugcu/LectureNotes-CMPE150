@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Container Data Structures 
+  </p> 
+  <p class="tcTitleSlide"> 
+Lists in Detail 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p><span class="tcEmp">Lists</span> and <span class="tcEmp">tuples</span> can contain items of mixed types and the type of any item can be retrieved by using the <code>type()</code>function:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">list_of_mixed_items</span> <span class="pl-c1">=</span> [<span class="pl-s">'red'</span>, <span class="pl-c1">2.3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">True</span>,
+                       [<span class="pl-s">&quot;another&quot;</span>, <span class="pl-s">&quot;list&quot;</span>],
+                       (<span class="pl-s">&quot;a&quot;</span> , <span class="pl-s">&quot;tuple&quot;</span>),
+                       {<span class="pl-s">&quot;a&quot;</span> , <span class="pl-s">&quot;set&quot;</span>},
+                       {<span class="pl-s">&quot;and&quot;</span>: <span class="pl-c1">1</span>, <span class="pl-s">&quot;a&quot;</span>: <span class="pl-c1">2</span>, <span class="pl-s">&quot;dictionary&quot;</span>: <span class="pl-c1">3</span>}]
+
+<span class="pl-k">for</span> <span class="pl-s1">item</span> <span class="pl-c1">in</span> <span class="pl-s1">list_of_mixed_items</span>:
+    <span class="pl-en">print</span>(<span class="pl-en">type</span>(<span class="pl-s1">item</span>))</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="TypeFunction.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Type Function)"> 
+</div> 
+<p>Output:</p> 
+<pre><code>&lt;class 'str'&gt;
+&lt;class 'float'&gt;
+&lt;class 'int'&gt;
+&lt;class 'bool'&gt;
+&lt;class 'list'&gt;
+&lt;class 'tuple'&gt;
+&lt;class 'set'&gt;
+&lt;class 'dict'&gt;
+</code></pre> 
+<ul> 
+ <li> <p>When constructing a container data structure such as a list, tuple, set, or dictionary with variables of <strong>primitive types</strong>, namely <span class="tcEmp">Integers</span>, <span class="tcEmp">Floats</span>, <span class="tcEmp">Strings</span>, and <span class="tcEmp">Booleans</span>, the <strong>values</strong> of those variables are copied into the container data structure. If those variables are reassigned with other primitive values after the populating the container, the values in the list are preserved (<strong>referencing the value</strong>).</p> </li> 
+ <li> <p>If the variable placed in a container is a <strong>complex data type</strong> such as a custom object, list, set, turtle, etc. then the container keeps a <strong>reference</strong> to the address of that variable in the memory of the computer, i.e. always referring to the present value of the variable even if its contents are modified (<strong>referencing the variable</strong>). Even though the tuples themselves cannot be modified, the values of the complex variables stored in that tuple can be modified, and that is not a violation of the definition of the tuple, which may hold any data type including primitive and complex types.</p> </li> 
+ <li> <p>If a complex variable placed in a container is <em><strong>reassigned</strong></em>, then the container (e.g. list) keeps referring to the previous address of that variable. We can think of this as both the list and the complex typed variable are pointing to the same location in the memory at the same time. Even if one of them stops referring to that address, the other can keep referring as long as required.</p> </li> 
+ <li> <p>If there is no reference left to a specific value in the memory, then the interpreter will utilize a <strong>garbage collection</strong> algorithm to reclaim the space consumed by un-reachable data. Otherwise, the application may run out of memory due to these <em><strong>memory leaks</strong></em>.</p> </li> 
+</ul> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">color</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;yellow&quot;</span>
+<span class="pl-s1">number</span> <span class="pl-c1">=</span> <span class="pl-c1">10</span>
+<span class="pl-s1">boolean</span> <span class="pl-c1">=</span> <span class="pl-c1">True</span>
+
+<span class="pl-s1">sublist</span> <span class="pl-c1">=</span> [<span class="pl-c1">123</span>, <span class="pl-c1">213</span>]
+
+<span class="pl-s1">tuple_of_mixed_items</span> <span class="pl-c1">=</span> (<span class="pl-s1">color</span>, <span class="pl-s1">number</span>, <span class="pl-s1">boolean</span>, <span class="pl-s1">sublist</span>)
+
+<span class="pl-s1">color</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;red&quot;</span>
+<span class="pl-s1">number</span> <span class="pl-c1">=</span> <span class="pl-c1">11</span>
+<span class="pl-s1">boolean</span> <span class="pl-c1">=</span> <span class="pl-c1">False</span>
+
+<span class="pl-s1">sublist</span>[<span class="pl-c1">0</span>] <span class="pl-c1">=</span> <span class="pl-c1">34</span>
+<span class="pl-s1">sublist</span>.<span class="pl-en">append</span>(<span class="pl-c1">54</span>)
+
+<span class="pl-k">for</span> <span class="pl-s1">item</span> <span class="pl-c1">in</span> <span class="pl-s1">tuple_of_mixed_items</span>:
+    <span class="pl-en">print</span>(<span class="pl-s1">item</span>)
+
+<span class="pl-s1">sublist</span> <span class="pl-c1">=</span> [<span class="pl-c1">36</span>, <span class="pl-c1">67</span>]
+<span class="pl-en">print</span>(<span class="pl-s1">tuple_of_mixed_items</span>)
+
+<span class="pl-s1">mylist</span><span class="pl-c1">=</span>[<span class="pl-s1">color</span>,<span class="pl-s1">number</span>]
+<span class="pl-en">print</span>(<span class="pl-s1">mylist</span>)
+<span class="pl-s1">color</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;blue&quot;</span>
+<span class="pl-en">print</span>(<span class="pl-s1">mylist</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="VariableValueAndAddressReference.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Reference by Value or Address)"> 
+</div> 
+<p>Output:</p> 
+<pre><code>yellow
+10
+True
+[34, 213, 54]
+('yellow', 10, True, [34, 213, 54])
+</code></pre> 
+<p>Elements in a tuple can be assigned (unpacked) to multiple variables at once, possibly as a list when using an asterisk (<code>*</code>) to contain all items left without a variable:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">person</span> <span class="pl-c1">=</span> (<span class="pl-c1">23</span>, <span class="pl-s">&quot;Ghida&quot;</span>, <span class="pl-s">&quot;Student&quot;</span>, <span class="pl-c1">20009001</span>, <span class="pl-s">&quot;Reading&quot;</span>, <span class="pl-s">&quot;Maths&quot;</span>, <span class="pl-s">&quot;Address&quot;</span>, <span class="pl-s">&quot;ghida@some.mail&quot;</span>)
+<span class="pl-s1">age</span>, <span class="pl-s1">name</span>, <span class="pl-s1">occupation</span>, <span class="pl-s1">id</span>, <span class="pl-c1">*</span><span class="pl-s1">other_info</span>, <span class="pl-s1">email</span> <span class="pl-c1">=</span> <span class="pl-s1">person</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">age</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">name</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">occupation</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">id</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">other_info</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">email</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="TupleUnpacking.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Unpacking Tuples)"> 
+</div> 
+<p>Output:</p> 
+<pre><code>23
+Ghida
+Student
+20009001
+['Reading', 'Maths', 'Adress']
+ghida@some.mail
+</code></pre> 
+
+<hr/>
+<p>The star <code>*</code> notation can be used to unpack list items. Execute the following code and compare the outputs:</p> 
+<div class="highlight highlight-source-python">
+<pre><span class="pl-s1">my_list</span> <span class="pl-c1">=</span> [<span class="pl-en">"purple", "red"</span>]
+
+<span class="pl-en">print</span>(<span class="pl-s1">my_list</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s1">*my_list</span>)
+</pre>
+</div> 
+
+
+<hr/>
+
+<p>Displaying a chess board with * operator:</p> 
+
+<pre>
+
+chess_board =[['r','n','b','q','k','b','n','r'],\
+              ['p','p','p','p','p','p','p','p'],\
+              ['.','.','.','.','.','.','.','.'],\
+              ['.','.','.','.','.','.','.','.'],\
+              ['.','.','.','.','.','.','.','.'],\
+              ['.','.','.','.','.','.','.','.'],\
+              ['P','P','P','P','P','P','P','P'],\
+              ['R','N','B','Q','K','B','N','R']]
+
+for i in range (8):
+    print((" " if i > 7 else (8-i)), *chess_board[i])
+
+print(" ", *['a','b','c','d','e','f','g','h'])
+
+""" The output is as follows:
+
+8 r n b q k b n r
+7 p p p p p p p p
+6 . . . . . . . .
+5 . . . . . . . .
+4 . . . . . . . .
+3 . . . . . . . .
+2 P P P P P P P P
+1 R N B Q K B N R
+  a b c d e f g h
+
+"""
+</pre>
+
+
+<hr/>
+<p>When used in a function definition, the star <code>*</code> notation  stands for 'arbitrary number of parameters':</p> 
+<div class="highlight highlight-source-python">
+<pre>
+<span class="pl-k">def</span> <span class="pl-en">add_numbers</span>(<span class="pl-s1">*numbers</span>):
+   <span class="pl-k">return</span> sum(numbers)
+
+print(add_numbers(5, 10, 20, 6))
+
+print(add_numbers(50, 21))
+</pre>
+</div> 
+
+
+
+
+
+
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

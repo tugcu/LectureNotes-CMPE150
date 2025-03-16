@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Container Data Structures 
+  </p> 
+  <p class="tcTitleSlide"> 
+Strings in Detail 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p><span class="tcEmp">Strings</span> are basically lists of characters in Python. It is possible to access any character in the string using the index reference operator <code>[]</code>&nbsp; as in</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Cmpe150&quot;</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>[<span class="pl-c1">3</span>])</pre>
+</div> 
+<p>which will output <code>e</code>, the character at position 3 (Pos. 0: 'C', Pos. 1: 'm', Pos. 2: 'p', Pos.3:'e', and so on).</p> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="StringDetails.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (String Details)"> 
+</div> 
+<p>The length, i.e. the number of characters in a string, can be obtained using the <code>len()</code>&nbsp;function as in</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Cmpe 150 <span class="pl-cce">\n</span> <span class="pl-cce">\\</span>&quot;</span>
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>)
+
+<span class="pl-en">print</span>(<span class="pl-en">len</span>(<span class="pl-s1">course</span>))</pre>
+</div> 
+<p>len() function also counts any whitespace character included in the string. Keep in mind that each special character escaped by <code>&quot;\&quot;</code> as in <code>&quot;\n&quot;</code> or <code>&quot;\\&quot;</code> consists of a single character.</p> 
+<p>String members can be iterated in a <code>for</code> loop as in</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Cmpe 150 <span class="pl-cce">\n</span> <span class="pl-cce">\\</span>&quot;</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">character</span> <span class="pl-c1">in</span> <span class="pl-s1">course</span>:
+    <span class="pl-en">print</span>(<span class="pl-s1">character</span>)</pre>
+</div> 
+<p>producing an output of</p> 
+<pre><code>C
+m
+p
+e
+ 
+1
+5
+0
+ 
+
+
+ 
+\
+</code></pre> 
+<p>Note that the <code>print()</code>&nbsp;function inserts an additional new line character even for the <code>&quot;\n&quot;</code> in the string.</p> 
+<p>The <code>in</code>&nbsp;operator has an additional functionality to find out whether a string on the left hand side of the operator can be found in the string on the right hand side.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Cmpe 150 &quot;</span>
+
+<span class="pl-k">if</span> <span class="pl-s">&quot;150&quot;</span> <span class="pl-c1">in</span> <span class="pl-s1">course</span>:
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;Course code matches 150&quot;</span>)</pre>
+</div> 
+<p>The <code>in</code> operator can be negated by using the <code>not</code> operator as in</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Cmpe 150 &quot;</span>
+
+<span class="pl-k">if</span> <span class="pl-s">&quot;250&quot;</span> <span class="pl-c1">not</span> <span class="pl-c1">in</span> <span class="pl-s1">course</span>:
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;Course code does not match 250&quot;</span>)</pre>
+</div> 
+<div class="tcDivRemark"> 
+<p>The <code>in</code> operator returns a boolean value when used in an <code>if</code>&nbsp;clause. On the other hand, it is used for iteratively assigning values to a loop variable when used in a <code>for</code>&nbsp;loop.</p> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

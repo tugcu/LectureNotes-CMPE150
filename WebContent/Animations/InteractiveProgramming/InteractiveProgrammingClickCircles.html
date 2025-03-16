@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Animations and Interactive Programming 
+  </p> 
+  <p class="tcTitleSlide"> 
+Interactive Programming: Click with Circles 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Example with some additional circles:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+<span class="pl-k">import</span> <span class="pl-s1">random</span>
+<span class="pl-k">import</span> <span class="pl-s1">math</span>
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">setup</span>(<span class="pl-c1">500</span>, <span class="pl-c1">500</span>)
+<span class="pl-s1">screen</span> <span class="pl-c1">=</span> <span class="pl-s1">turtle</span>.<span class="pl-v">Screen</span>()
+<span class="pl-s1">turtle</span>.<span class="pl-en">title</span>(<span class="pl-s">&quot;Turtle Keys&quot;</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">pensize</span>(<span class="pl-c1">3</span>)
+
+<span class="pl-s1">colors</span> <span class="pl-c1">=</span> (<span class="pl-s">&quot;orange&quot;</span>, <span class="pl-s">&quot;pink&quot;</span>, <span class="pl-s">&quot;yellow&quot;</span>, <span class="pl-s">&quot;green&quot;</span>, <span class="pl-s">&quot;blue&quot;</span>, <span class="pl-s">&quot;purple&quot;</span>, <span class="pl-s">&quot;magenta&quot;</span>, <span class="pl-s">&quot;cyan&quot;</span>)
+<span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">False</span>
+
+
+<span class="pl-k">def</span> <span class="pl-en">goto_and_do_whatever_required</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>):
+    <span class="pl-k">global</span> <span class="pl-s1">drawing</span>
+    <span class="pl-k">if</span>(<span class="pl-s1">drawing</span>):
+        <span class="pl-k">return</span>
+    <span class="pl-k">if</span>(<span class="pl-s1">y</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">150</span>):
+        <span class="pl-k">return</span>
+    <span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">True</span>
+    <span class="pl-s1">turtle</span>.<span class="pl-en">goto</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">color</span>(<span class="pl-s1">colors</span>[<span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">0</span>, <span class="pl-en">len</span>(<span class="pl-s1">colors</span>)<span class="pl-c1">-</span><span class="pl-c1">1</span>)])
+    <span class="pl-s1">turtle</span>.<span class="pl-en">circle</span>(<span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">10</span>,<span class="pl-c1">50</span>))
+    <span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">False</span>
+
+
+<span class="pl-s1">screen</span>.<span class="pl-en">onscreenclick</span>(<span class="pl-s1">goto_and_do_whatever_required</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()
+
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="Interactive" 
+    data-softdev4u-filePath="TurtleGotoClickCircles.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Go to click circles)"> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

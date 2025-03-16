@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+Additional Practice 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Rewrite the <code>calculateFare</code> function using nested conditional statements by first checking the distance, then checking the traveler type.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">def</span> <span class="pl-en">calculateFare</span>(<span class="pl-s1">distance</span>, <span class="pl-s1">student</span>, <span class="pl-s1">teacher</span>, <span class="pl-s1">senior</span>): 
+    ...
+    </pre>
+</div> 
+<p><a href="images/SimpleMandala.png" target="_blank" rel="noopener noreferrer"><img src="images/SimpleMandala.png" style="max-width:100%;" /></a></p> 
+<p>Draw a simple mandala using squares and altering colors</p> 
+<p>Increase the number of colors, change the size</p> 
+<p>Plan and implement your solution before you take a look at the given code:</p> 
+<div class="softdev4u-answer tcShowAnswer"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+<span class="pl-k">def</span> <span class="pl-en">draw_square</span>(<span class="pl-s1">side</span>):
+    <span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">4</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">side</span>)
+        <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">speed</span>(<span class="pl-c1">20</span>)
+<span class="pl-s1">numberOfSquares</span> <span class="pl-c1">=</span> <span class="pl-c1">100</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">numberOfSquares</span>):
+    <span class="pl-k">if</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Red&quot;</span>)
+    <span class="pl-k">elif</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">1</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Purple&quot;</span>)
+    <span class="pl-k">elif</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">2</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Blue&quot;</span>)
+    <span class="pl-k">elif</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">3</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Green&quot;</span>)
+    <span class="pl-k">else</span>:
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Yellow&quot;</span>)
+    <span class="pl-en">draw_square</span>(<span class="pl-c1">100</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">360</span> <span class="pl-c1">/</span> <span class="pl-s1">numberOfSquares</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()
+
+</pre>
+</div> 
+</div> 
+<br /> 
+<p>Draw a smaller mandala inside the larger one</p> 
+<p><a href="images/SmallerMandala.png" target="_blank" rel="noopener noreferrer"><img src="images/SmallerMandala.png" style="max-width:100%;" /></a></p> 
+<div class="softdev4u-answer tcShowAnswer"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+
+<span class="pl-k">def</span> <span class="pl-en">draw_square</span>(<span class="pl-s1">side</span>):
+    <span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">4</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">side</span>)
+        <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+
+
+<span class="pl-k">def</span> <span class="pl-en">draw_mandala</span>(<span class="pl-s1">size</span>, <span class="pl-s1">number_of_squares</span>):
+    <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">number_of_squares</span>):
+        <span class="pl-k">if</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>):
+            <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Red&quot;</span>)
+        <span class="pl-k">elif</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">1</span>):
+            <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Purple&quot;</span>)
+        <span class="pl-k">elif</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">2</span>):
+            <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Blue&quot;</span>)
+        <span class="pl-k">elif</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">3</span>):
+            <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Green&quot;</span>)
+        <span class="pl-k">else</span>:
+            <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Yellow&quot;</span>)
+        <span class="pl-en">draw_square</span>(<span class="pl-s1">size</span>)
+        <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">360</span> <span class="pl-c1">/</span> <span class="pl-s1">number_of_squares</span>)
+
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">speed</span>(<span class="pl-c1">20</span>)
+<span class="pl-en">draw_mandala</span>(<span class="pl-c1">100</span>, <span class="pl-c1">100</span>)
+<span class="pl-en">draw_mandala</span>(<span class="pl-c1">50</span>, <span class="pl-c1">100</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()
+</pre>
+</div> 
+</div> 
+<br /> 
+<p>Draw a spiral mandala by adjusting the size of the squares.</p> 
+<p><a href="images/SpiralMandala.png" target="_blank" rel="noopener noreferrer"><img src="images/SpiralMandala.png" style="max-width:100%;" /></a></p> 
+<div class="softdev4u-answer tcShowAnswer"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+
+<span class="pl-k">def</span> <span class="pl-en">draw_square</span>(<span class="pl-s1">side</span>):
+    <span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">4</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">side</span>)
+        <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">speed</span>(<span class="pl-c1">20</span>)
+<span class="pl-s1">number_of_squares</span> <span class="pl-c1">=</span> <span class="pl-c1">300</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">number_of_squares</span>):
+    <span class="pl-k">if</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Red&quot;</span>)
+    <span class="pl-k">elif</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">1</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Purple&quot;</span>)
+    <span class="pl-k">elif</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">2</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Blue&quot;</span>)
+    <span class="pl-k">elif</span> (<span class="pl-s1">i</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">3</span>):
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Green&quot;</span>)
+    <span class="pl-k">else</span>:
+        <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Yellow&quot;</span>)
+    <span class="pl-en">draw_square</span>(<span class="pl-c1">10</span> <span class="pl-c1">+</span> <span class="pl-s1">i</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">900</span> <span class="pl-c1">/</span> <span class="pl-s1">number_of_squares</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()
+</pre>
+</div> 
+<p>This code draws the squares starting from the smaller, can you modify a single line of the source code to begin with the larger square, so that smaller ones are not overdrawn?</p> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

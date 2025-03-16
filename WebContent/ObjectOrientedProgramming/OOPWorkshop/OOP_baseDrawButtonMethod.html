@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+OOP Workshop 
+  </p> 
+  <p class="tcTitleSlide"> 
+Draw Button Method 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">def</span> <span class="pl-en">drawTheButton</span>(<span class="pl-s1">self</span>, <span class="pl-s1">aTurtle</span>):
+
+        <span class="pl-k">global</span> <span class="pl-s1">selectedButton</span> 
+        <span class="pl-k">if</span>(<span class="pl-s1">self</span> <span class="pl-c1">is</span> <span class="pl-s1">selectedButton</span>):
+            <span class="pl-s1">aTurtle</span>.<span class="pl-en">color</span>(<span class="pl-s">&quot;Red&quot;</span>)
+        <span class="pl-k">else</span>:
+            <span class="pl-s1">aTurtle</span>.<span class="pl-en">color</span>(<span class="pl-s">&quot;Black&quot;</span>)
+            
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">setheading</span>(<span class="pl-c1">0</span>)
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">fillcolor</span>(<span class="pl-s1">self</span>.<span class="pl-s1">buttonColor</span>)
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">penup</span>()
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">goto</span>(<span class="pl-s1">self</span>.<span class="pl-s1">buttonX</span>, <span class="pl-s1">self</span>.<span class="pl-s1">buttonY</span>)
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">pendown</span>()
+        
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">begin_fill</span>()
+        
+        <span class="pl-s1">self</span>.<span class="pl-en">drawButtonShape</span>(<span class="pl-s1">aTurtle</span>) <span class="pl-c"># Potential Polymorphic call to child class</span>
+        
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">end_fill</span>()
+</pre>
+</div> 
+<p><code>drawTheButton</code>&nbsp;method takes care of adding different button types on the screen. The&nbsp;'drawButtonShape' method has a <code>polymorphic</code>&nbsp;call inside this method, that will act differently for each type of the inheriting methods, without the need to know the details of the implementation in those child classes. Even though the <code>drawTheButton</code>&nbsp;function will not be modified by the child classes, any call to this function will determine the correct implementation of the <code>drawButtonShape</code>&nbsp;method with respect to the child class instantiated for that specific button type.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

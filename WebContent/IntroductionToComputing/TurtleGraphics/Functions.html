@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Turtle Graphics 
+  </p> 
+  <p class="tcTitleSlide"> 
+Functions in Python 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Although they are interchangeable in many programming languages, Python uses the term <span class="tcKeyw">function</span> for non-object related functional units of code and the term <span class="tcKeyw">method</span> for object related functional units of code. We will concentrate on <span class="tcKeyw">functions</span> for the time being.</p> 
+<p>A function is defined with the <span class="tcEmp">def</span> keyword.</p> 
+<ul> 
+ <li>The <span class="tcKeyw">signature</span> of a function consists of 
+  <ul> 
+   <li>a function name</li> 
+   <li>an opening parenthesis(&quot;(&quot;)</li> 
+   <li>any number of input arguments</li> 
+   <li>a closing parenthesis(&quot;)&quot;)</li> 
+   <li>a colon(&quot;:&quot;).</li> 
+  </ul> </li> 
+ <li>Function names are <span class="tcEmp">case sensitive</span>, i.e. upper case and lower case letters are not interchangeable when we are referring to a function in other parts of our code.</li> 
+ <li>By the older convention, function names start with a lower case letter and if it consists of multiple words, camel case (or mixed case) is used to differentiate the individual words where initial letter of each word is typed in upper case, e.g. <code>thisIsAMixedCaseFunctionName</code>.</li> 
+ <li>By the newer convention, function names consist of lower case letters with underscore(&quot;_&quot;) characters separating the individual words, if there are more than one, e.g. <code>this_is_a_function_name_in_python</code>.</li> 
+ <li>No space characters are allowed in function names.</li> 
+ <li>Function names cannot start with a number, however they can contain numbers.</li> 
+ <li>The functions name should give a clue about the main purpose of that function.</li> 
+ <li>Functions can be defined to receive zero or more arguments. If no arguments is necessary, we simply do not write in between the pair of parentheses. If more than one argument is necessary, we need to add a <span class="tcEmp">comma</span> in between the consecutive arguments.</li> 
+ <li>Avoid functions that are too long to keep track of and maintain.</li> 
+ <li>Writing a function is necessary if there is no standard built-in way of doing that work.</li> 
+ <li><span class="tcEmp">Indentation</span> defines the boundaries and the end of the function code.</li> 
+ <li>The order of arguments is very important, that when calling the function you must specify the argument values as specified in the function signature.</li> 
+</ul> 
+<p><a target="_blank" rel="noopener noreferrer" href="images/SquaresWithFunctions.png"><img src="images/SquaresWithFunctions.png" style="max-width: 100%;" /></a></p> 
+<p>The following code defines a function with an <span class="tcEmp">argument</span> that is used inside the function to drawing squares of variable sizes:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+<span class="pl-k">def</span> <span class="pl-en">draw_a_square_for_me</span>(<span class="pl-s1">square_size</span>):
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">square_size</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">square_size</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">square_size</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">square_size</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">penup</span>()
+<span class="pl-s1">turtle</span>.<span class="pl-en">goto</span>(<span class="pl-c1">-</span><span class="pl-c1">50</span>,<span class="pl-c1">50</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">pendown</span>()
+<span class="pl-s1">turtle</span>.<span class="pl-en">pensize</span>(<span class="pl-c1">5</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Red&quot;</span>)
+<span class="pl-en">draw_a_square_for_me</span>(<span class="pl-c1">100</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">penup</span>()
+<span class="pl-s1">turtle</span>.<span class="pl-en">backward</span>(<span class="pl-c1">10</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">10</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">pendown</span>()
+<span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Blue&quot;</span>)
+<span class="pl-en">draw_a_square_for_me</span>(<span class="pl-c1">120</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">penup</span>()
+<span class="pl-s1">turtle</span>.<span class="pl-en">backward</span>(<span class="pl-c1">10</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">10</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">pendown</span>()
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s">&quot;Green&quot;</span>)
+<span class="pl-en">draw_a_square_for_me</span>(<span class="pl-c1">140</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="SimpleShapesWithTurtle" 
+    data-softdev4u-filePath="DrawingSquaresWithFunctions.py" 
+    data-softdev4u-lineNumber=3
+    data-softdev4u-linkTitle="Switch to Code (Drawing Squares with Functions)"> 
+</div> 
+<br /> 
+<div class="tcDivRemark"> 
+<p><strong>Caution</strong>: Defining a function does not mean that the function will be executed immediately. The execution takes place when the function name is encountered inside a statement line (without the <code>def</code> keyword) with values or variables <span class="tcEmp">passed</span> to the function as arguments if any arguments were specified during the definition of the function. The correct number of arguments must be provided during the function call.</p> 
+<p><code>def</code>&nbsp;tells the Python interpreter to start defining the internal structure of a function and be prepared to execute the given set of instructions in that function as soon as a <span class="tcEmp">function call</span> statement is issued in the running program.</p> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

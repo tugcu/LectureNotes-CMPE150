@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>for</code> Loops 
+  </p> 
+  <p class="tcTitleSlide"> 
+Block Scoping 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Variables are not accessible outside the function block they are defined in. The variable is also accessible in the inner blocks of the function. A variable is also not accessible before it is defined in an earlier line of code.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">variable1</span> <span class="pl-c1">=</span> <span class="pl-c1">1</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;variable1 is &quot;</span>, <span class="pl-s1">variable1</span>, <span class="pl-s">&quot; initially&quot;</span>)
+
+<span class="pl-k">def</span> <span class="pl-en">function1</span>():
+    <span class="pl-c"># variable1 is accessible in this block of the function as well</span>
+
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;variable1 is &quot;</span>, <span class="pl-s1">variable1</span>, <span class="pl-s">&quot; inside the function block&quot;</span>)
+
+    <span class="pl-s1">variable2</span> <span class="pl-c1">=</span> <span class="pl-c1">2</span>
+    <span class="pl-c"># variable2 is accessible in this block of the function and the inner blocks</span>
+
+    <span class="pl-k">global</span> <span class="pl-s1">variable3</span>
+    <span class="pl-s1">variable</span> <span class="pl-c1">=</span> <span class="pl-c1">3</span>
+    <span class="pl-c"># variable3 will be accessible to the global scope as soon as the function1() is called for the first time</span>
+
+    <span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">5</span>):
+
+        <span class="pl-c"># Both variable1 and variable2 as well as variable3 are accessible in this inner block</span>
+        <span class="pl-en">print</span>(<span class="pl-s">&quot;variable1 is &quot;</span>, <span class="pl-s1">variable1</span>, <span class="pl-s">&quot; inside the for loop block&quot;</span>)
+        <span class="pl-en">print</span>(<span class="pl-s">&quot;variable2 is &quot;</span>, <span class="pl-s1">variable2</span>, <span class="pl-s">&quot; inside the for loop block&quot;</span>)
+
+        <span class="pl-s1">variable3</span> <span class="pl-c1">=</span> <span class="pl-c1">3</span>
+        <span class="pl-en">print</span>(<span class="pl-s">&quot;variable3 is &quot;</span>, <span class="pl-s1">variable3</span>)
+
+        <span class="pl-s1">variable3</span> <span class="pl-c1">+=</span> <span class="pl-c1">1</span>
+        <span class="pl-en">print</span>(<span class="pl-s">&quot;variable3 is &quot;</span>, <span class="pl-s1">variable3</span>, <span class="pl-s">&quot; after the increment&quot;</span>)
+
+        <span class="pl-c"># The loop counter or iteration variable _ is accessible throughout</span>
+        <span class="pl-c"># the entire cycles of the for loop without losing its current value</span>
+        <span class="pl-en">print</span>(<span class="pl-s">&quot;This was the iteration &quot;</span>, <span class="pl-s1">_</span>, <span class="pl-s">&quot; of the for loop<span class="pl-cce">\n</span>&quot;</span>)
+
+    <span class="pl-c"># variable1 and variable2 are still accessible</span>
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;variable1 is &quot;</span>, <span class="pl-s1">variable1</span>, <span class="pl-s">&quot; outside of the for loop block&quot;</span>)
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;variable2 is &quot;</span>, <span class="pl-s1">variable2</span>, <span class="pl-s">&quot; outside of the for loop block&quot;</span>)
+
+<span class="pl-c"># making a call to the function1()</span>
+
+<span class="pl-en">function1</span>()
+
+<span class="pl-c"># variable2 is not accessible outside the block scope of the function1</span>
+<span class="pl-c"># uncomment the next line by removing the &quot;#&quot; to see the effect</span>
+<span class="pl-c"># print(variable2)</span>
+
+<span class="pl-c"># variable3 is accessible to the global scope once the function1() is called</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;variable3 is &quot;</span>, <span class="pl-s1">variable3</span>, <span class="pl-s">&quot; finally&quot;</span>)
+
+
+<span class="pl-c"># variable1 is still accessible in this scope, as it is defined in the outer code block</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;variable1 is &quot;</span>, <span class="pl-s1">variable1</span>, <span class="pl-s">&quot; finally&quot;</span>)
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ForLoops" 
+    data-softdev4u-filePath="BlockScopeOfVariables.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Block Scope)"> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

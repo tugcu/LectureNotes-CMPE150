@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>for</code> Loops 
+  </p> 
+  <p class="tcTitleSlide"> 
+Drawing Squares 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>For each side of the square, we have used four pairs of the</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">100</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)</pre>
+</div> 
+<p>statements in our previous examples:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">100</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">100</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">100</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">100</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()</pre>
+</div> 
+<br /> 
+<p>We have eliminated the use of some repetitive statements to draw turtle squares as a whole using functions. However, there is still more repetitive code in our simple square generating code, that we can eliminate by using <span class="tcKeyw">for loops</span> as in:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">4</span>):
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">100</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ForLoops" 
+    data-softdev4u-filePath="DrawSquaresWithForLoops.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Squares with Loops)"> 
+</div> 
+<p>The <span class="tcEmp">for</span> loop repeats the statements provided in the code block of the loop as much as four times.</p> 
+<br /> 
+<p>The &quot;_&quot; is a variable name that is defined within the <span class="tcKeyw">scope</span> of the <span class="tcEmp">for</span> loop. Any valid variable name can be specified as the counter variable and the common naming of the variable is &quot;i&quot;, &quot;j&quot;, &quot;k&quot;, &quot;index&quot;, etc. &quot;_&quot; is also a valid variable name, and you are free to use any variable name you prefer.</p> 
+<br /> 
+<p>The <code>range(n)</code>&nbsp;function returns <code>n</code> consecutive integer numbers in the sequence <code>0, 1, 2, ..., n-1</code> (assuming n&gt;2 in this case). The <code>range(4)</code>&nbsp;function call returns the values <code>0, 1, 2, 3</code> and will not include 4 itself.</p> 
+<p>It is also possible to execute the <span class="tcEmp">for</span> loop in this example as:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> [<span class="pl-c1">0</span>,<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>]:
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">100</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()</pre>
+</div> 
+<p>or</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> [<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>,<span class="pl-c1">0</span>]:
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-c1">100</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()</pre>
+</div> 
+<p>where any group of items separated by <code>,</code> and specified between a pair of <code>[]</code> is called a <span class="tcKeyw">list</span> which we will discuss more in upcoming sections. Although we do not use the value of the loop variable <code>_</code> in the loop iterations, its presence is necessary due to the syntax of the <span class="tcKeyw">for</span> loop.</p> 
+<br /> 
+<p>The <code>range(n)</code>&nbsp;function can be used with a starting value such as <code>range(20, 30)</code>, which will return the values <code>20, 21, 22, 23, 24, 25, 26, 27, 28, 29</code>. The increments can also be specified for the successive numbers as in <code>range(20, 30, 2)</code>, which will yield the numbers <code>20, 22, 24, 26, 28</code>. Note that if you need to specify the increment value, you have to use the three argument version of the <code>range()</code>&nbsp;function, otherwise the python interpreter will think that you are using the two argument version, which is used for specifying a start and an ending value of the sequence.</p> 
+<pre><code>range(10) returns the integer numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+range(5, 10) returns the integer numbers 5, 6, 7, 8, 9
+range(10, 2) returns nothing as the second argument should be larger to generate a sequence
+range(5, 10, 2) returns the integer numbers 5, 7, 9
+</code></pre> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

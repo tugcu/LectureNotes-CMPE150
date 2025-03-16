@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+len() Function for List, Tuple, Set, and Dictionary 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">list_example</span> <span class="pl-c1">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">55</span>, <span class="pl-c1">6</span>, <span class="pl-c1">6</span>]
+<span class="pl-s1">tuple_example</span> <span class="pl-c1">=</span> (<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">55</span>, <span class="pl-c1">6</span>, <span class="pl-c1">6</span>)
+<span class="pl-s1">set_example</span> <span class="pl-c1">=</span> {<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">55</span>, <span class="pl-c1">6</span>, <span class="pl-c1">6</span>}
+<span class="pl-s1">dictionary_example</span> <span class="pl-c1">=</span> {<span class="pl-c1">1</span>: <span class="pl-s">&quot;One&quot;</span>, <span class="pl-c1">2</span>: <span class="pl-s">&quot;Two&quot;</span>, <span class="pl-c1">3</span>: <span class="pl-s">&quot;Three&quot;</span>, <span class="pl-c1">4</span>: <span class="pl-s">&quot;Four&quot;</span>, <span class="pl-c1">5</span>: <span class="pl-s">&quot;Five&quot;</span>}
+
+<span class="pl-en">print</span>(<span class="pl-en">len</span>(<span class="pl-s1">list_example</span>), <span class="pl-s">&quot;-&gt; &quot;</span>, <span class="pl-s1">list_example</span>)
+<span class="pl-en">print</span>(<span class="pl-en">len</span>(<span class="pl-s1">tuple_example</span>), <span class="pl-s">&quot;-&gt; &quot;</span>, <span class="pl-s1">tuple_example</span>)
+<span class="pl-en">print</span>(<span class="pl-en">len</span>(<span class="pl-s1">set_example</span>), <span class="pl-s">&quot;-&gt; &quot;</span>, <span class="pl-s1">set_example</span>)
+<span class="pl-en">print</span>(<span class="pl-en">len</span>(<span class="pl-s1">dictionary_example</span>), <span class="pl-s">&quot;-&gt; &quot;</span>, <span class="pl-s1">dictionary_example</span>)</pre>
+</div> 
+<p>Output:</p> 
+<pre><code>
+7 :  [1, 2, 3, 4, 55, 6, 6]
+7 :  (1, 2, 3, 4, 55, 6, 6)
+6 :  {1, 2, 3, 4, 6, 55}  : order of elements is not preserved and duplicates are not allowed in sets.
+
+</code></pre> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="DataStructuresWhileLoops" 
+    data-softdev4u-filePath="LenListTupleSetDictionary.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (len() Function)"> 
+</div> 
+<br /> 
+<hr /> 
+<p><span class="tcEmp">Lists</span> are defined by a pair of <code>[]</code>,</p> 
+<ul> 
+ <li>The elements of a <span class="tcEmp">list</span> can be modified in the runtime</li> 
+ <li>The elements are accessed by an index number</li> 
+ <li>The same item can be added as many times as necessary, at different positions in the <span class="tcEmp">list</span></li> 
+ <li>The insertion order of elements is preserved until the <span class="tcEmp">list</span> is modified</li> 
+</ul> 
+<hr /> 
+<p><span class="tcEmp">Tuples</span> are defined by a pair of <code>()</code>,</p> 
+<ul> 
+ <li>The elements of a <span class="tcEmp">tuple</span> cannot be modified in the runtime</li> 
+ <li>The elements are accessed by an index number</li> 
+ <li>The same item can be added as many times as necessary, at different positions in the <span class="tcEmp">tuple</span></li> 
+ <li>The insertion order of elements is preserved throughout the life span of the <span class="tcEmp">tuple</span></li> 
+</ul> 
+<hr /> 
+<p><span class="tcEmp">Sets</span> are defined by a pair of <code>{}</code>,</p> 
+<ul> 
+ <li>The elements stored in a <span class="tcEmp">set</span> have to be unique, no matter how many times they are added to the set, duplicates are not allowed.</li> 
+ <li>The order of elements is not guaranteed to be preserved as the order of insertion to the <span class="tcEmp">set</span></li> 
+</ul> 
+<hr /> 
+<p><span class="tcEmp">Dictionaries</span> are also defined by a pair of <code>{}</code>,</p> 
+<ul> 
+ <li><span class="tcEmp">Dictionaries</span> are special type of <span class="tcEmp">sets</span> where the <span class="tcKeyw">keys</span> are unique as in <span class="tcEmp">sets</span></li> 
+ <li>The ordering is similar to the <span class="tcEmp">sets</span> based on the <span class="tcKeyw">keys</span></li> 
+ <li>len() of a dictionary is the number of <code>keys</code> in the dictionary</li> 
+</ul> 
+<hr /> 
+<p>The <span class="tcKeyw">positional order</span> does not imply the incremental or decremental ordering based on magnitude of numbers or the lexicographic ordering of strings in a <span class="tcEmp">list</span> or a <span class="tcEmp">tuple</span>. If such an ordering is necessary, the programmers will need to <span class="tcKeyw">sort</span> the items in the <span class="tcEmp">list</span> or the <span class="tcEmp">tuple</span>.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

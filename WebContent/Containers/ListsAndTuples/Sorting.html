@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Container Data Structures 
+  </p> 
+  <p class="tcTitleSlide"> 
+Sorting Lists 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>The order of items in a list are preserved until the list is modified by inserting an item to or removing an item from the list. However, preserving the order does not guarantee the items to be sorted.</p> 
+<p>The <code>sort()</code> method reorders the items in a list based on an increasing/ascending alphanumeric ordering. The sort can be reversed by setting the <code>reverse = True</code>&nbsp;argument in the sort function as <code>sort(reverse = True)</code>. The values in the list need to be comparable:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">temp</span> <span class="pl-c1">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2.3</span>, <span class="pl-c1">3</span>, <span class="pl-c1">2.4</span>, <span class="pl-c1">6</span>, <span class="pl-c1">3</span>, <span class="pl-c1">7</span>]
+
+<span class="pl-s1">temp</span>.<span class="pl-en">sort</span>()
+<span class="pl-en">print</span>(<span class="pl-s1">temp</span>)
+
+<span class="pl-s1">temp</span>.<span class="pl-en">sort</span>(<span class="pl-s1">reverse</span><span class="pl-c1">=</span><span class="pl-c1">True</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">temp</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="ListSorting.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Sorting)"> 
+</div> 
+<p>Output:</p> 
+<pre><code>[1, 2.3, 2.4, 3, 3, 6, 7]
+[7, 6, 3, 3, 2.4, 2.3, 1]
+</code></pre> 
+<hr /> 
+<p>The <code>reverse()</code> method on the other hand, simply reverses the order of elements in the list:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">temp</span> <span class="pl-c1">=</span> [<span class="pl-c1">1</span>, <span class="pl-c1">2.3</span>, <span class="pl-c1">3</span>, <span class="pl-c1">2.4</span>, <span class="pl-c1">6</span>, <span class="pl-c1">3</span>, <span class="pl-c1">7</span>]
+
+<span class="pl-s1">temp</span>.<span class="pl-en">reverse</span>()
+<span class="pl-en">print</span>(<span class="pl-s1">temp</span>)</pre>
+</div> 
+<p>Output: <code>[7, 3, 6, 2.4, 3, 2.3, 1]</code></p> 
+<p><code>sort()</code>&nbsp;method can be applied to the list of strings as well:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">colors</span> <span class="pl-c1">=</span> [<span class="pl-s">&quot;black&quot;</span>, <span class="pl-s">&quot;azure&quot;</span>, <span class="pl-s">&quot;ruby&quot;</span>, <span class="pl-s">&quot;orange&quot;</span>, <span class="pl-s">&quot;blue&quot;</span>, <span class="pl-s">&quot;violet&quot;</span>, <span class="pl-s">&quot;pink&quot;</span> ]
+
+<span class="pl-s1">colors</span>.<span class="pl-en">sort</span>()
+<span class="pl-en">print</span>(<span class="pl-s1">colors</span>)</pre>
+</div> 
+<p>Output: <code>['azure', 'black', 'blue', 'orange', 'pink', 'ruby', 'violet']</code></p> 
+<hr /> 
+<p>The modification operations cannot be performed on a tuple, however, there is a workaround for such cases,</p> 
+<ul> 
+ <li>Generate a new list using the <code>list()</code>&nbsp;constructor having the tuple as its argument,</li> 
+ <li>Apply modification, sort, reverse, insert, remove etc on the new list,</li> 
+ <li>Convert the new list to tuple using the <code>tuple()</code> constructor, and assign to the initial tuple if necessary</li> 
+ <li>Be careful that other entities such as variables referring to or lists, tuples, dictionaries containing the older version of the tuple may still have reference to that older version</li> 
+</ul> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

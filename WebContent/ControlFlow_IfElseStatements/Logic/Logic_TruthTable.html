@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        
+        <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+        
+        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+Truth Table 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Example values for boolean variables or function calls</p> 
+<p><code>a = True, b = False, c= True </code></p> 
+<p><code>a or b and c</code> : True</p> 
+<p><code>b or a and not c</code> : False</p> 
+<p><code>(b or a) and not c</code> : False</p> 
+<br /> 
+<h2> <a id="precedence-in-boolean-statements" class="anchor" href="#precedence-in-boolean-statements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Precedence in boolean statements</h2> 
+<p>The order of precedence in boolean statements higher to lower precedence is as follows:</p> 
+<p><code>&quot;()&quot;</code>, <code>&quot;not&quot;</code>, <code>&quot;and&quot;</code>, and <code>&quot;or&quot;</code>.</p> 
+<p>Consider the logical expression <nobr><code>a or b and c</code></nobr> where the operand <code>&quot;b&quot;</code> is between the two operators. 
+Based on the precedence rules, it will be a part of the <code>&quot;and&quot;</code> operation.
+Therefore, <nobr><code>a or b and c</code></nobr> automatically becomes <nobr><code>a or (b and c)</code></nobr> .</p> 
+
+
+
+
+<table> 
+ <tbody>
+  <tr> 
+   <td>a</td> 
+   <td>b</td> 
+   <td>a and b</td> 
+   <td>a or b</td> 
+   <td>not a or b</td> 
+   <td>not (a or b)</td> 
+  </tr> 
+  <tr> 
+   <td>False</td> 
+   <td>False</td> 
+   <td>False</td> 
+   <td>False</td> 
+   <td>True</td> 
+   <td>True</td> 
+  </tr> 
+  <tr> 
+   <td>False</td> 
+   <td>True</td> 
+   <td>False</td> 
+   <td>True</td> 
+   <td>True</td> 
+   <td>False</td> 
+  </tr> 
+  <tr> 
+   <td>True</td> 
+   <td>False</td> 
+   <td>False</td> 
+   <td>True</td> 
+   <td>False</td> 
+   <td>False</td> 
+  </tr> 
+  <tr> 
+   <td>True</td> 
+   <td>True</td> 
+   <td>True</td> 
+   <td>True</td> 
+   <td>True</td> 
+   <td>False</td> 
+  </tr> 
+  <tr> 
+   <td></td> 
+   <td></td> 
+   <td></td> 
+   <td></td> 
+   <td></td> 
+   <td></td> 
+  </tr> 
+ </tbody>
+</table> 
+<p>The logical expression <code>(a or b or (c or not b and not (a or c)))</code>&nbsp; evaluates to <code>True</code>&nbsp;as shown step by step in the following solution</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+(<span class="pl-s1">a</span> <span class="pl-c1">or</span> <span class="pl-s1">b</span> <span class="pl-c1">or</span> (<span class="pl-s1">c</span> <span class="pl-c1">or</span> <span class="pl-c1">not</span> <span class="pl-s1">b</span> <span class="pl-c1">and</span> <span class="pl-c1">not</span> (<span class="pl-c1">True</span>)))
+(<span class="pl-s1">a</span> <span class="pl-c1">or</span> <span class="pl-s1">b</span> <span class="pl-c1">or</span> (<span class="pl-s1">c</span> <span class="pl-c1">or</span> <span class="pl-c1">not</span> <span class="pl-s1">b</span> <span class="pl-c1">and</span> <span class="pl-c1">False</span>))
+(<span class="pl-s1">a</span> <span class="pl-c1">or</span> <span class="pl-s1">b</span> <span class="pl-c1">or</span> (<span class="pl-s1">c</span> <span class="pl-c1">or</span> <span class="pl-c1">False</span>))
+(<span class="pl-s1">a</span> <span class="pl-c1">or</span> <span class="pl-s1">b</span> <span class="pl-c1">or</span> <span class="pl-c1">True</span>)
+(<span class="pl-c1">True</span>)</pre>
+</div> 
+<p>In fact, in most of the programming languages the boolean statements are evaluated from left to right. Adhering to the <span class="tcEmp">short-circuit evaluation</span> principle, the Python interpreter will not evaluate the second operand of the <code>or</code> operator if the first operand is evaluated to <code>True</code>. Similarly, the second operand of an <code>and</code> operator will not be evaluated if the first operand is evaluated to <code>False</code>. However, the remaining statements may be evaluated depending on the structure of the compound statement.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">a</span> <span class="pl-c1">or</span> <span class="pl-s1">b</span> <span class="pl-c1">or</span> (<span class="pl-s1">c</span> <span class="pl-c1">or</span> <span class="pl-c1">not</span> <span class="pl-s1">b</span> <span class="pl-c1">and</span> <span class="pl-c1">not</span> (<span class="pl-s1">a</span> <span class="pl-c1">or</span> <span class="pl-s1">c</span>))
+<span class="pl-c1">True</span> <span class="pl-c1">or</span> <span class="pl-s1">b</span> <span class="pl-c1">or</span> (<span class="pl-s1">c</span> <span class="pl-c1">or</span> <span class="pl-c1">not</span> <span class="pl-s1">b</span> <span class="pl-c1">and</span> <span class="pl-c1">not</span> (<span class="pl-s1">a</span> <span class="pl-c1">or</span> <span class="pl-s1">c</span>)) </pre>
+</div> 
+<p>will evaluate directly to <code>True</code> since the value of <code>a</code> is <code>True</code>&nbsp;and the rest of the expression (<code>b or (c or not b and not (a or c))</code>) is not going to be checked. On the other hand, the statement <code>a or True or b</code>&nbsp; will first check for the value of <code>a</code> although there is an explicitly stated <code>True</code> value in the expression constructed of <code>or</code> operators only.</p> 
+<p>A simple test using a function with a boolean return value instead of a variable is provided below. It can be executed to test the <span class="tcEmp">short-circuit evaluation</span> principle by replacing <code>or</code> with <code>and</code>, inserting additional <code>or</code>&nbsp;and <code>and</code> operators, modifying the return value of the function, or adding extra functions, etc.:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">def</span> <span class="pl-en">getValue</span>():
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;called getValue function, you may include code that operates on databases, accesses network, stores data, etc. before returning the result value&quot;</span>)
+    <span class="pl-s1">result</span> <span class="pl-c1">=</span> <span class="pl-c1">False</span>
+    <span class="pl-k">return</span> <span class="pl-s1">result</span>
+
+
+<span class="pl-en">print</span>(<span class="pl-en">getValue</span>() <span class="pl-c1">or</span> <span class="pl-c1">True</span> <span class="pl-c1">or</span> <span class="pl-en">getValue</span>())</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ConditionalFlow" 
+    data-softdev4u-filePath="BooleanExpression.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Boolean Expression)"> 
+</div> 
+<h1> <a id="demorgans-law" class="anchor" href="#demorgans-law" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DeMorgan's Law</h1> 
+<p>When applying the negation operator <code>not</code>&nbsp;to the compound logical statements, the well known DeMorgan's law applies as</p> 
+<p><code>not (a or b)</code> is equal to: <code>not a and not b</code></p> 
+<p>and</p> 
+<p><code>not (a and b)</code> is equal to: <code>not a or not b</code></p> 
+
+<hr/>
+
+<p>Practice: XOR</p>
+
+<pre>
+    <zero-md>
+        <script type="text/markdown">
+```python
+    
+def bool2xor(a,b):
+    return not (a == b)
+
+def boolxoor(a,b):
+    return ((a and not b) or (not a and b))
+
+def xor(a,b):
+
+    return ((a+b) % 2 == 1)
+
+print(xor(0,0))
+print(xor(0,1))
+print(xor(1,0))
+print(xor(1,1))
+
+```
+</script>
+</zero-md>
+
+</pre>
+
+
+
+
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

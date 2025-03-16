@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+Numeric Comparison 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Similar to mathematical quantity comparison symbols, Python also has the respective operators for numeric comparison, however, the syntax is a little different in order to simplify coding with a regular general purpose keyboard. Note that the compound operators consisting of more than one symbol do not have spaces in between the symbols involved.</p> 
+<p>For the value <span class="tcEmp">“x = 10”</span> and</p> 
+<ul> 
+ <li> <p><span class="tcEmp">is less than</span> operator ( <span class="tcKeyw">&lt;</span> ) : The expression <span class="tcEmp">x&lt;11</span> evaluates to <code>True</code>, but <span class="tcEmp">x&lt;10</span> evaluates to <code>False</code>&nbsp;</p> </li> 
+ <li> <p><span class="tcEmp">is greater than</span> operator ( <span class="tcKeyw">&gt;</span> ) : The expression <span class="tcEmp">x&gt;9</span> evaluates to <code>True</code>, but <span class="tcEmp">x&gt;10</span> evaluates to <code>False</code></p> </li> 
+ <li> <p><span class="tcEmp">is equal to</span> operator ( <span class="tcKeyw">==</span> ) : The expression <span class="tcEmp">x==10</span> evaluates to <code>True</code>, but <span class="tcEmp">x==9</span> evaluates to <code>False</code></p> </li> 
+ <li> <p><span class="tcEmp">is less than or equal to</span> operator ( <span class="tcKeyw">&lt;=</span> ) : The expression <span class="tcEmp">x&lt;=11</span> and <span class="tcEmp">x&lt;=10</span> evaluate to <code>True</code>, but <span class="tcEmp">x&lt;=9</span> evaluates to <code>False</code></p> </li> 
+ <li> <p><span class="tcEmp">is greater than or equal to</span> operator ( <span class="tcKeyw">&gt;=</span> ) : The expression <span class="tcEmp">x&gt;=9</span> and <span class="tcEmp">x&gt;=10</span> evaluate to <code>True</code>, but <span class="tcEmp">x&gt;=11</span> evaluates to <code>False</code></p> </li> 
+ <li> <p><span class="tcEmp">is not equal to</span> operator ( <span class="tcKeyw">!=</span> ) : The expression <span class="tcEmp">x!=9</span> evaluates to <code>True</code>, but <span class="tcEmp">x!=10</span> evaluates to <code>False</code></p> </li> 
+</ul> 
+<div class="tcDivRemark"> 
+<p>Note that the <code>=</code> operator is the assignment operator and it cannot be used for comparison. One of the most common mistakes in coding is using <code>=</code> instead of <code>==</code> in comparison. The IDE platform may warn the programmer, however, when using remote tools or text editors on a remote server and without proper test coverage, the errors may go unnoticed until that code section is executed in the production system for the first time.</p> 
+</div> 
+<p>The result of the comparison expressions can be stored in a variable as a Boolean value of either <code>True</code>&nbsp;or <code>False</code>. Please try the following example with different values of <code>x</code> and <code>y</code>.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-c1">3</span>
+<span class="pl-s1">y</span> <span class="pl-c1">=</span> <span class="pl-c1">10</span>
+
+<span class="pl-s1">condition_variable</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> <span class="pl-c1">&gt;=</span> <span class="pl-s1">y</span>
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;The value of condition_variable is&quot;</span>, <span class="pl-s1">condition_variable</span>)
+
+<span class="pl-k">if</span> (<span class="pl-s1">condition_variable</span>):
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is more than or equal to&quot;</span>, <span class="pl-s1">y</span>)
+    
+<span class="pl-k">else</span>:
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is less than&quot;</span>,<span class="pl-s1">y</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ConditionalFlow" 
+    data-softdev4u-filePath="ConditionVariable.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Condition Variable)"> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

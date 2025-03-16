@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Simple Arithmetic, Input and Output in Python 
+  </p> 
+  <p class="tcTitleSlide"> 
+File Processing 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Now that we can receive input, process that input and output it to the terminal, we should find a way of storing data in a file and use data from exiting files.</p> 
+<h1><a id="open" class="anchor" aria-hidden="true" href="#open"><span aria-hidden="true" class="octicon octicon-link"></span></a>open()</h1> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;path_to_my_file&quot;</span>)</pre>
+</div> 
+<p>will open the file located in <code>path_to_my_file</code> and return a file handle stored in the <code>my_file</code> variable.</p> 
+<h1><a id="read" class="anchor" aria-hidden="true" href="#read"><span aria-hidden="true" class="octicon octicon-link"></span></a>read()</h1> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;path_to_my_file&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">my_file</span>.<span class="pl-en">read</span>())</pre>
+</div> 
+<p>will read the contents of the entire file and display it on the screen.</p> 
+<h1><a id="readnumber_of_characters" class="anchor" aria-hidden="true" href="#readnumber_of_characters"><span aria-hidden="true" class="octicon octicon-link"></span></a>read(number_of_characters)</h1> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;path_to_my_file&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">my_file</span>.<span class="pl-en">read</span>(<span class="pl-c1">10</span>))</pre>
+</div> 
+<p>will read as many as <code>number_of_characters</code> from file and display them on the screen.</p> 
+<h1><a id="readline" class="anchor" aria-hidden="true" href="#readline"><span aria-hidden="true" class="octicon octicon-link"></span></a>readline()</h1> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;path_to_my_file&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">my_file</span>.<span class="pl-en">readline</span>())</pre>
+</div> 
+<p>will read a single line from the file each time it is called from the <code>my_file</code> file handle. Each call will retrieve the next line after the previously read line if any. Each time the file is opened the position pointer of the file is reset to the beginning.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;path_to_my_file&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">my_file</span>.<span class="pl-en">readline</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">my_file</span>.<span class="pl-en">readline</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">my_file</span>.<span class="pl-en">readline</span>())</pre>
+</div> 
+<h1><a id="close" class="anchor" aria-hidden="true" href="#close"><span aria-hidden="true" class="octicon octicon-link"></span></a>close()</h1> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;path_to_my_file&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">my_file</span>.<span class="pl-en">read</span>())
+<span class="pl-s1">my_file</span>.<span class="pl-en">close</span>()</pre>
+</div> 
+<p>It is important to <code>close()</code> the file if it is not required any longer. This will free system resources which you will need later on.</p> 
+<div class="tcDivRemark"> 
+<p>Files can be automatically closed by the Python interpreter if opened within a <code>with</code>&nbsp;statement. Also the <code>with</code> statement handles the errors, eliminating the need for <code>try-except</code> and makes the code more compact. However, the file will be immediately closed at the end of the <code>with</code>&nbsp; statement block, so if you need your file to be open for other parts of your program, you may need to consider the regular file opening and closing approach.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">offset_file_name</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;datafile.txt&quot;</span>
+<span class="pl-k">with</span> <span class="pl-en">open</span>(<span class="pl-s1">offset_file_name</span>) <span class="pl-k">as</span> <span class="pl-s1">f</span>:
+    <span class="pl-s1">offset</span> <span class="pl-c1">=</span> <span class="pl-en">int</span>(<span class="pl-s1">f</span>.<span class="pl-en">read</span>())</pre>
+</div> 
+</div> 
+<h1><a id="mode-arguments-of-open" class="anchor" aria-hidden="true" href="#mode-arguments-of-open"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mode Arguments of open()</h1> 
+<p>The modes of opening a file are as follows:</p> 
+<ul> 
+ <li>&quot;r&quot; : Read from the file, write is not allowed, (default)</li> 
+ <li>&quot;a&quot; : Append to the end of the file</li> 
+ <li>&quot;w&quot; : Write or overwrite the contents of the file</li> 
+ <li>&quot;x&quot; : Create a non existing file.</li> 
+</ul> 
+<p>The modes &quot;a&quot; and &quot;w&quot; will create the file if it does not exist in the storage, however, the mode &quot;x&quot; will return an error if the file already exists. This is a means of warning to the user not to overwrite or append accidentally to a file which is not intended to be modified. Similarly the mode &quot;r&quot; will return an error if the file does not exist. The modes are mutually exclusive, i.e. they cannot be used together.</p> 
+<br /> 
+<p>There are two more mutually exclusive modes of opening a file, that can be used with the above modes:</p> 
+<ul> 
+ <li>&quot;t&quot; : Text file, (default)</li> 
+ <li>&quot;b&quot; : Binary file</li> 
+</ul> 
+<p>The <code>open()</code> function uses <span class="tcKeyw">readonly text</span> mode if no mode argument is specified, i.e.</p> 
+<p><code>my_file = open(&quot;path_to_my_file&quot;)</code> is equivalent to</p> 
+<p><code>my_file = open(&quot;path_to_my_file&quot;,&quot;rt&quot;)</code>.</p> 
+<h1><a id="write" class="anchor" aria-hidden="true" href="#write"><span aria-hidden="true" class="octicon octicon-link"></span></a>write()</h1> 
+<p>In order to write to a file we need to open it with either of the &quot;a&quot; or &quot;w&quot; modes.</p> 
+<p>In order to everwrite the contents:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;path_to_my_file&quot;</span>,<span class="pl-s">&quot;w&quot;</span>)
+<span class="pl-s1">my_file</span>.<span class="pl-en">write</span>(<span class="pl-s">&quot;This text will overwrite any content in the file.&quot;</span>)
+<span class="pl-s1">my_file</span>.<span class="pl-en">close</span>()</pre>
+</div> 
+<p>To append to the end of the file:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;path_to_my_file&quot;</span>,<span class="pl-s">&quot;a&quot;</span>)
+<span class="pl-s1">my_file</span>.<span class="pl-en">write</span>(<span class="pl-s">&quot;This will append this text content to the end of the file.&quot;</span>)
+<span class="pl-s1">my_file</span>.<span class="pl-en">close</span>()</pre>
+</div> 
+<p>You can experiment with reading from files using the following example:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-en">print</span>(<span class="pl-s">&quot;Reading the entire content:&quot;</span>)
+
+<span class="pl-s1">demo_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;resources/FileReadingDemo.txt&quot;</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s1">demo_file</span>.<span class="pl-en">read</span>())
+
+<span class="pl-s1">demo_file</span>.<span class="pl-en">close</span>()
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;--------------------&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s">&quot;Reading 20 characters from the file&quot;</span>)
+<span class="pl-s1">demo_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;resources/FileReadingDemo.txt&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">demo_file</span>.<span class="pl-en">read</span>(<span class="pl-c1">20</span>))
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;Reading 20 more characters from the file&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">demo_file</span>.<span class="pl-en">read</span>(<span class="pl-c1">20</span>))
+<span class="pl-s1">demo_file</span>.<span class="pl-en">close</span>()
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;--------------------&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s">&quot;Reading two lines from the file, beware of the extra newlines&quot;</span>)
+<span class="pl-s1">demo_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;resources/FileReadingDemo.txt&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">demo_file</span>.<span class="pl-en">readline</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">demo_file</span>.<span class="pl-en">readline</span>())
+<span class="pl-s1">demo_file</span>.<span class="pl-en">close</span>()
+
+<span class="pl-s1">my_demo_file</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s">&quot;resources/FileReadingDemo.txt&quot;</span>,<span class="pl-s">&quot;at&quot;</span>)
+<span class="pl-s1">my_demo_file</span>.<span class="pl-en">write</span>(<span class="pl-s">&quot;<span class="pl-cce">\n</span>This is additional content written using the append mode.&quot;</span>)
+<span class="pl-s1">my_demo_file</span>.<span class="pl-en">close</span>()
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;--------------------&quot;</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="BasicMathsAndIO" 
+    data-softdev4u-filePath="FileIO.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (File Input)"> 
+</div> 
+<div class="tcDivRemark"> 
+<p>If an error occurs due to missing file or if the file cannot be created in the file system, then the program may crash simply not knowing how to proceed. Try the example with a non-existing filename:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">file_name</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">'Enter the file name: '</span>)
+<span class="pl-s1">file_handle</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s1">file_name</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;File opened successfully&quot;</span>)
+<span class="pl-s1">file_handle</span>.<span class="pl-en">close</span>()</pre>
+</div> 
+<p>In order to prevent such cases the exception handling procedure, i.e. <code>try-except</code> structure, should be used anywhere that has a potential of generating a system error, namely a <code>runtime exception</code>&nbsp;:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">file_name</span> <span class="pl-c1">=</span> <span class="pl-en">input</span>(<span class="pl-s">'Enter the file name: '</span>)
+
+<span class="pl-k">try</span>:
+    <span class="pl-s1">file_handle</span> <span class="pl-c1">=</span> <span class="pl-en">open</span>(<span class="pl-s1">file_name</span>)
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;File opened successfully&quot;</span>)
+    <span class="pl-s1">file_handle</span>.<span class="pl-en">close</span>()
+<span class="pl-k">except</span>:
+    <span class="pl-en">print</span>(<span class="pl-s">'File cannot be opened:'</span>, <span class="pl-s1">file_name</span>)</pre>
+</div> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

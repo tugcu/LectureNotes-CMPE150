@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Container Data Structures 
+  </p> 
+  <p class="tcTitleSlide"> 
+String Slicing 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p><span class="tcEmp">Slicing</span> (<code>[:]</code>) is an operation that can be performed on ordered sequential data structures such as <span class="tcKeyw">lists</span>, <span class="tcKeyw">tuples</span>, and <span class="tcKeyw">strings</span>, to retrieve a specific successive portion of the original sequence.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot; Introduction to Programming&quot;</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>[<span class="pl-c1">1</span>:<span class="pl-c1">13</span>])</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="StringSlicing.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (String Slicing)"> 
+</div> 
+<p>This first character in a string resides at index 0 and the <code>[1:13]</code>&nbsp;slice corresponds to the sub-string of the given string starting at index 1 and ending at index 12, excluding the given end index value 13, yielding the substring <code>&quot;Introduction&quot;</code>. If no start index is specified for the slice, then it is assumed to be <code>0</code>, i.e. the beginning index of the string. Similarly if no end-index is specified for the slice, it is assumed to be the length of the string.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Introduction to Programming&quot;</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>[:<span class="pl-c1">12</span>])</pre>
+</div> 
+<p>generates the output <code>&quot;Introduction&quot;</code>, and similarly,</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Introduction to Programming&quot;</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>[<span class="pl-c1">16</span>:])</pre>
+</div> 
+<p>produces the output <code>&quot;Programming&quot;</code>.</p> 
+<p>The index values used in slicing can be bound to variables:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">social_security_id</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;25495-456-3224874&quot;</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">5</span>,<span class="pl-en">len</span>(<span class="pl-s1">social_security_id</span>)):
+    <span class="pl-en">print</span>(<span class="pl-s1">i</span><span class="pl-c1">*</span><span class="pl-s">&quot;*&quot;</span> <span class="pl-c1">+</span> <span class="pl-s1">social_security_id</span>[<span class="pl-s1">i</span>:<span class="pl-en">len</span>(<span class="pl-s1">social_security_id</span>)])</pre>
+</div> 
+<p>The code above can be used to hide a certain part of the social security id numbers:</p> 
+<pre><code>*****-456-3224874
+******456-3224874
+*******56-3224874
+********6-3224874
+*********-3224874
+**********3224874
+***********224874
+************24874
+*************4874
+**************874
+***************74
+****************4
+</code></pre> 
+<p>Try hiding the end or middle portion of the id number such as :</p> 
+<pre><code>25495-456-322487*
+25495-456-32248**
+25495-456-3224***
+25495-456-322****
+25495-456-32*****
+
+or 
+
+25495-45*-3224874
+25495-4***3224874
+25495-*****224874
+25495*******24874
+2549*********4874
+
+and maybe
+
+*5495-456-322487*
+**495-456-32248**
+***95-456-3224***
+****5-456-322****
+*****-456-32*****
+******456-3******
+
+</code></pre> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

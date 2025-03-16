@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+OOP Workshop 
+  </p> 
+  <p class="tcTitleSlide"> 
+class Constructor Method 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">class</span> <span class="pl-v">Button</span>:
+    <span class="pl-s1">buttonShape</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Line&quot;</span>
+    <span class="pl-s1">buttonColor</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Orange&quot;</span>    
+    <span class="pl-s1">buttonX</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+    <span class="pl-s1">buttonY</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>    
+    <span class="pl-s1">width</span> <span class="pl-c1">=</span> <span class="pl-c1">100</span>
+    <span class="pl-s1">height</span> <span class="pl-c1">=</span> <span class="pl-c1">50</span>
+    
+    <span class="pl-k">def</span> <span class="pl-en">__init__</span> (<span class="pl-s1">self</span>, <span class="pl-s1">buttonShape</span>, <span class="pl-s1">buttonColor</span>, <span class="pl-s1">buttonX</span>, <span class="pl-s1">buttonY</span>, <span class="pl-s1">width</span>, <span class="pl-s1">height</span>):
+        <span class="pl-s1">self</span>.<span class="pl-s1">buttonShape</span> <span class="pl-c1">=</span> <span class="pl-s1">buttonShape</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">buttonColor</span> <span class="pl-c1">=</span> <span class="pl-s1">buttonColor</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">buttonX</span> <span class="pl-c1">=</span> <span class="pl-s1">buttonX</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">buttonY</span> <span class="pl-c1">=</span> <span class="pl-s1">buttonY</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">width</span> <span class="pl-c1">=</span> <span class="pl-s1">width</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">height</span> <span class="pl-c1">=</span> <span class="pl-s1">height</span>
+
+
+<span class="pl-k">class</span> <span class="pl-v">RectangleButton</span>(<span class="pl-v">Button</span>):
+    <span class="pl-k">def</span> <span class="pl-en">__init__</span>(<span class="pl-s1">self</span>, <span class="pl-s1">buttonColor</span>, <span class="pl-s1">buttonX</span>, <span class="pl-s1">buttonY</span>, <span class="pl-s1">width</span>, <span class="pl-s1">height</span>):
+        <span class="pl-en">super</span>().<span class="pl-en">__init__</span>(<span class="pl-s">&quot;Rectangle&quot;</span>, <span class="pl-s1">buttonColor</span>, <span class="pl-s1">buttonX</span>, <span class="pl-s1">buttonY</span>, <span class="pl-s1">width</span>, <span class="pl-s1">height</span>)
+
+
+<span class="pl-k">class</span> <span class="pl-v">TriangleButton</span>(<span class="pl-v">Button</span>):
+    <span class="pl-k">def</span> <span class="pl-en">__init__</span>(<span class="pl-s1">self</span>, <span class="pl-s1">buttonColor</span>, <span class="pl-s1">buttonX</span>, <span class="pl-s1">buttonY</span>, <span class="pl-s1">width</span>, <span class="pl-s1">height</span>):
+        <span class="pl-en">super</span>().<span class="pl-en">__init__</span>(<span class="pl-s">&quot;Triangle&quot;</span>, <span class="pl-s1">buttonColor</span>, <span class="pl-s1">buttonX</span>, <span class="pl-s1">buttonY</span>, <span class="pl-s1">width</span>, <span class="pl-s1">height</span>)
+
+
+<span class="pl-k">class</span> <span class="pl-v">CircleButton</span>(<span class="pl-v">Button</span>):
+    <span class="pl-k">def</span> <span class="pl-en">__init__</span>(<span class="pl-s1">self</span>, <span class="pl-s1">buttonColor</span>, <span class="pl-s1">buttonX</span>, <span class="pl-s1">buttonY</span>, <span class="pl-s1">width</span>, <span class="pl-s1">height</span>):
+        <span class="pl-en">super</span>().<span class="pl-en">__init__</span>(<span class="pl-s">&quot;Circle&quot;</span>, <span class="pl-s1">buttonColor</span>, <span class="pl-s1">buttonX</span>, <span class="pl-s1">buttonY</span>, <span class="pl-s1">width</span>, <span class="pl-s1">height</span>)
+</pre>
+</div> 
+<p><code>__init__ (self, ... </code>&nbsp;is a special method for initializing a class instance. The argument <code>self</code>&nbsp;refers to the specific instance of the class being constructed. Each instance may be constructed with different values of the arguments. Each method defined as an instance method should define the <code>self</code>&nbsp;argument as the first argument. On the other hand, when making a call to the instance methods, the <code>self</code>&nbsp;argument is automatically provided by the python interpreter to the called method, and no explicit argument passing is necessary.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">class</span> <span class="pl-s1">myclass</span>:
+
+    <span class="pl-s1">my_label</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;&quot;</span>
+
+    <span class="pl-k">def</span> <span class="pl-en">__init__</span>(<span class="pl-s1">self</span>, <span class="pl-s1">label_value</span>):
+        <span class="pl-s1">self</span>.<span class="pl-s1">my_label</span> <span class="pl-c1">=</span> <span class="pl-s1">label_value</span>
+
+    <span class="pl-k">def</span> <span class="pl-en">my_method</span>(<span class="pl-s1">self</span>):
+        <span class="pl-en">print</span> (<span class="pl-s">&quot;my_method has been called, my_label is &quot;</span>, <span class="pl-s1">self</span>.<span class="pl-s1">my_label</span>)
+
+
+<span class="pl-s1">myclass_instance</span> <span class="pl-c1">=</span> <span class="pl-en">myclass</span>(<span class="pl-s">&quot;Instance 1&quot;</span>)
+
+<span class="pl-s1">myclass_instance</span>.<span class="pl-en">my_method</span>()
+</pre>
+</div> 
+<p>In the example above, <code>myclass</code>&nbsp;defines an attribute <code>my_label</code>&nbsp;which can be accessed by using the <code>self</code>&nbsp;argument. When initializing an instance of the class <code>myclass</code>, we do not provide the <code>self</code>&nbsp;as an argument in the line <code>myclass_instance = myclass(&quot;Instance 1&quot;)</code>, instead the <code>self</code> argument is implicitly added by the interpreter. The same event occurs in the statement <code>myclass_instance.my_method()</code>&nbsp;where the <code>self</code>&nbsp;argument is implicitly set to be the <code>myclass_instance</code>&nbsp;variable. &nbsp;</p> 
+<p>The class definitions</p> 
+<ul> 
+ <li> <code>RectangleButton(Button)</code>,</li> 
+ <li> <code>TriangleButton(Button)</code>, and</li> 
+ <li> <code>CircleButton(Button)</code>&nbsp;are also of the type <code>Button</code>&nbsp;as they inherit all characteristics by using the class name <code>Button</code>&nbsp;inside a pair of <code>()</code>, extending the <span class="tcKeyw">base (parent) class</span> <code>Button</code>.</li> 
+</ul> 
+<p>The <code>super()</code>&nbsp;method returns the <span class="tcKeyw">parent</span> class reference to specifically call the methods defined in that parent class. No matter whether those methods were overridden by the child class, the implementation in the base class will be executed in such a call.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

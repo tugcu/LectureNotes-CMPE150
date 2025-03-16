@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Algorithms 
+  </p> 
+  <p class="tcTitleSlide"> 
+Robotic Arm 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Problem definition:</p> 
+<ul> 
+ <li>Moving a robotic arm</li> 
+</ul> 
+<p>Problem constraints:</p> 
+<ul> 
+ <li>Length of the arm</li> 
+ <li>x-y-z rotational axes</li> 
+</ul> 
+<p>Problem parameters:</p> 
+<ul> 
+ <li>Target coordinates</li> 
+ <li>Speed of movement</li> 
+</ul> 
+<p>Solution steps:</p> 
+<ul> 
+ <li>Flow of moving</li> 
+ <li>Turning</li> 
+ <li>Checking for safety</li> 
+</ul> 
+<p>Options in each step:</p> 
+<ul> 
+ <li>Milestone locations reached?</li> 
+ <li>Target location reached?</li> 
+ <li>Safety margins exceeded?</li> 
+</ul> 
+<p>Solution output:</p> 
+<ul> 
+ <li>Insecure movement,</li> 
+ <li>Target coordinates reached</li> 
+</ul> 
+<p>Result</p> 
+<hr /> 
+<p>Simple robotic arm movement algorithm</p> 
+<ul> 
+ <li> <p>Receive target coordinates</p> </li> 
+ <li> <p>Begin movement loop</p> </li> 
+ <li> <p>If movement requires x axis rotation, rotate x axis as much as Δx</p> </li> 
+ <li> <p>Check security sensors, if an insecure movement has occurred, abort</p> </li> 
+ <li> <p>If movement requires y axis rotation, rotate y axis as much as Δy</p> </li> 
+ <li> <p>Check security sensors, if an insecure movement has occurred, abort</p> </li> 
+ <li> <p>If movement requires z axis rotation, rotate z axis as much as Δz</p> </li> 
+ <li> <p>Check security sensors, if an insecure movement has occurred, abort</p> </li> 
+ <li> <p>If target coordinates were reached, abort</p> </li> 
+ <li> <p>Else continue movement loop</p> </li> 
+</ul> 
+<p>Please expand these steps further and draw one or more flow diagrams to help the software developers implement the algorithm.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

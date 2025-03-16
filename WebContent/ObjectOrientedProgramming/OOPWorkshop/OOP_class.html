@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+OOP Workshop 
+  </p> 
+  <p class="tcTitleSlide"> 
+Button class 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">class</span> <span class="pl-v">Button</span>:
+    <span class="pl-s1">buttonShape</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Line&quot;</span>
+    <span class="pl-s1">buttonColor</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Orange&quot;</span>    
+    <span class="pl-s1">buttonX</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+    <span class="pl-s1">buttonY</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>    
+    <span class="pl-s1">width</span> <span class="pl-c1">=</span> <span class="pl-c1">100</span>
+    <span class="pl-s1">height</span> <span class="pl-c1">=</span> <span class="pl-c1">50</span>
+    </pre>
+</div> 
+<p><code>Button</code> is a new data type which contains some properties and methods specific to itself and its descendants.</p> 
+<br /> 
+<p>Object oriented programming aims to provide the following major properties</p> 
+<ul> 
+ <li>Simplicity</li> 
+ <li>Code reusability</li> 
+ <li>Extendibility</li> 
+ <li>Security</li> 
+</ul> 
+<p>Object oriented programming is built mainly upon the following concepts:</p> 
+<ul> 
+ <li> <p>Abstraction: Packaging the methods in different classes, hiding away the implementation details from other parts of the code that only make use of that functionality, instead of implementing them.</p> </li> 
+ <li> <p>Encapsulation: Packaging the fields or attributes that are internal to a class implementation and not exposing them unless necessary to other parts of the code.</p> </li> 
+ <li> <p>Inheritance: Generating new classes by extending the functionality and properties of other classes, inheriting the existing properties and functionality of the extended class.</p> </li> 
+ <li> <p>Polymorphism: Providing the ability to implement a given functionality of a class in a different way at any one of the inheriting classes. The program does not have to know about the exact type of the inheriting class and a simple call to the methods of those classes will respond with respect to their way of implementing the method.</p> </li> 
+</ul> 
+<p>You can find more formal definitions of these concepts online, and may be with different approaches based on the programming language.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Introduction to Computing 
+  </p> 
+  <p class="tcTitleSlide"> 
+Comments in Python Source Code 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Almost all programming languages allow the users to add comments inside the source code to help understand the functionality of the source code.</p> 
+<p>Python comments start with a ‘#’ symbol. They will be ignored by the Python interpreter and will not be executed while the program is running.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-c"># Python comments example, yes this line is a comment.</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;This program is demonstrating the effects of comments&quot;</span>)
+<span class="pl-c"># print(&quot;This line will not be executed, because it is a comment too&quot;)</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;This statement will also be executed up to the comment at the end of this line&quot;</span>) <span class="pl-c"># This is another comment </span></pre>
+</div> 
+<br /> 
+<p>Unlike Java, C or C++, Python does not support multiline comments, however you can use the multi-line docstrings (starting and ending with a triple &quot;) to comment out a group of successive lines in your Python source codes. But bear in mind that they may appear in your documentation if you generate it from your code automatically using a documentation tool.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-c"># Python comments example, yes this line is a comment.</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;This program is demonstrating the effects of comments&quot;</span>)
+<span class="pl-s">&quot;&quot;&quot;</span>
+<span class="pl-s">print(&quot;This line will not be executed, because it is inside a docstring&quot;)</span>
+<span class="pl-s">print(&quot;This line will not be executed, because it is inside a docstring too&quot;)</span>
+<span class="pl-s">print(&quot;This line will not be executed, because it is inside a docstring too&quot;)</span>
+<span class="pl-s">&quot;&quot;&quot;</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;This statement will also be executed up to the comment at the end of this line&quot;</span>) <span class="pl-c"># This is another comment </span></pre>
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

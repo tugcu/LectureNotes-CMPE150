@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+Dictionary 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>A <span class="tcEmp">dictionary</span> is a data structure that can be used as a <span class="tcEmp">key-value</span> pair storage. Instead of providing index values as in <span class="tcEmp">tuples</span> or <span class="tcEmp">lists</span>, the <span class="tcEmp">dictionary</span> elements can be accessed and modified by using non-consecutive or non-integer <span class="tcEmp">keys</span>. <span class="tcEmp">Dictionaries</span> are defined by using a pair of curly braces and their values can be modified after initialization.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">bookshelves</span> <span class="pl-c1">=</span> { 
+
+<span class="pl-s">&quot;The Grapes of Wrath&quot;</span> : <span class="pl-s">&quot;A2-S5&quot;</span>, 
+<span class="pl-s">&quot;Harry Potter and the Goblet of Fire&quot;</span> : <span class="pl-s">&quot;B7-S2&quot;</span>,
+<span class="pl-s">&quot;The Hobbit&quot;</span> : <span class="pl-s">&quot;B7-S2&quot;</span>
+
+}
+
+<span class="pl-en">print</span>(<span class="pl-s1">bookshelves</span>[<span class="pl-s">&quot;The Grapes of Wrath&quot;</span>])
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="DataStructuresWhileLoops" 
+    data-softdev4u-filePath="DictionarySimple.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Simple Dictionary)"> 
+</div> 
+<p>The example above defines a bookshelf database by using the book name as the <span class="tcKeyw">key</span> and the shelf address as the dictionary <span class="tcKeyw">value</span> for each key. Each <span class="tcKeyw">key</span> needs to be a unique number, string literal, or object, however the same <span class="tcKeyw">value</span> can be used for multiple <span class="tcKeyw">keys</span>. The value can also be any data type such as numbers, string literals, lists, tuples, other dictionaries, etc.</p> 
+<p>There is no limitation on the type of <span class="tcKeyw">keys</span> or the respective <span class="tcKeyw">values</span> in Python. It is possible to use a mixed set of keys such as strings and numbers. Similarly the values can also be a mixed group of strings, numbers or data structures.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">dictionary_of_everything</span> <span class="pl-c1">=</span> {
+
+<span class="pl-c">#the value can be a number</span>
+<span class="pl-s">&quot;my favorite number&quot;</span> : <span class="pl-c1">8</span>,
+
+<span class="pl-c">#the key can be number</span>
+<span class="pl-c1">3</span> : <span class="pl-s">&quot;Three&quot;</span>,
+
+<span class="pl-c"># the value can even be another dictionary</span>
+<span class="pl-s">&quot;The bookshelf dictionary&quot;</span> : {
+     <span class="pl-s">&quot;The Grapes of Wrath&quot;</span> : <span class="pl-s">&quot;A2-S5&quot;</span>, 
+    <span class="pl-s">&quot;Harry Potter and the Goblet of Fire&quot;</span> : <span class="pl-s">&quot;B7-S2&quot;</span>,
+    <span class="pl-s">&quot;The Hobbit&quot;</span> : <span class="pl-s">&quot;B7-S2&quot;</span>
+    }
+
+}
+
+<span class="pl-en">print</span>(<span class="pl-s1">dictionary_of_everything</span>[<span class="pl-s">&quot;my favorite number&quot;</span>])
+<span class="pl-en">print</span>(<span class="pl-s1">dictionary_of_everything</span>[<span class="pl-c1">3</span>])
+<span class="pl-en">print</span>(<span class="pl-s1">dictionary_of_everything</span>[<span class="pl-s">&quot;The bookshelf dictionary&quot;</span>])
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="DataStructuresWhileLoops" 
+    data-softdev4u-filePath="DictionaryMixed.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Mixed Dictionary)"> 
+</div> 
+<p>The dictionaries can also be populated in the runtime of the application:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">runtime_dictionary</span> <span class="pl-c1">=</span> {}
+<span class="pl-s1">even_odd_dictionary</span> <span class="pl-c1">=</span> {}
+
+<span class="pl-k">for</span> <span class="pl-s1">_</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">10</span>):
+    <span class="pl-k">if</span>(<span class="pl-s1">_</span> <span class="pl-c1">%</span> <span class="pl-c1">2</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>):
+        <span class="pl-s1">runtime_dictionary</span>[<span class="pl-s1">_</span>] <span class="pl-c1">=</span> <span class="pl-c1">2</span> <span class="pl-c1">*</span> <span class="pl-s1">_</span>
+        <span class="pl-s1">even_odd_dictionary</span>[<span class="pl-s1">_</span>] <span class="pl-c1">=</span> <span class="pl-en">str</span>(<span class="pl-s1">_</span>) <span class="pl-c1">+</span> <span class="pl-s">&quot; is an even number&quot;</span>
+    <span class="pl-k">else</span>:
+        <span class="pl-s1">runtime_dictionary</span>[<span class="pl-s1">_</span>] <span class="pl-c1">=</span> <span class="pl-c1">3</span> <span class="pl-c1">*</span> <span class="pl-s1">_</span>
+        <span class="pl-s1">even_odd_dictionary</span>[<span class="pl-s1">_</span>] <span class="pl-c1">=</span> <span class="pl-en">str</span>(<span class="pl-s1">_</span>) <span class="pl-c1">+</span> <span class="pl-s">&quot; is an odd number&quot;</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">runtime_dictionary</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">even_odd_dictionary</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="DataStructuresWhileLoops" 
+    data-softdev4u-filePath="DictionaryRuntime.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Runtime Dictionary)"> 
+</div> 
+<p>The modified version of the code from https:<span></span>//code.sololearn.com/c7oSEHZTPmsV/#py can be used to print different shapes on the console:</p> 
+<div class=softdev4u-twoColumn> 
+ <div class=softdev4u-columnOneOfTwo> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-c">#  Example of Python code to</span>
+<span class="pl-c">#  print some simple symmetric shapes</span>
+<span class="pl-c">#  using &quot;X&quot; and spaces..</span>
+
+<span class="pl-k">def</span> <span class="pl-en">xprint</span>(<span class="pl-s1">x</span>, <span class="pl-s1">line_width</span><span class="pl-c1">=</span><span class="pl-c1">40</span>):
+    <span class="pl-s1">spaces</span> <span class="pl-c1">=</span> (<span class="pl-s1">line_width</span> <span class="pl-c1">-</span> <span class="pl-s1">x</span>) <span class="pl-c1">//</span> <span class="pl-c1">2</span>
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;|&quot;</span> <span class="pl-c1">+</span> <span class="pl-s">&quot; &quot;</span> <span class="pl-c1">*</span> <span class="pl-s1">spaces</span> <span class="pl-c1">+</span> <span class="pl-s">&quot;X&quot;</span> <span class="pl-c1">*</span> <span class="pl-s1">x</span> <span class="pl-c1">+</span>
+          <span class="pl-s">&quot; &quot;</span> <span class="pl-c1">*</span> <span class="pl-s1">spaces</span> <span class="pl-c1">+</span><span class="pl-s">&quot;|&quot;</span>)
+
+
+<span class="pl-c">#  Some simple shapes using a dictionary of String: a tuple of numbers</span>
+
+<span class="pl-s1">shapes</span> <span class="pl-c1">=</span> {
+    <span class="pl-s">&quot;square&quot;</span>: (<span class="pl-c1">0</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">0</span>),
+    <span class="pl-s">&quot;triangle&quot;</span>: (<span class="pl-c1">0</span>, <span class="pl-c1">1</span>, <span class="pl-c1">3</span>, <span class="pl-c1">5</span>, <span class="pl-c1">7</span>, <span class="pl-c1">9</span>, <span class="pl-c1">11</span>, <span class="pl-c1">13</span>, <span class="pl-c1">15</span>, <span class="pl-c1">17</span>, <span class="pl-c1">19</span>, <span class="pl-c1">0</span>),                
+    <span class="pl-s">&quot;diamond&quot;</span>: (<span class="pl-c1">0</span>, <span class="pl-c1">1</span>, <span class="pl-c1">3</span>, <span class="pl-c1">5</span>, <span class="pl-c1">7</span>, <span class="pl-c1">9</span>, <span class="pl-c1">11</span>, <span class="pl-c1">13</span>, <span class="pl-c1">15</span>, <span class="pl-c1">15</span>, <span class="pl-c1">13</span>, <span class="pl-c1">11</span>, <span class="pl-c1">9</span>, <span class="pl-c1">7</span>, <span class="pl-c1">5</span>, <span class="pl-c1">3</span>, <span class="pl-c1">1</span>, <span class="pl-c1">0</span>),
+    <span class="pl-s">&quot;sandglass&quot;</span>: (<span class="pl-c1">0</span>, <span class="pl-c1">15</span>, <span class="pl-c1">13</span>, <span class="pl-c1">11</span>, <span class="pl-c1">9</span>, <span class="pl-c1">7</span>, <span class="pl-c1">5</span>, <span class="pl-c1">3</span>, <span class="pl-c1">3</span>, <span class="pl-c1">5</span>, <span class="pl-c1">7</span>, <span class="pl-c1">9</span>, <span class="pl-c1">11</span>, <span class="pl-c1">13</span>, <span class="pl-c1">15</span>, <span class="pl-c1">0</span>), 
+    <span class="pl-s">&quot;cross&quot;</span>: (<span class="pl-c1">0</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">30</span>, <span class="pl-c1">30</span>, <span class="pl-c1">30</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">10</span>, <span class="pl-c1">0</span>),             
+    <span class="pl-s">&quot;arrow&quot;</span>: (<span class="pl-c1">0</span>, <span class="pl-c1">1</span>, <span class="pl-c1">3</span>, <span class="pl-c1">5</span>, <span class="pl-c1">7</span>, <span class="pl-c1">9</span>, <span class="pl-c1">11</span>, <span class="pl-c1">13</span>, <span class="pl-c1">7</span>, <span class="pl-c1">7</span>, <span class="pl-c1">7</span>, <span class="pl-c1">7</span>, <span class="pl-c1">7</span>, <span class="pl-c1">0</span>)
+}    
+
+<span class="pl-k">for</span> <span class="pl-s1">key</span> <span class="pl-c1">in</span> <span class="pl-s1">shapes</span>.<span class="pl-en">keys</span>():
+    <span class="pl-en">print</span>(<span class="pl-s1">key</span>)
+    <span class="pl-s1">shapeRowTuple</span> <span class="pl-c1">=</span> <span class="pl-s1">shapes</span>[<span class="pl-s1">key</span>]
+    <span class="pl-k">for</span> <span class="pl-s1">x</span> <span class="pl-c1">in</span> <span class="pl-s1">shapeRowTuple</span>:
+        <span class="pl-en">xprint</span>(<span class="pl-s1">x</span>)
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="DataStructuresWhileLoops" 
+    data-softdev4u-filePath="DictionaryShapes.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Shapes Dictionary)"> 
+</div> 
+</div> 
+ <div class=softdev4u-columnTwoOfTwo> 
+<pre><code>square
+|                                        |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|                                        |
+triangle
+|                                        |
+|                   X                   |
+|                  XXX                  |
+|                 XXXXX                 |
+|                XXXXXXX                |
+|               XXXXXXXXX               |
+|              XXXXXXXXXXX              |
+|             XXXXXXXXXXXXX             |
+|            XXXXXXXXXXXXXXX            |
+|           XXXXXXXXXXXXXXXXX           |
+|          XXXXXXXXXXXXXXXXXXX          |
+|                                        |
+diamond
+|                                        |
+|                   X                   |
+|                  XXX                  |
+|                 XXXXX                 |
+|                XXXXXXX                |
+|               XXXXXXXXX               |
+|              XXXXXXXXXXX              |
+|             XXXXXXXXXXXXX             |
+|            XXXXXXXXXXXXXXX            |
+|            XXXXXXXXXXXXXXX            |
+|             XXXXXXXXXXXXX             |
+|              XXXXXXXXXXX              |
+|               XXXXXXXXX               |
+|                XXXXXXX                |
+|                 XXXXX                 |
+|                  XXX                  |
+|                   X                   |
+|                                        |
+sandglass
+|                                        |
+|            XXXXXXXXXXXXXXX            |
+|             XXXXXXXXXXXXX             |
+|              XXXXXXXXXXX              |
+|               XXXXXXXXX               |
+|                XXXXXXX                |
+|                 XXXXX                 |
+|                  XXX                  |
+|                  XXX                  |
+|                 XXXXX                 |
+|                XXXXXXX                |
+|               XXXXXXXXX               |
+|              XXXXXXXXXXX              |
+|             XXXXXXXXXXXXX             |
+|            XXXXXXXXXXXXXXX            |
+|                                        |
+cross
+|                                        |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     |
+|     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     |
+|     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX     |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|               XXXXXXXXXX               |
+|                                        |
+arrow
+|                                        |
+|                   X                   |
+|                  XXX                  |
+|                 XXXXX                 |
+|                XXXXXXX                |
+|               XXXXXXXXX               |
+|              XXXXXXXXXXX              |
+|             XXXXXXXXXXXXX             |
+|                XXXXXXX                |
+|                XXXXXXX                |
+|                XXXXXXX                |
+|                XXXXXXX                |
+|                XXXXXXX                |
+|                                        |
+            
+
+</code></pre> 
+<p>Exercise: Fix the alignment of the &quot;|&quot; characters at the end of the lines throughout the entire print sequence.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

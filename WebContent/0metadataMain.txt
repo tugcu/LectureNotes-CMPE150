@@ -1,0 +1,199 @@
+// Repeat this for every chapter. Only chapters (i.e., level 1); no sections and subsections. The sections are defined in 0metadataSub.txt
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%  CHAPTER 1: INTRODUCTION TO COMPUTING  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Symbolic name for chapter. You will refer to the chapter with this symbolic name. Stick with the identifier name rules. (As a convention we will precede symbolic name with "C" for C language and with "J" for Java.)
+#IntroductionToComputing
+
+// This is the name of the folder that contains HTML files.
+IntroductionToComputing
+
+// The name that appears in ToC
+Ch.1- Introduction to Computing
+// This is for the title and agenda slides
+-Common/Title.html
+-Common/Agenda.html
+// These are references to topics (i.e., sections)
+*Computing
+*Python
+*TurtleGraphics
+// // This is for the summary of the chapter (optional)
+-Common/Summary-Title.html
+-Common/Summary.html
+-Common/EndOfChapter.html
+#END
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%  CHAPTER 2: BASIC MATHS AND IO %%%%%%%%%%%%%%%%%%%%%%
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Symbolic name for chapter. You will refer to the chapter with this symbolic name. Stick with the identifier name rules. (As a convention we will precede symbolic name with "C" for C language and with "J" for Java.)
+#BasicMathsAndIO
+
+// This is the name of the folder that contains HTML files.
+BasicMathsAndIO
+
+// The name that appears in ToC
+Ch.2- Basic Arithmetic, Input and Output
+// This is for the title and agenda slides
+-Common/Title.html
+-Common/Agenda.html
+// These are references to topics (i.e., sections)
+*BasicMaths
+*TextIO
+*DrawingWithInput
+// // This is for the summary of the chapter (optional)
+-Common/Summary-Title.html
+-Common/Summary.html
+-Common/EndOfChapter.html
+#END
+
+//%%%%%%%%%%%%%%%%%  CHAPTER 3: CONTROL FLOW - IF ELSE STATEMENTS %%%%%%%%%%%%%%%%
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Symbolic name for chapter. You will refer to the chapter with this symbolic name. Stick with the identifier name rules. (As a convention we will precede symbolic name with "C" for C language and with "J" for Java.)
+#ControlFlow_IfElseStatements
+
+// This is the name of the folder that contains HTML files.
+ControlFlow_IfElseStatements
+
+// The name that appears in ToC
+Ch.3- Control Flow: The if elif else Statements
+// This is for the title and agenda slides
+-Common/Title.html
+-Common/Agenda.html
+// These are references to topics (i.e., sections)
+*ifElifElse
+*Logic
+*RecursiveFunctions
+
+// // This is for the summary of the chapter (optional)
+-Common/Summary-Title.html
+-Common/Summary.html
+-Common/EndOfChapter.html
+#END
+
+
+
+//%%%%%%%%%%%%%%%%%%%%%  CHAPTER 4: CONTROL FLOW - FOR LOOPS %%%%%%%%%%%%%%%%%%%%%
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Symbolic name for chapter. You will refer to the chapter with this symbolic name. Stick with the identifier name rules. (As a convention we will precede symbolic name with "C" for C language and with "J" for Java.)
+#ControlFlow_ForLoops
+
+// This is the name of the folder that contains HTML files.
+ControlFlow_ForLoops
+
+// The name that appears in ToC
+Ch.4- Control Flow: The for Loops
+// This is for the title and agenda slides
+-Common/Title.html
+-Common/Agenda.html
+// These are references to topics (i.e., sections)
+*RepeatingInstructions
+*forLoopsInDetail
+*PrintingConsoleShapesWithForLoops
+*RandomNumbersTuplesLists
+// // This is for the summary of the chapter (optional)
+-Common/Summary-Title.html
+-Common/Summary.html
+-Common/EndOfChapter.html
+#END
+
+
+
+
+
+//%%%%%  CHAPTER 5: CONTROL FLOW - CONDITIONAL LOOP AND DATA STRUCTURES %%%%%%%%%%
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Symbolic name for chapter. You will refer to the chapter with this symbolic name. Stick with the identifier name rules. (As a convention we will precede symbolic name with "C" for C language and with "J" for Java.)
+#ControlFlow_ConditionalLoop
+
+// This is the name of the folder that contains HTML files.
+ControlFlow_ConditionalLoop
+
+// The name that appears in ToC
+Ch.5- Control Flow: Conditional (while) Loops and Data Structures
+// This is for the title and agenda slides
+-Common/Title.html
+-Common/Agenda.html
+// These are references to topics (i.e., sections)
+*Algorithms
+*DataStructures
+*ConditionalLoop
+// // This is for the summary of the chapter (optional)
+-Common/Summary-Title.html
+-Common/Summary.html
+-Common/EndOfChapter.html
+#END
+
+
+//%%%%%  CHAPTER 6: CONTAINER DATA STRUCTURES %%%%%%%%%%
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Symbolic name for chapter. You will refer to the chapter with this symbolic name. Stick with the identifier name rules. (As a convention we will precede symbolic name with "C" for C language and with "J" for Java.)
+#Containers
+
+// This is the name of the folder that contains HTML files.
+Containers
+
+// The name that appears in ToC
+Ch.6- Container Data Structures
+// This is for the title and agenda slides
+-Common/Title.html
+-Common/Agenda.html
+// These are references to topics (i.e., sections)
+*StringsInDetail
+*ListsAndTuples
+*DictionariesAndSets
+
+// // This is for the summary of the chapter (optional)
+-Common/Summary-Title.html
+-Common/Summary.html
+-Common/EndOfChapter.html
+#END
+
+
+//%%%%%%%%%%%%%%%%%%%%%  CHAPTER 7: ANIMATIONS %%%%%%%%%%%%%%%%%%%%%
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Symbolic name for chapter. You will refer to the chapter with this symbolic name. Stick with the identifier name rules. (As a convention we will precede symbolic name with "C" for C language and with "J" for Java.)
+#Animations
+
+// This is the name of the folder that contains HTML files.
+Animations
+
+// The name that appears in ToC
+Ch.7- Animations
+// This is for the title and agenda slides
+-Common/Title.html
+-Common/Agenda.html
+// These are references to topics (i.e., sections)
+*AnimatingShapes
+*InteractiveProgramming
+// // This is for the summary of the chapter (optional)
+-Common/Summary-Title.html
+-Common/Summary.html
+-Common/EndOfChapter.html
+#END
+
+//%%%%%%%%%%%%%%%%%  CHAPTER 8: OBJECT ORIENTED PROGRAMMING   %%%%%%%%%%%%%%%%
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Symbolic name for chapter. You will refer to the chapter with this symbolic name. Stick with the identifier name rules. (As a convention we will precede symbolic name with "C" for C language and with "J" for Java.)
+#ObjectOrientedProgramming
+
+// This is the name of the folder that contains HTML files.
+ObjectOrientedProgramming
+
+// The name that appears in ToC
+Ch.8- Object Oriented Programming
+// This is for the title and agenda slides
+-Common/Title.html
+-Common/Agenda.html
+// These are references to topics (i.e., sections)
+*OOPWorkshop
+// // This is for the summary of the chapter (optional)
+-Common/Summary-Title.html
+-Common/Summary.html
+-Common/EndOfChapter.html
+#END
+
+//%%%%%%%%%%%%%%%%%  CHAPTER 9: WORKSHOPS AND FURTHER LEARNING   %%%%%%%%%%%%%%%%
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

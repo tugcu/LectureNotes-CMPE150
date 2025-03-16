@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+OOP Workshop 
+  </p> 
+  <p class="tcTitleSlide"> 
+Version1: Single Shape 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>The first version of the example can be brought together from the previous examples as follows:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+<span class="pl-k">import</span> <span class="pl-s1">random</span>
+<span class="pl-k">import</span> <span class="pl-s1">math</span>
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">setup</span>(<span class="pl-c1">500</span>, <span class="pl-c1">500</span>)
+<span class="pl-s1">screen</span> <span class="pl-c1">=</span> <span class="pl-s1">turtle</span>.<span class="pl-v">Screen</span>()
+<span class="pl-s1">turtle</span>.<span class="pl-en">title</span>(<span class="pl-s">&quot;Turtle Keys&quot;</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">pensize</span>(<span class="pl-c1">3</span>)
+
+<span class="pl-s1">colors</span> <span class="pl-c1">=</span> (<span class="pl-s">&quot;orange&quot;</span>, <span class="pl-s">&quot;pink&quot;</span>, <span class="pl-s">&quot;yellow&quot;</span>, <span class="pl-s">&quot;green&quot;</span>, <span class="pl-s">&quot;blue&quot;</span>, <span class="pl-s">&quot;purple&quot;</span>, <span class="pl-s">&quot;magenta&quot;</span>, <span class="pl-s">&quot;cyan&quot;</span>)
+
+
+<span class="pl-k">class</span> <span class="pl-v">Button</span>:
+    <span class="pl-s1">buttonShape</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Line&quot;</span>
+    <span class="pl-s1">buttonColor</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Orange&quot;</span>
+    <span class="pl-s1">buttonX</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+    <span class="pl-s1">buttonY</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+    <span class="pl-s1">width</span> <span class="pl-c1">=</span> <span class="pl-c1">100</span>
+    <span class="pl-s1">height</span> <span class="pl-c1">=</span> <span class="pl-c1">50</span>
+
+    <span class="pl-k">def</span> <span class="pl-en">__init__</span>(<span class="pl-s1">self</span>, <span class="pl-s1">buttonShape</span>, <span class="pl-s1">buttonColor</span>, <span class="pl-s1">buttonX</span>, <span class="pl-s1">buttonY</span>, <span class="pl-s1">width</span>, <span class="pl-s1">height</span>):
+        <span class="pl-s1">self</span>.<span class="pl-s1">buttonShape</span> <span class="pl-c1">=</span> <span class="pl-s1">buttonShape</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">buttonColor</span> <span class="pl-c1">=</span> <span class="pl-s1">buttonColor</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">buttonX</span> <span class="pl-c1">=</span> <span class="pl-s1">buttonX</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">buttonY</span> <span class="pl-c1">=</span> <span class="pl-s1">buttonY</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">width</span> <span class="pl-c1">=</span> <span class="pl-s1">width</span>
+        <span class="pl-s1">self</span>.<span class="pl-s1">height</span> <span class="pl-c1">=</span> <span class="pl-s1">height</span>
+
+    <span class="pl-k">def</span> <span class="pl-en">drawButtonShape</span>(<span class="pl-s1">self</span>, <span class="pl-s1">aTurtle</span>):
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">pensize</span>(<span class="pl-c1">20</span>)
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">penup</span>()
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">goto</span>(<span class="pl-s1">self</span>.<span class="pl-s1">buttonX</span>, <span class="pl-s1">self</span>.<span class="pl-s1">buttonY</span> <span class="pl-c1">+</span> <span class="pl-c1">10</span>)
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">pendown</span>()
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">self</span>.<span class="pl-s1">width</span>)
+
+    <span class="pl-k">def</span> <span class="pl-en">drawTheButton</span>(<span class="pl-s1">self</span>, <span class="pl-s1">aTurtle</span>):
+
+        <span class="pl-k">global</span> <span class="pl-s1">selectedButton</span>
+        <span class="pl-k">if</span> (<span class="pl-s1">self</span> <span class="pl-c1">is</span> <span class="pl-s1">selectedButton</span>):
+            <span class="pl-s1">aTurtle</span>.<span class="pl-en">color</span>(<span class="pl-s">&quot;Red&quot;</span>)
+        <span class="pl-k">else</span>:
+            <span class="pl-s1">aTurtle</span>.<span class="pl-en">color</span>(<span class="pl-s">&quot;Black&quot;</span>)
+
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">setheading</span>(<span class="pl-c1">0</span>)
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">fillcolor</span>(<span class="pl-s1">self</span>.<span class="pl-s1">buttonColor</span>)
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">penup</span>()
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">goto</span>(<span class="pl-s1">self</span>.<span class="pl-s1">buttonX</span>, <span class="pl-s1">self</span>.<span class="pl-s1">buttonY</span>)
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">pendown</span>()
+
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">begin_fill</span>()
+
+        <span class="pl-s1">self</span>.<span class="pl-en">drawButtonShape</span>(<span class="pl-s1">aTurtle</span>)  <span class="pl-c"># Potential Polymorphic call to child class</span>
+
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">end_fill</span>()
+
+    <span class="pl-k">def</span> <span class="pl-en">drawShape</span>(<span class="pl-s1">self</span>, <span class="pl-s1">x</span>, <span class="pl-s1">y</span>, <span class="pl-s1">aTurtle</span>):
+        <span class="pl-s1">aTurtle</span>.<span class="pl-en">goto</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>)
+
+    <span class="pl-k">def</span> <span class="pl-en">isClicked</span>(<span class="pl-s1">self</span>, <span class="pl-s1">x</span>, <span class="pl-s1">y</span>):
+        <span class="pl-k">return</span> <span class="pl-s1">self</span>.<span class="pl-s1">buttonX</span> <span class="pl-c1">&lt;</span> <span class="pl-s1">x</span> <span class="pl-c1">&lt;</span> <span class="pl-s1">self</span>.<span class="pl-s1">buttonX</span> <span class="pl-c1">+</span> <span class="pl-s1">self</span>.<span class="pl-s1">width</span> <span class="pl-c1">and</span> \
+               <span class="pl-s1">self</span>.<span class="pl-s1">buttonY</span> <span class="pl-c1">&lt;</span> <span class="pl-s1">y</span> <span class="pl-c1">&lt;</span> <span class="pl-s1">self</span>.<span class="pl-s1">buttonY</span> <span class="pl-c1">+</span> <span class="pl-s1">self</span>.<span class="pl-s1">height</span>
+
+    <span class="pl-k">def</span> <span class="pl-en">getColor</span>(<span class="pl-s1">self</span>):
+        <span class="pl-k">return</span> <span class="pl-s1">self</span>.<span class="pl-s1">buttonColor</span>
+
+
+<span class="pl-s1">buttonTurtle</span> <span class="pl-c1">=</span> <span class="pl-s1">turtle</span>.<span class="pl-v">Turtle</span>()
+<span class="pl-s1">selectedButton</span> <span class="pl-c1">=</span> <span class="pl-v">Button</span>(<span class="pl-s">&quot;Line&quot;</span>, <span class="pl-s">&quot;Orange&quot;</span>, <span class="pl-c1">-</span><span class="pl-c1">130</span>, <span class="pl-c1">220</span>, <span class="pl-c1">40</span>, <span class="pl-c1">20</span>)
+<span class="pl-s1">shapeButtons</span> <span class="pl-c1">=</span> []
+<span class="pl-s1">shapeButtons</span>.<span class="pl-en">append</span>(<span class="pl-s1">selectedButton</span>)
+
+
+<span class="pl-k">def</span> <span class="pl-en">updateButtons</span>():
+    <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">shapeButtons</span>)):
+        <span class="pl-s1">shapeButtons</span>[<span class="pl-s1">i</span>].<span class="pl-en">drawTheButton</span>(<span class="pl-s1">buttonTurtle</span>)
+
+
+<span class="pl-k">def</span> <span class="pl-en">anyShapeSelected</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>):
+    <span class="pl-k">global</span> <span class="pl-s1">selectedButton</span>
+    <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">shapeButtons</span>)):
+        <span class="pl-s1">shapeB</span> <span class="pl-c1">=</span> <span class="pl-s1">shapeButtons</span>[<span class="pl-s1">i</span>]
+
+        <span class="pl-k">if</span> (<span class="pl-s1">shapeB</span>.<span class="pl-en">isClicked</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>)):
+            <span class="pl-en">print</span>(<span class="pl-s1">shapeB</span>.<span class="pl-s1">buttonShape</span>, <span class="pl-s">&quot;was clicked&quot;</span>)
+            <span class="pl-k">if</span> (<span class="pl-s1">shapeB</span> <span class="pl-c1">is</span> <span class="pl-s1">selectedButton</span>):
+                <span class="pl-k">return</span> <span class="pl-c1">False</span>
+            <span class="pl-s1">selectedButton</span> <span class="pl-c1">=</span> <span class="pl-s1">shapeB</span>
+            <span class="pl-k">return</span> <span class="pl-c1">True</span>
+
+    <span class="pl-k">return</span> <span class="pl-c1">False</span>
+
+
+<span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">False</span>
+
+
+<span class="pl-k">def</span> <span class="pl-en">goto_and_do_whatever_required</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>):
+    <span class="pl-k">global</span> <span class="pl-s1">drawing</span>
+    <span class="pl-k">if</span> (<span class="pl-s1">drawing</span>):
+        <span class="pl-k">return</span>
+
+    <span class="pl-k">if</span> (<span class="pl-s1">y</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">170</span>):
+        <span class="pl-k">if</span> (<span class="pl-en">anyShapeSelected</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>)):
+            <span class="pl-en">updateButtons</span>()
+        <span class="pl-k">return</span>
+
+    <span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">True</span>
+    <span class="pl-s1">turtle</span>.<span class="pl-en">color</span>(<span class="pl-s1">colors</span>[<span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">0</span>, <span class="pl-en">len</span>(<span class="pl-s1">colors</span>) <span class="pl-c1">-</span> <span class="pl-c1">1</span>)])
+    <span class="pl-s1">selectedButton</span>.<span class="pl-en">drawShape</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>, <span class="pl-s1">turtle</span>)
+    <span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">False</span>
+
+
+<span class="pl-s1">screen</span>.<span class="pl-en">onscreenclick</span>(<span class="pl-s1">goto_and_do_whatever_required</span>)
+
+<span class="pl-en">updateButtons</span>()
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()
+</pre>
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

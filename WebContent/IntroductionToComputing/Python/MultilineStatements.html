@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Introduction to Computing 
+  </p> 
+  <p class="tcTitleSlide"> 
+Multiline Statements in Python Source Code 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Each statement (instruction) in Python has to be written in a dedicated line and no more. However, if the statement is too long, it can be split into multiple lines with a careful approach. We can use the backslash <code>\</code>&nbsp;symbol as the last character of any line to split long lines of statements into multiple lines for better readability. All those lines are part of a single statement. Be careful that there must be no space or other characters following the <code>\</code>, i.e. the <code>\</code> must be the final symbol on a that line.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-en">print</span>(<span class="pl-s">&quot;This statement has a long text string to be printed on the output terminal.&quot;</span>)</pre>
+</div> 
+<p>The following code has the similar output and <code>\</code> symbol can be used as many times as necessary to make the code more readable.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-en">print</span>(<span class="pl-s">&quot;This statement has a long text string to be <span class="pl-cce">\</span></span>
+<span class="pl-s"><span class="pl-cce"></span>printed on the output terminal and it was split into multiple <span class="pl-cce">\</span></span>
+<span class="pl-s"><span class="pl-cce"></span>lines in the original source file.&quot;</span>)</pre>
+</div> 
+<p>As you can clearly see in the output that the text (string) spread to multiple lines of code statements is in fact displayed on a single line, since the original interpretation of those lines of code is in fact a single python code line.</p> 
+<pre><code>This statement has a long text string to be printed on the output terminal and it was split into multiple lines in the original source file.
+</code></pre> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">a</span> <span class="pl-c1">=</span> <span class="pl-c1">300</span> <span class="pl-c1">*</span> <span class="pl-c1">4</span> <span class="pl-c1">/</span> (<span class="pl-c1">240</span> <span class="pl-c1">+</span> <span class="pl-c1">56</span>) <span class="pl-c1">*</span> <span class="pl-c1">25</span> <span class="pl-c1">+</span> <span class="pl-c1">100</span> \
+    <span class="pl-c1">/</span> <span class="pl-c1">2</span> <span class="pl-c1">+</span> <span class="pl-c1">4</span> <span class="pl-c1">/</span> <span class="pl-c1">6</span>
+
+<span class="pl-en">print</span> (<span class="pl-s1">a</span>)</pre>
+</div> 
+<br /> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

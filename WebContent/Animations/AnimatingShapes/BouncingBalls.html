@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Animations and Interactive Programming 
+  </p> 
+  <p class="tcTitleSlide"> 
+Bouncing Balls 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+<span class="pl-k">import</span> <span class="pl-s1">time</span>
+
+
+<span class="pl-k">def</span> <span class="pl-en">drawCircle</span>(<span class="pl-s1">t</span>, <span class="pl-s1">r</span>):
+    <span class="pl-s1">t</span>.<span class="pl-en">penup</span>()
+    <span class="pl-s1">t</span>.<span class="pl-en">pendown</span>()
+    <span class="pl-s1">t</span>.<span class="pl-en">begin_fill</span>()
+    <span class="pl-s1">t</span>.<span class="pl-en">circle</span>(<span class="pl-s1">r</span>)
+    <span class="pl-s1">t</span>.<span class="pl-en">end_fill</span>()
+
+
+<span class="pl-s1">screen</span> <span class="pl-c1">=</span> <span class="pl-s1">turtle</span>.<span class="pl-v">Screen</span>()
+<span class="pl-s1">screen</span>.<span class="pl-en">tracer</span>(<span class="pl-c1">0</span>)
+
+<span class="pl-s1">turtleList</span> <span class="pl-c1">=</span> []
+<span class="pl-s1">goingUpList</span> <span class="pl-c1">=</span> []
+<span class="pl-s1">speedList</span> <span class="pl-c1">=</span> []
+<span class="pl-s1">colors</span> <span class="pl-c1">=</span> (<span class="pl-s">&quot;red&quot;</span>, <span class="pl-s">&quot;purple&quot;</span>, <span class="pl-s">&quot;pink&quot;</span>, <span class="pl-s">&quot;orange&quot;</span>, <span class="pl-s">&quot;green&quot;</span>)
+
+<span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">colors</span>)):
+    <span class="pl-s1">t</span> <span class="pl-c1">=</span> <span class="pl-s1">turtle</span>.<span class="pl-v">Turtle</span>()
+    <span class="pl-s1">t</span>.<span class="pl-en">goto</span>(<span class="pl-c1">-</span><span class="pl-en">len</span>(<span class="pl-s1">colors</span>) <span class="pl-c1">*</span> <span class="pl-c1">110</span> <span class="pl-c1">/</span> <span class="pl-c1">2</span> <span class="pl-c1">+</span> <span class="pl-s1">i</span> <span class="pl-c1">*</span> <span class="pl-c1">110</span>, <span class="pl-c1">0</span>)
+    <span class="pl-s1">t</span>.<span class="pl-en">speed</span>(<span class="pl-c1">20</span>)
+    <span class="pl-s1">t</span>.<span class="pl-en">hideturtle</span>()
+    <span class="pl-s1">t</span>.<span class="pl-en">fillcolor</span>(<span class="pl-s1">colors</span>[<span class="pl-s1">i</span>])
+
+    <span class="pl-s1">turtleList</span>.<span class="pl-en">append</span>(<span class="pl-s1">t</span>)
+    <span class="pl-s1">goingUpList</span>.<span class="pl-en">append</span>(<span class="pl-c1">False</span>)
+    <span class="pl-s1">speedList</span>.<span class="pl-en">append</span>(<span class="pl-s1">i</span> <span class="pl-c1">+</span> <span class="pl-c1">3</span>)
+
+<span class="pl-k">while</span> <span class="pl-c1">True</span>:
+    <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">turtleList</span>)):
+        <span class="pl-s1">myTurtle</span> <span class="pl-c1">=</span> <span class="pl-s1">turtleList</span>[<span class="pl-s1">i</span>]
+        <span class="pl-s1">myTurtle</span>.<span class="pl-en">clear</span>()
+
+        <span class="pl-k">if</span> (<span class="pl-s1">goingUpList</span>[<span class="pl-s1">i</span>]):
+            <span class="pl-s1">myTurtle</span>.<span class="pl-en">goto</span>(<span class="pl-s1">myTurtle</span>.<span class="pl-en">xcor</span>(), <span class="pl-s1">myTurtle</span>.<span class="pl-en">ycor</span>() <span class="pl-c1">+</span> <span class="pl-s1">speedList</span>[<span class="pl-s1">i</span>])
+        <span class="pl-k">else</span>:
+            <span class="pl-s1">myTurtle</span>.<span class="pl-en">goto</span>(<span class="pl-s1">myTurtle</span>.<span class="pl-en">xcor</span>(), <span class="pl-s1">myTurtle</span>.<span class="pl-en">ycor</span>() <span class="pl-c1">-</span> <span class="pl-s1">speedList</span>[<span class="pl-s1">i</span>])
+        <span class="pl-en">drawCircle</span>(<span class="pl-s1">myTurtle</span>, <span class="pl-c1">30</span> <span class="pl-c1">+</span> <span class="pl-s1">i</span> <span class="pl-c1">*</span> <span class="pl-c1">5</span>)
+        <span class="pl-k">if</span> (<span class="pl-s1">goingUpList</span>[<span class="pl-s1">i</span>] <span class="pl-c1">and</span> <span class="pl-s1">myTurtle</span>.<span class="pl-en">ycor</span>() <span class="pl-c1">&gt;</span> <span class="pl-c1">200</span>):
+            <span class="pl-s1">goingUpList</span>[<span class="pl-s1">i</span>] <span class="pl-c1">=</span> <span class="pl-c1">False</span>
+        <span class="pl-k">elif</span> (<span class="pl-c1">not</span> <span class="pl-s1">goingUpList</span>[<span class="pl-s1">i</span>] <span class="pl-c1">and</span> <span class="pl-s1">myTurtle</span>.<span class="pl-en">ycor</span>() <span class="pl-c1">&lt;</span> <span class="pl-c1">-</span><span class="pl-c1">300</span>):
+            <span class="pl-s1">goingUpList</span>[<span class="pl-s1">i</span>] <span class="pl-c1">=</span> <span class="pl-c1">True</span>
+    <span class="pl-s1">screen</span>.<span class="pl-en">update</span>()
+    <span class="pl-s1">time</span>.<span class="pl-en">sleep</span>(<span class="pl-c1">0.01</span>)
+
+
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="Interactive" 
+    data-softdev4u-filePath="BouncingBalls.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Bouncing Balls)"> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

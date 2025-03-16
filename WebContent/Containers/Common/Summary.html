@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Container Data Structures 
+  </p> 
+  <p class="tcTitleSlide"> 
+Summary 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<ul> 
+ <li>Strings in Detail
+  <ul> 
+   <li>Characters in a string can be referenced by the index access operator '[]'</li> 
+   <li>The 'in' keyword can be used to check whether a substring is present in a string, results in a boolean value</li> 
+   <li>The 'in' keyword has an iterator effect when used in a 'for' loop, not boolean in that case</li> 
+   <li>String slicing with the '[:]' operator, which returns a new string not altering the original</li> 
+   <li>upper() method returns a new string by converting all characters in a string to upper case</li> 
+   <li>lower() method returns a new string by converting all characters in a string to lower case</li> 
+   <li>strip() method returns a new string by removing and preceding and trailing white space from a string</li> 
+   <li>split() method returns a list of substrings by separating a string by a substring</li> 
+   <li>String templates can be generated using a pair of curly braces `{}` to be formatted either by the format() function, or the `%` operator</li> 
+   <li>%d, %s, %f can be used for numeric and textual formatting to reserve a given amount of space for replacement values</li> 
+   <li>Check %10d, %20s, %10.2f</li> 
+   <li>print() method can use an additional '%' operator to match placeholders to value tuples<br /><br /> </li> 
+  </ul> </li> 
+ <li>Lists and Tuples
+  <ul> 
+   <li>type() function can be used to find out the class type of a variable or item in a collection</li> 
+   <li>Lists can be unpacked to multiple variables at once and the asterisk (*) can be used to generate sublists for the remaining items</li> 
+   <li>Lists and tuples can also be sliced just like the strings using the '[:]' operator</li> 
+   <li>Negative indexing can be used to access the elements in a container starting from the end</li> 
+   <li>insert() method can be used to add items to a given position in a list</li> 
+   <li>append() method can be used to add items at the end of a list</li> 
+   <li>Other lists, sets, or tuples can be appended to a list using the extend() method</li> 
+   <li>Lists or tuples can be concatenated among themselves using the '+' operator, one type at a time</li> 
+   <li>remove() method can be used to delete the first occurrence of an item from a list</li> 
+   <li>pop() method can be used to remove items using an index value</li> 
+   <li>del keyword can be used to delete an item from a list or the entire list itself, making it inaccessible. <br /> </li> 
+   <li>del keyword also deletes variables other than lists</li> 
+   <li>clear() method can be used to remove all items in a list, keeping the list itself</li> 
+   <li>Items in a list can be reordered in ascending order using the sort() method. <br /> </li> 
+   <li>sort(reverse = True) will sort the items in descending order.</li> 
+   <li>reverse() method relocates the elements in the reverse order they were positioned initially.<br /> </li> 
+   <li>sort() and reverse() methods are inplace methods that modify the original list instead of returning a new list.</li> 
+   <li>Tuples cannot be modified, however they can be converted to lists using list() function, reordered and the list can be converted back to a tuple using the tuple() function. <br /> </li> 
+   <li>copy() method produces a copy of a list</li> 
+   <li>list() is a constructor method for generating lists from lists, tuples, sets, and dictionaries (keys only)</li> 
+   <li>Similarly tuple() is the constructor method for tuples</li> 
+   <li>'*' can be used to replicate lists and tuples multiple times</li> 
+   <li>count() method returns the number of occurrences of an element in the given list or tuple<br /> </li> 
+   <li>index() method returns the index of the first occurrence of an element in a list of tuple, causing an error if it is not present<br /> </li> 
+  </ul> 
+  <div>
+   <br />
+  </div> </li> 
+ <li>Dictionaries and Sets
+  <ul> 
+   <li>Sets contain unique values, no duplicates are allowed</li> 
+   <li>Dictionaries (collection of 'key : value' pairs) are special form of sets having unique keys, whereas the same value can be assigned to different keys</li> 
+   <li>key() method returns the set of keys of a dictionary</li> 
+   <li>get() method and '[]' operator can be used to retrieve the value of a given key</li> 
+   <li>Reassignment can be used to change the value of a key</li> 
+   <li>update() method can be used to update or add multiple items (e.g. other dictionaries)&nbsp; to a dictionary</li> 
+   <li>items() method returns the dict_items view of a dictionary</li> 
+   <li>'in' keyword returns whether a given key or item is present in a dictionary or a set respectively</li> 
+   <li>clear() method removes all entries in a dictionary or set</li> 
+   <li>del keyword applies to dictionaries and sets as well</li> 
+   <li>copy() method generates a copy of a set or dictionary</li> 
+   <li>dict() can be used to construct a new dictionary from a list of tuples</li> 
+   <li>Composite keys can be used in a dictionary only as tuples. Lists cannot be keys of dictionary items.<br /> </li> 
+  </ul> </li> 
+</ul> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

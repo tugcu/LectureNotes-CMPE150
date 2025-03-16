@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Random Numbers, Tuples, and Lists 
+  </p> 
+  <p class="tcTitleSlide"> 
+Lists 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p><span class="tcEmp">Lists</span> are data structures used for storing an ordered list of items, where the position of each element is guaranteed to be fixed until the list is modified. Unlike tuples, <span class="tcEmp">lists</span> can be modified after they are initialized. A pair of square brackets are used for initializing the <span class="tcEmp">lists</span>.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+<span class="pl-s1">colors</span> <span class="pl-c1">=</span> [<span class="pl-s">'red'</span>, <span class="pl-s">'purple'</span>, <span class="pl-s">'blue'</span>, <span class="pl-s">'green'</span>, <span class="pl-s">'orange'</span>, <span class="pl-s">'yellow'</span>]
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">bgcolor</span>(<span class="pl-s">'black'</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">speed</span>(<span class="pl-c1">20</span>)
+
+<span class="pl-k">for</span> <span class="pl-s1">x</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">360</span>):
+    <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s1">colors</span>[<span class="pl-s1">x</span> <span class="pl-c1">%</span> <span class="pl-c1">6</span>])
+    <span class="pl-s1">turtle</span>.<span class="pl-en">width</span>(<span class="pl-s1">x</span> <span class="pl-c1">/</span> <span class="pl-c1">100</span> <span class="pl-c1">+</span> <span class="pl-c1">1</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">x</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">59</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="DataStructuresWhileLoops" 
+    data-softdev4u-filePath="ColorSpiral.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Color Spiral)"> 
+</div> 
+<p><a target="_blank" rel="noopener noreferrer" href="images/ColorSpiral.png"><img src="images/ColorSpiral.png" style="max-width: 100%;" /></a></p> 
+<p>(Note: The original source of the code sample is unknown, however you can find a reference url to this example in www<span></span>.geeksforgeeks.org/draw-colorful-spiral-web-using-turtle-graphics-in-python/)</p> 
+
+
+<div class="tcDivQuestion"> 
+<p>How can we populate a list from the values returned by the <code>range()</code>&nbsp;function?</p> 
+<div class="softdev4u-answer tcShowAnswer"> 
+<p>Using the star /asterisk <code>*</code> operator as in the following to unpack the range result:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_list</span> <span class="pl-c1">=</span> [<span class="pl-c1">*</span><span class="pl-en">range</span>(<span class="pl-c1">20</span>)]
+
+<span class="pl-en">print</span>(<span class="pl-s1">my_list</span>)
+
+<span class="pl-s1">my_second_list</span> <span class="pl-c1">=</span> [<span class="pl-c1">*</span><span class="pl-en">range</span>(<span class="pl-c1">10</span>,<span class="pl-c1">50</span>,<span class="pl-c1">3</span>)]
+
+<span class="pl-en">print</span>(<span class="pl-s1">my_second_list</span>)
+
+
+
+</pre>
+</div> 
+<p>Another alternative is to use list comprehension with a <code>generator expression</code>:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_list</span> <span class="pl-c1">=</span> [<span class="pl-c1">2</span><span class="pl-c1">*</span><span class="pl-s1">x</span> <span class="pl-k">for</span> <span class="pl-s1">x</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">10</span>,<span class="pl-c1">50</span>,<span class="pl-c1">2</span>) ]
+<span class="pl-en">print</span>(<span class="pl-s1">my_list</span>)</pre>
+</div> 
+<p>which will retrieve a collection of numbers using the <code>range</code> function and assign twice as much as each <code>x</code> value to the list in the order they are iterated by the <code>for</code>&nbsp;statement. Note that this use of <code>for</code> does not have a body or colon (:).</p> 
+<br>
+<p>The following example appends multiples of 5 to the list from the range(100):</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_list</span> <span class="pl-c1">=</span> [<span class="pl-s1">x</span> <span class="pl-k">for</span> <span class="pl-s1">x</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">101</span>) <span class="pl-k">if</span> <span class="pl-s1">x</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span> ]
+<span class="pl-en">print</span>(<span class="pl-s1">my_list</span>)</pre>
+</div> 
+
+<br>
+
+<p>Receiving a string containing coordinates separated by commas :</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">coordinates</span> <span class="pl-c1">=</span> [<span class="pl-s1">int(c)</span> <span class="pl-k">for</span> <span class="pl-s1">c</span> <span class="pl-c1">in</span> <span class="pl-en">input</span>(<span class="pl-c1"></span>).<span class="pl-en">split</span>(',') ]
+<span class="pl-en">print</span>(<span class="pl-s1">coordinates</span>)</pre>
+</div> 
+
+<hr/>
+
+
+The generator expression does not work with tuples in means of comprehension, you can use <code>tuple()</code> constructor instead: 
+<pre>
+
+<span class="pl-s1">my_tuple</span> <span class="pl-c1">=</span> tuple(<span class="pl-s1">x</span> <span class="pl-k">for</span> <span class="pl-s1">x</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">101</span>) <span class="pl-k">if</span> <span class="pl-s1">x</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span> )
+</pre>
+
+<hr/>
+
+<p>If you need to add items to a list after a more complicated processing, you can use the <code>append</code>&nbsp;function as in</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">my_list</span> <span class="pl-c1">=</span> []
+
+<span class="pl-k">for</span> <span class="pl-s1">x</span> <span class="pl-c1">in</span> <span class="pl-en">range</span> (<span class="pl-c1">20</span>):
+    <span class="pl-k">if</span>(<span class="pl-s1">x</span><span class="pl-c1">%</span><span class="pl-c1">2</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>):
+        <span class="pl-s1">my_list</span>.<span class="pl-en">append</span>(<span class="pl-s1">x</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s1">my_list</span>)</pre>
+</div> 
+<p>which will output <code>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</code>&nbsp;.</p> 
+</div> 
+</div>
+
+
+
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

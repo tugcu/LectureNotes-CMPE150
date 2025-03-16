@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+Multi-dimensional Lists 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Lists can be organized in a multi-dimensional structure. A two dimensional list is a <span class="tcKeyw">list of lists</span> as in the time table in the following example:</p> 
+<p>Time table:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">time_table</span> <span class="pl-c1">=</span> [
+    [<span class="pl-s">&quot;Math101&quot;</span>, <span class="pl-s">&quot;Cmpe150&quot;</span>, <span class="pl-s">&quot;Cmpe150&quot;</span>, <span class="pl-s">&quot;Turkish202&quot;</span>, <span class="pl-s">&quot;Turkish202&quot;</span>],
+    [<span class="pl-s">&quot;Cmpe150&quot;</span>, <span class="pl-s">&quot;Cmpe150&quot;</span>, <span class="pl-s">&quot;Math101&quot;</span>, <span class="pl-s">&quot;Hist302&quot;</span>, <span class="pl-s">&quot;Hist302&quot;</span>],
+    [<span class="pl-s">&quot;Turkish202&quot;</span>, <span class="pl-s">&quot;Turkish202&quot;</span>, <span class="pl-s">&quot;Bio201&quot;</span>, <span class="pl-s">&quot;Turkish202&quot;</span>, <span class="pl-s">&quot;En301&quot;</span>],
+    [<span class="pl-s">&quot;Math101&quot;</span>, <span class="pl-s">&quot;Math101&quot;</span>, <span class="pl-s">&quot;Bio201&quot;</span>, <span class="pl-s">&quot;Bio201&quot;</span>, <span class="pl-s">&quot;Hist302&quot;</span>],
+    [<span class="pl-s">&quot;Cmpe150&quot;</span>, <span class="pl-s">&quot;Cmpe150&quot;</span>, <span class="pl-s">&quot;Phil102&quot;</span>, <span class="pl-s">&quot;Phil102&quot;</span>, <span class="pl-s">&quot;En301&quot;</span>]]
+
+<span class="pl-en">print</span>(<span class="pl-s1">time_table</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">time_table</span>[<span class="pl-c1">1</span>])
+<span class="pl-en">print</span>(<span class="pl-s1">time_table</span>[<span class="pl-c1">1</span>][<span class="pl-c1">2</span>])</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="DataStructuresWhileLoops" 
+    data-softdev4u-filePath="ListsMultidimensional.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Multidimensional Lists)"> 
+</div> 
+<div class="tcDivQuestion"> 
+<p>Exercise: Generate a three dimensional list and try with altering number of elements in each dimension.</p> 
+<div class="softdev4u-answer tcShowAnswer"> 
+<p>Hint:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">list_3D</span> <span class="pl-c1">=</span> [
+        [[<span class="pl-s">&quot;item at ([0][0][0])&quot;</span>, <span class="pl-s">&quot;item at ([0][0][1])&quot;</span>], [<span class="pl-s">&quot;item at ([0][1][0])&quot;</span>, <span class="pl-s">&quot;item at ([0][1][1])&quot;</span>]],
+        [[<span class="pl-s">&quot;item at ([1][0][0])&quot;</span>, <span class="pl-s">&quot;item at ([1][0][1])&quot;</span>], [<span class="pl-s">&quot;item at ([1][1][0])&quot;</span>, <span class="pl-s">&quot;item at ([1][1][1])&quot;</span>]],
+        [[<span class="pl-s">&quot;item at ([2][0][0])&quot;</span>, <span class="pl-s">&quot;item at ([2][0][1])&quot;</span>], [<span class="pl-s">&quot;item at ([2][1][0])&quot;</span>, <span class="pl-s">&quot;item at ([2][1][1])&quot;</span>]]
+       ]
+
+<span class="pl-en">print</span> (<span class="pl-s1">list_3D</span>[<span class="pl-c1">0</span>][<span class="pl-c1">0</span>][<span class="pl-c1">0</span>])
+<span class="pl-en">print</span> (<span class="pl-s1">list_3D</span>[<span class="pl-c1">2</span>][<span class="pl-c1">0</span>][<span class="pl-c1">1</span>])</pre>
+</div> 
+</div> 
+<br /> 
+<p>Example:</p> 
+<div class="softdev4u-answer tcShowAnswer"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-c">#List of &quot;numbers&quot;</span>
+<span class="pl-s1">oneDimensionalList</span> <span class="pl-c1">=</span> [<span class="pl-c1">1</span>,<span class="pl-c1">4</span>,<span class="pl-c1">7</span>,<span class="pl-c1">8</span>]
+
+<span class="pl-en">print</span> (<span class="pl-s1">oneDimensionalList</span>)
+<span class="pl-en">print</span> (<span class="pl-s1">oneDimensionalList</span>[<span class="pl-c1">2</span>])
+
+<span class="pl-c">#List of &quot;number lists&quot;</span>
+<span class="pl-s1">twoDimensionalList</span> <span class="pl-c1">=</span> [[<span class="pl-c1">5</span>,<span class="pl-c1">7</span>], [<span class="pl-c1">4</span>,<span class="pl-c1">8</span>,<span class="pl-c1">6</span>], [<span class="pl-c1">3</span>,<span class="pl-c1">7</span>,<span class="pl-c1">5</span>,<span class="pl-c1">3</span>], [<span class="pl-c1">3</span>,<span class="pl-c1">7</span>]]
+<span class="pl-en">print</span> (<span class="pl-s1">twoDimensionalList</span>)
+<span class="pl-en">print</span> (<span class="pl-s1">twoDimensionalList</span>[<span class="pl-c1">2</span>])
+<span class="pl-en">print</span> (<span class="pl-s1">twoDimensionalList</span>[<span class="pl-c1">2</span>][<span class="pl-c1">1</span>])
+
+<span class="pl-c">#List of &quot;list of number lists&quot;</span>
+<span class="pl-s1">threeDimensionalList</span> <span class="pl-c1">=</span> [ [ [<span class="pl-c1">1</span>,<span class="pl-c1">5</span>], [<span class="pl-c1">3</span>,<span class="pl-c1">4</span>,<span class="pl-c1">8</span>], [<span class="pl-c1">2</span>,<span class="pl-c1">4</span>,<span class="pl-c1">5</span>,<span class="pl-c1">6</span>] ] ,[ [<span class="pl-c1">3</span>,<span class="pl-c1">4</span>,<span class="pl-c1">5</span>], [<span class="pl-c1">2</span>], [<span class="pl-c1">3</span>,<span class="pl-c1">7</span>] ]  ]
+<span class="pl-en">print</span> (<span class="pl-s1">threeDimensionalList</span>)
+<span class="pl-en">print</span> (<span class="pl-s1">threeDimensionalList</span>[<span class="pl-c1">1</span>])
+<span class="pl-en">print</span> (<span class="pl-s1">threeDimensionalList</span>[<span class="pl-c1">1</span>][<span class="pl-c1">2</span>])
+<span class="pl-en">print</span> (<span class="pl-s1">threeDimensionalList</span>[<span class="pl-c1">1</span>][<span class="pl-c1">2</span>][<span class="pl-c1">0</span>])</pre>
+</div> 
+</div> 
+<p>Time Table Example:</p> 
+<div class="softdev4u-answer tcShowAnswer"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">timetable</span> <span class="pl-c1">=</span> [ [<span class="pl-s">&quot;Eng&quot;</span>, <span class="pl-s">&quot;Arts&quot;</span>, <span class="pl-s">&quot;Music&quot;</span>, <span class="pl-s">&quot;PE&quot;</span>, <span class="pl-s">&quot;PE&quot;</span>],
+              [<span class="pl-s">&quot;Math&quot;</span>,<span class="pl-s">&quot;Math&quot;</span>, <span class="pl-s">&quot;Phys&quot;</span>,<span class="pl-s">&quot;Free&quot;</span>,<span class="pl-s">&quot;Chem&quot;</span>],
+              [<span class="pl-s">&quot;Eng&quot;</span>,<span class="pl-s">&quot;Eng&quot;</span>,<span class="pl-s">&quot;Bio&quot;</span>,<span class="pl-s">&quot;Bio&quot;</span>,<span class="pl-s">&quot;Math&quot;</span>],
+              [<span class="pl-s">&quot;Drama&quot;</span>,<span class="pl-s">&quot;Drama&quot;</span>,<span class="pl-s">&quot;Free&quot;</span>,<span class="pl-s">&quot;Drama&quot;</span>],
+              [<span class="pl-s">&quot;History&quot;</span>,<span class="pl-s">&quot;Geo&quot;</span>,<span class="pl-s">&quot;Geo&quot;</span>,<span class="pl-s">&quot;RE&quot;</span>,<span class="pl-s">&quot;Math&quot;</span>]
+            ]
+
+<span class="pl-en">print</span>(<span class="pl-s1">timetable</span>[<span class="pl-c1">0</span>])
+<span class="pl-en">print</span>(<span class="pl-s1">timetable</span>[<span class="pl-c1">1</span>])
+<span class="pl-en">print</span>(<span class="pl-s1">timetable</span>[<span class="pl-c1">2</span>])
+<span class="pl-en">print</span>(<span class="pl-s1">timetable</span>[<span class="pl-c1">3</span>])
+<span class="pl-en">print</span>(<span class="pl-s1">timetable</span>[<span class="pl-c1">4</span>])
+
+<span class="pl-s1">days</span><span class="pl-c1">=</span>(<span class="pl-s">&quot;Mon&quot;</span>,<span class="pl-s">&quot;Tue&quot;</span>,<span class="pl-s">&quot;Wed&quot;</span>,<span class="pl-s">&quot;Thu&quot;</span>,<span class="pl-s">&quot;Fri&quot;</span>)
+
+<span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">timetable</span>)):
+    <span class="pl-k">for</span> <span class="pl-s1">j</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">timetable</span>[<span class="pl-s1">i</span>])):
+        <span class="pl-en">print</span>(<span class="pl-s1">days</span>[<span class="pl-s1">i</span>], <span class="pl-s1">j</span><span class="pl-c1">+</span><span class="pl-c1">1</span>, <span class="pl-s1">timetable</span>[<span class="pl-s1">i</span>][<span class="pl-s1">j</span>])</pre>
+</div> 
+</div> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

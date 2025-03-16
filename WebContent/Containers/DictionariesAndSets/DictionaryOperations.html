@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Container Data Structures 
+  </p> 
+  <p class="tcTitleSlide"> 
+Dictionary Operations 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>When an existing dictionary variable is assigned to another variable, both variables refer to the same dictionary instance, i.e. modifications on either one will be reflected to the other. An independent copy of the dictionary can be produced by using the <code>copy()</code> or <code>dict()</code>&nbsp;methods:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">students</span> <span class="pl-c1">=</span> {
+    <span class="pl-c1">20009001</span>: <span class="pl-s">&quot;Alice&quot;</span>,
+    <span class="pl-c1">20009002</span>: <span class="pl-s">&quot;Claire&quot;</span>,
+    <span class="pl-c1">20009003</span>: <span class="pl-s">&quot;Joker&quot;</span>,
+    <span class="pl-c1">20009004</span>: <span class="pl-s">&quot;Spiderman&quot;</span>}
+
+<span class="pl-s1">students_temp</span> <span class="pl-c1">=</span> <span class="pl-s1">students</span>
+<span class="pl-s1">students</span>[<span class="pl-c1">20009005</span>] <span class="pl-c1">=</span> <span class="pl-s">&quot;Batman&quot;</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">students_temp</span>)
+
+<span class="pl-s1">students_temp</span> <span class="pl-c1">=</span> <span class="pl-s1">students</span>.<span class="pl-en">copy</span>()
+<span class="pl-s1">students</span>[<span class="pl-c1">20009006</span>] <span class="pl-c1">=</span> <span class="pl-s">&quot;Ghida&quot;</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">students</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">students_temp</span>)
+
+<span class="pl-s1">students_temp</span> <span class="pl-c1">=</span> <span class="pl-en">dict</span>(<span class="pl-s1">students</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">students_temp</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="DictionaryOperations.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Dictionary Operations)"> 
+</div> 
+<p>Output:</p> 
+<pre><code>{20009001: 'Alice', 20009002: 'Claire', 20009003: 'Joker', 20009004: 'Spiderman', 20009005: 'Batman'}
+{20009001: 'Alice', 20009002: 'Claire', 20009003: 'Joker', 20009004: 'Spiderman', 20009005: 'Batman', 20009006: 'Ghida'}
+{20009001: 'Alice', 20009002: 'Claire', 20009003: 'Joker', 20009004: 'Spiderman', 20009005: 'Batman'}
+{20009001: 'Alice', 20009002: 'Claire', 20009003: 'Joker', 20009004: 'Spiderman', 20009005: 'Batman', 20009006: 'Ghida'}
+</code></pre> 
+
+<br>
+
+<p>Please check the concepts of <code>shallow copy</code> and <code>deep copy</code> from onine sources such as <a href="https://docs.python.org/3/library/copy.html" target="_blank">https://docs.python.org/3/library/copy.html</a> </p>
+<pre><code class="lang-python">the_list = [<span class="hljs-string">"first"</span>, <span class="hljs-string">"second"</span>, <span class="hljs-string">"third"</span>]
+
+my_original_dictionary = {<span class="hljs-string">"numeric"</span>: <span class="hljs-number">10</span> , <span class="hljs-string">"string"</span>: <span class="hljs-string">"my_string"</span>, <span class="hljs-string">"my_list"</span>: the_list}
+
+my_copy = my_original_dictionary.copy()
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(my_copy)</span></span>
+
+my_original_dictionary.update({<span class="hljs-string">"numeric"</span>: <span class="hljs-number">20</span>})
+
+
+my_list = my_original_dictionary.get(<span class="hljs-string">"my_list"</span>)
+my_list.append(<span class="hljs-string">"fourth"</span>)
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(my_list)</span></span>
+
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(my_original_dictionary)</span></span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(my_copy)</span></span>
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(my_list)</span></span>
+</code></pre>
+
+
+
+<p>Constructing a new dictionary using a list of tuples:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">st_list</span> <span class="pl-c1">=</span> [ (<span class="pl-s">&quot;Alice&quot;</span>,<span class="pl-c1">20</span>), (<span class="pl-s">&quot;Michael&quot;</span>,<span class="pl-c1">19</span>)]
+<span class="pl-s1">student_tt</span> <span class="pl-c1">=</span> <span class="pl-en">dict</span>(<span class="pl-s1">st_list</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s1">student_tt</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">student_tt</span>[<span class="pl-s">&quot;Michael&quot;</span>])</pre>
+</div> 
+<p>The values of dictionaries can be any type including other dictionaries.</p> 
+<div class="tcDivRemark"> 
+<p>If you need composite keys in your dictionary consisting of multiple items, then you need tuples as the key. On the other hand, lists cannot be used as keys as tuples are hashable and lists are not:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">balance_dict</span> <span class="pl-c1">=</span> {}
+
+<span class="pl-s1">balance_dict</span>[<span class="pl-s">&quot;Alice&quot;</span>, <span class="pl-s">&quot;Morgan&quot;</span>] <span class="pl-c1">=</span> <span class="pl-c1">1345.345</span>
+<span class="pl-s1">balance_dict</span>[<span class="pl-s">&quot;Claire&quot;</span>, <span class="pl-s">&quot;McMillan&quot;</span>] <span class="pl-c1">=</span> <span class="pl-c1">15642.432</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">balance_dict</span>)</pre>
+</div> 
+<p>will output <code>{('Alice', 'Morgan'): 1345.345, ('Claire', 'McMillan'): 15642.432}</code>, with tuples as the composite keys.</p> 
+<p>Using a list as the key in the same example</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">balance_dict</span> <span class="pl-c1">=</span> {}
+<span class="pl-s1">balance_dict</span>[[<span class="pl-s">&quot;Claire&quot;</span>, <span class="pl-s">&quot;McMillan&quot;</span>]] <span class="pl-c1">=</span> <span class="pl-c1">15642.432</span></pre>
+</div> 
+<p>will generate the following error</p> 
+<pre lang="&nbsp;"><code>TypeError: unhashable type: 'list'
+</code></pre> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

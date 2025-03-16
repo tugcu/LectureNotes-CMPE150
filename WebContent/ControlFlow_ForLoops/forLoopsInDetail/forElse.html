@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>for</code> Loops 
+  </p> 
+  <p class="tcTitleSlide"> 
+<code>for else</code>&nbsp;Structure 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>A <code>for</code> loop will repeat the statements inside the block of that loop as many times as the loop specifies. However, execution flow of the loop statements can be altered by using special keywords <code>break</code> and <code>continue</code>.</p> 
+<p>The <code>break</code> statement can be used to stop repeating the loop immediately. Code execution will continue with the first statement following the loop body.</p> 
+<p>The <code>continue</code> statement will cause the loop to repeat the loop body with the next iteration, immediately abandoning the remaining code statements in the current iteration of the loop.&nbsp;</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">iteration_count</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>
+<span class="pl-s1">max_value</span> <span class="pl-c1">=</span> <span class="pl-en">int</span>(<span class="pl-en">input</span>(<span class="pl-s">&quot;Please enter the max value:&quot;</span>))
+
+<span class="pl-c">#Also try for 50 and 51 and assess why the else part is executed.</span>
+
+<span class="pl-k">for</span> <span class="pl-s1">number</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-s1">max_value</span>):
+
+    <span class="pl-k">if</span> <span class="pl-s1">number</span> <span class="pl-c1">%</span> <span class="pl-c1">2</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>:
+        <span class="pl-c"># Skip the remaining code in the loop for even numbers</span>
+        <span class="pl-k">continue</span>
+
+    <span class="pl-k">if</span> <span class="pl-s1">number</span> <span class="pl-c1">&gt;=</span> <span class="pl-c1">50</span>:
+        <span class="pl-c"># Exit the loop immediately</span>
+        <span class="pl-k">break</span>
+
+    <span class="pl-s1">iteration_count</span> <span class="pl-c1">+=</span> <span class="pl-c1">1</span>
+
+    <span class="pl-k">if</span> <span class="pl-s1">number</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>:
+        <span class="pl-en">print</span>(<span class="pl-s1">number</span> <span class="pl-c1">*</span> <span class="pl-c1">100</span>)
+    <span class="pl-k">else</span>:
+        <span class="pl-en">print</span>(<span class="pl-s1">number</span>)
+
+    <span class="pl-en">print</span> (<span class="pl-s">&quot;Iteration: &quot;</span>, <span class="pl-s1">iteration_count</span>)
+
+<span class="pl-k">else</span>:
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;The loop executed completely without encountering the break statement&quot;</span>)
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ForLoops" 
+    data-softdev4u-filePath="ForElse.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (for-else)"> 
+</div> 
+<p>An optional <code>else</code> block may be appended to the end of a <code>for</code> block to be executed 
+    if the <code>for</code> loop was not interrupted by any <code>break</code>&nbsp;statement, i.e. the <code>for</code> loop has executed for all iterations. 
+    Executing a <code>continue</code> statement does not interrupt the <code>for</code> loop.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

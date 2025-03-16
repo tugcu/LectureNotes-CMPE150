@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Animations and Interactive Programming 
+  </p> 
+  <p class="tcTitleSlide"> 
+Drawing a Pair of Spirals 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+<span class="pl-s1">wn</span> <span class="pl-c1">=</span> <span class="pl-s1">turtle</span>.<span class="pl-v">Screen</span>()
+<span class="pl-s1">wn</span>.<span class="pl-en">bgcolor</span>(<span class="pl-s">&quot;light green&quot;</span>)
+<span class="pl-s1">wn</span>.<span class="pl-en">title</span>(<span class="pl-s">&quot;Turtle&quot;</span>)
+
+<span class="pl-s1">turtle1</span> <span class="pl-c1">=</span> <span class="pl-s1">turtle</span>.<span class="pl-v">Turtle</span>()
+<span class="pl-s1">turtle1</span>.<span class="pl-en">color</span>(<span class="pl-s">&quot;blue&quot;</span>)
+
+<span class="pl-s1">turtle2</span> <span class="pl-c1">=</span> <span class="pl-s1">turtle</span>.<span class="pl-v">Turtle</span>()
+<span class="pl-s1">turtle2</span>.<span class="pl-en">up</span>()
+<span class="pl-s1">turtle2</span>.<span class="pl-en">goto</span>(<span class="pl-c1">-</span><span class="pl-c1">200</span>,<span class="pl-c1">200</span>)
+<span class="pl-s1">turtle2</span>.<span class="pl-en">down</span>()
+
+
+<span class="pl-k">def</span> <span class="pl-en">sqrfunc</span>(<span class="pl-s1">size</span>):
+    <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">4</span>):
+        <span class="pl-s1">turtle1</span>.<span class="pl-en">fd</span>(<span class="pl-s1">size</span>)
+        <span class="pl-s1">turtle1</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+        <span class="pl-s1">turtle2</span>.<span class="pl-en">fd</span>(<span class="pl-s1">size</span>)
+        <span class="pl-s1">turtle2</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+        <span class="pl-s1">size</span> <span class="pl-c1">=</span> <span class="pl-s1">size</span><span class="pl-c1">-</span><span class="pl-c1">5</span>
+
+
+<span class="pl-en">sqrfunc</span>(<span class="pl-c1">146</span>)
+<span class="pl-en">sqrfunc</span>(<span class="pl-c1">126</span>)
+<span class="pl-en">sqrfunc</span>(<span class="pl-c1">106</span>)
+<span class="pl-en">sqrfunc</span>(<span class="pl-c1">86</span>)
+<span class="pl-en">sqrfunc</span>(<span class="pl-c1">66</span>)
+<span class="pl-en">sqrfunc</span>(<span class="pl-c1">46</span>)
+<span class="pl-en">sqrfunc</span>(<span class="pl-c1">26</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="Interactive" 
+    data-softdev4u-filePath="SpiralPairs.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Spiral Pairs)"> 
+</div> 
+<p><code>turtle1</code> and <code>turtle2</code> are two different <span class="tcEmp">instances (objects)</span> of the <span class="tcKeyw">turtle</span> <span class="tcEmp">class</span>.</p> 
+<p>Practice: Try drawing the spirals inside-out.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

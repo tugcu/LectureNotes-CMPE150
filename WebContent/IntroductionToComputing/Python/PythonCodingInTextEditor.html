@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Introduction to Computing 
+  </p> 
+  <p class="tcTitleSlide"> 
+Python Coding in a Text Editor 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Although possible, it is useful as a temporary practice to use the terminal for writing and executing source code. Writing more complex and larger source codes requires the use of python source code files that can be stored in a hard drive and redistributed (hopefully sold) to other parties.</p> 
+<br /> 
+<p>Python source code can simply be written in a text file, and executed from the terminal without the need of writing the entire source every time the application is expected to be executed.</p> 
+<br /> 
+<p>Let's write the previous source code into a file named <span class="tcKeyw">MyFirstCode.py</span> and store it to our computer, remembering the location of the file.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-en">print</span>(<span class="pl-s">&quot;Welcome to Cmpe 150 – Introduction to Computing&quot;</span>)</pre>
+</div> 
+<p>In the command prompt or terminal, you can simply type the following command to execute the source code any time you need to run your program:</p> 
+<div class="highlight highlight-source-shell">
+ <pre>python real_path_to_MyFirstCode.py</pre>
+</div> 
+<p><span class="tcEmp">real_path_to_MyFirstCode.py</span> may be C:\Users\userXYZ\Documents\MyFirstCode.py, or /Users/userXYZ/Documents/MyFirstCode.py etc depending on your operating system and location you stored your file.</p> 
+<p>Note: Depending on the text editor you are using, you may encounter an error regarding &quot;SyntaxError: Non-ASCII character&quot;. If so, you should add &quot;# coding: utf-8&quot; line at the top of the text file and save it once again. That line informs the python interpreter on the type of character set used in that text file.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-c"># coding: utf-8</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;Welcome to Cmpe 150 – Introduction to Computing&quot;</span>)</pre>
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

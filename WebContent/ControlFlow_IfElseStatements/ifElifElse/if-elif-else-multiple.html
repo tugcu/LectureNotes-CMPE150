@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+Multiple <code>elif</code> Statements 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>The <code>elif</code>&nbsp;condition checks are performed after one another if the initial <code>if</code> check fails to evaluate to <code>True</code>. &nbsp;</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">if</span> (<span class="pl-v">Condition1</span>):
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    
+<span class="pl-k">elif</span> (<span class="pl-v">Condition2</span>):
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span> <span class="pl-c1">and</span> <span class="pl-v">Condition2</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    
+<span class="pl-k">elif</span> (<span class="pl-v">Condition3</span>):
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-c1">and</span> <span class="pl-v">Condition2</span> <span class="pl-s1">evaluate</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span> <span class="pl-c1">and</span> <span class="pl-v">Condition3</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    
+<span class="pl-k">elif</span> (<span class="pl-v">Condition4</span>):
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span>, <span class="pl-v">Condition2</span>, <span class="pl-c1">and</span> <span class="pl-v">Condition3</span> <span class="pl-s1">evaluate</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span> <span class="pl-c1">and</span> <span class="pl-v">Condition4</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    
+<span class="pl-k">else</span>:
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-s1">none</span> <span class="pl-s1">of</span> <span class="pl-s1">the</span> <span class="pl-s1">conditions</span> <span class="pl-s1">above</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span> </pre>
+</div> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">y</span> <span class="pl-c1">=</span> <span class="pl-en">int</span> ( <span class="pl-en">input</span>(<span class="pl-s">&quot;Enter a number please: &quot;</span>) )
+<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">y</span> <span class="pl-c1">+</span> <span class="pl-c1">3</span>
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;x =&quot;</span>, <span class="pl-s1">x</span>)
+
+<span class="pl-k">if</span> (<span class="pl-s1">x</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">10</span>) :
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is less than or equal to 10&quot;</span>)
+    <span class="pl-s1">remainder</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> <span class="pl-c1">%</span> <span class="pl-c1">10</span>
+
+<span class="pl-k">elif</span> (<span class="pl-s1">x</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">20</span>) :
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is greater than 10 and less than 20&quot;</span>)
+    <span class="pl-s1">remainder</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span>
+
+<span class="pl-k">elif</span> (<span class="pl-s1">x</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">30</span>) :
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is greater than or equal to 20 and less than 30&quot;</span>)
+    <span class="pl-s1">remainder</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> <span class="pl-c1">%</span> <span class="pl-c1">5</span>
+
+<span class="pl-k">else</span>:
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is greater than or equal to 30&quot;</span>)
+    <span class="pl-s1">remainder</span> <span class="pl-c1">=</span> <span class="pl-s1">x</span> <span class="pl-c1">%</span> <span class="pl-c1">2</span>
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;remainder =&quot;</span>, <span class="pl-s1">remainder</span>)
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ConditionalFlow" 
+    data-softdev4u-filePath="IfElifElseMulti.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (if-elif-else-Multi)"> 
+</div> 
+<p>Conditional blocks can be nested inside other conditional blocks as well. It is possible to add other if-elif-else blocks inside other if, elif, or else blocks.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-k">if</span> (<span class="pl-v">Condition1</span>):
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    
+    <span class="pl-k">if</span>(<span class="pl-v">Condition1_1_0</span>):
+        <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-c1">and</span> <span class="pl-v">Condition1_1_0</span> <span class="pl-s1">evaluate</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    <span class="pl-k">elif</span>(<span class="pl-v">Condition1_1_1</span>):         
+        <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>, <span class="pl-v">Condition1_1_0</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span>, <span class="pl-c1">and</span> <span class="pl-v">Condition1_1_1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    <span class="pl-k">elif</span>(<span class="pl-v">Condition1_1_2</span>):         
+        <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>, <span class="pl-v">Condition1_1_0</span> <span class="pl-c1">and</span> <span class="pl-v">Condition1_1_1</span> <span class="pl-s1">evaluate</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span>, <span class="pl-c1">and</span> <span class="pl-v">Condition1_1_2</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    <span class="pl-c"># not stating an else statement in this section</span>
+
+    <span class="pl-c"># starting a new nested if condition sequence independent of the one started as if(Condition1_1_0):</span>
+    <span class="pl-k">if</span>(<span class="pl-v">Condition1_2_0</span>):
+        <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-c1">and</span> <span class="pl-v">Condition1_2_0</span> <span class="pl-s1">evaluate</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    <span class="pl-k">elif</span>(<span class="pl-v">Condition1_2_1</span>):         
+        <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>, <span class="pl-v">Condition1_2_0</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span>, <span class="pl-c1">and</span> <span class="pl-v">Condition1_2_1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    <span class="pl-k">else</span>:         
+        <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span> <span class="pl-c1">and</span> <span class="pl-s1">none</span> <span class="pl-s1">of</span> <span class="pl-s1">the</span> <span class="pl-v">Condition1_2_0</span> <span class="pl-c1">and</span> <span class="pl-v">Condition1_2_1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    
+<span class="pl-k">elif</span> (<span class="pl-v">Condition2</span>):
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span> <span class="pl-c1">and</span> <span class="pl-v">Condition2</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    <span class="pl-k">if</span>(<span class="pl-v">Condition2_1_0</span>):
+        <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span>, <span class="pl-v">Condition2</span> <span class="pl-c1">and</span> <span class="pl-v">Condition2_1_0</span> <span class="pl-s1">evaluate</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    <span class="pl-k">elif</span>(<span class="pl-v">Condition2_1_1</span>):         
+        <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span>, <span class="pl-v">Condition2</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>, <span class="pl-v">Condition2_1_0</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span>, <span class="pl-c1">and</span> <span class="pl-v">Condition2_1_1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    <span class="pl-k">else</span>:         
+        <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span>, <span class="pl-v">Condition2</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>, <span class="pl-c1">and</span> <span class="pl-s1">none</span> <span class="pl-s1">of</span> <span class="pl-s1">the</span> <span class="pl-v">Condition2_1_0</span> <span class="pl-c1">and</span> <span class="pl-v">Condition2_1_1</span> <span class="pl-s1">evaluate</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+        
+<span class="pl-k">elif</span> (<span class="pl-v">Condition3</span>):
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span> <span class="pl-c1">and</span> <span class="pl-v">Condition2</span> <span class="pl-s1">evaluate</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span> <span class="pl-c1">and</span> <span class="pl-v">Condition3</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    
+<span class="pl-k">elif</span> (<span class="pl-v">Condition4</span>):
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-v">Condition1</span>, <span class="pl-v">Condition2</span>, <span class="pl-c1">and</span> <span class="pl-v">Condition3</span> <span class="pl-s1">evaluate</span> <span class="pl-s1">to</span> <span class="pl-c1">False</span> <span class="pl-c1">and</span> <span class="pl-v">Condition4</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span>
+    
+<span class="pl-k">else</span>:
+    <span class="pl-s1">execute</span> <span class="pl-s1">this</span> <span class="pl-s1">code</span> <span class="pl-s1">block</span> <span class="pl-k">if</span> <span class="pl-s1">none</span> <span class="pl-s1">of</span> <span class="pl-v">Condition1</span>, <span class="pl-v">Condition2</span>, <span class="pl-v">Condition3</span>, <span class="pl-c1">and</span> <span class="pl-v">Condition4</span> <span class="pl-s1">evaluates</span> <span class="pl-s1">to</span> <span class="pl-c1">True</span> </pre>
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

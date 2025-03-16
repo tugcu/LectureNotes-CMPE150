@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python for CmpE150 (Murat Özyurt) - Interactive Programming</title>
+    <style>
+        .nav-bar {
+            background-color: lightblue;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .title {
+            text-align: center;
+            flex-grow: 1;
+            font-weight: bold;
+        }
+        .nav-button {
+            padding: 5px 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .nav-button.disabled {
+            color: gray;
+            pointer-events: none;
+        }
+        .content-frame {
+            margin-top: 60px;
+            width: 100%;
+            height: calc(100vh - 60px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <a class="nav-button" href="chapter_Animations_12.html">&lt; Previous</a>
+        <div class="title">Interactive Programming</div>
+        <a class="nav-button" href="chapter_Animations_14.html">Next &gt;</a>
+    </div>
+    <iframe class="content-frame" src="../Animations/InteractiveProgramming/InteractiveProgrammingClickCircles.html"></iframe>
+</body>
+</html>

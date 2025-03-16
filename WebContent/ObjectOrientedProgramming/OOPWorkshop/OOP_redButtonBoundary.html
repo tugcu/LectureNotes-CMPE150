@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+OOP Workshop 
+  </p> 
+  <p class="tcTitleSlide"> 
+Red Button Boundary 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Displaying a red boundary for selected color button as well:</p> 
+<p>Modify the</p> 
+<div class="highlight highlight-source-python">
+ <pre>        <span class="pl-k">if</span>(<span class="pl-s1">self</span> <span class="pl-c1">is</span> <span class="pl-s1">selectedButton</span>):                
+            <span class="pl-s1">aTurtle</span>.<span class="pl-en">color</span>(<span class="pl-s">&quot;Red&quot;</span>)</pre>
+</div> 
+<p>part of the drawTheButton method of the Button class as</p> 
+<div class="highlight highlight-source-python">
+ <pre>        <span class="pl-k">if</span>(<span class="pl-s1">self</span> <span class="pl-c1">is</span> <span class="pl-s1">selectedButton</span> <span class="pl-c1">or</span> <span class="pl-s1">self</span> <span class="pl-c1">is</span> <span class="pl-s1">selectedColorButton</span>):
+            <span class="pl-s1">aTurtle</span>.<span class="pl-en">color</span>(<span class="pl-s">&quot;Red&quot;</span>)</pre>
+</div> 
+<p>Modify the main flow:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">False</span>
+<span class="pl-k">def</span> <span class="pl-en">goto_and_do_whatever_required</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>):
+    <span class="pl-k">global</span> <span class="pl-s1">drawing</span>
+    <span class="pl-k">if</span>(<span class="pl-s1">drawing</span>):
+        <span class="pl-k">return</span>
+
+    <span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">True</span>
+    <span class="pl-k">if</span>(<span class="pl-s1">y</span> <span class="pl-c1">&gt;</span> <span class="pl-c1">170</span>):        
+        <span class="pl-k">if</span>(<span class="pl-en">anyShapeSelected</span>(<span class="pl-s1">x</span>,<span class="pl-s1">y</span>)):
+            <span class="pl-en">updateButtons</span>()
+        
+        <span class="pl-k">if</span>(<span class="pl-en">anyColorSelected</span>(<span class="pl-s1">x</span>,<span class="pl-s1">y</span>)):
+            <span class="pl-en">updateColorButtons</span>()
+        <span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">False</span>    
+        <span class="pl-k">return</span>        
+    
+    <span class="pl-s1">turtle</span>.<span class="pl-en">color</span>(<span class="pl-s1">selectedColorButton</span>.<span class="pl-en">getColor</span>())
+    <span class="pl-s1">selectedButton</span>.<span class="pl-en">drawShape</span>(<span class="pl-s1">x</span>,<span class="pl-s1">y</span>,<span class="pl-s1">turtle</span>)
+
+    <span class="pl-s1">drawing</span> <span class="pl-c1">=</span> <span class="pl-c1">False</span>
+
+<span class="pl-s1">screen</span>.<span class="pl-en">onscreenclick</span>(<span class="pl-s1">goto_and_do_whatever_required</span>)
+
+<span class="pl-en">updateButtons</span>()
+<span class="pl-en">updateColorButtons</span>()</pre>
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

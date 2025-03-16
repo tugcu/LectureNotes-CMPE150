@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        
+ <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+        
+         
+         <script>
+        
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>for</code> Loops 
+  </p> 
+  <p class="tcTitleSlide"> 
+Additional Practice 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Draw the tilted squares using <span class="tcEmp">for</span> loops.</p> 
+<p><a href="../../IntroductionToComputing/TurtleGraphics/images/TiltedSquares.png" target="_blank" rel="noopener noreferrer"><img src="../../IntroductionToComputing/TurtleGraphics/images/TiltedSquares.png" style="max-width:100%;" /></a></p> 
+<p>Use turtle <code>goto()</code> function to draw circles and squares at other (random) locations onthe screen. Remember the <code>penup()</code> and <code>pendown()</code> functions. Do not move too far out on the drawing board, your turtle might get lost if you use relative positioning with respect to your last position. Instead you might prefer absolute positioning, i.e. with respect to the origin (0, 0).</p> 
+<p>You can use the following code to select random colors for your shapes, try it out for randomly generated shapes in a for loop.</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-s1">turtle</span>.<span class="pl-en">colormode</span>(<span class="pl-c1">255</span>)
+
+<span class="pl-s1">red</span> <span class="pl-c1">=</span> <span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">0</span>, <span class="pl-c1">255</span>)
+<span class="pl-s1">green</span> <span class="pl-c1">=</span> <span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">0</span>, <span class="pl-c1">255</span>)
+<span class="pl-s1">blue</span> <span class="pl-c1">=</span> <span class="pl-s1">random</span>.<span class="pl-en">randint</span>(<span class="pl-c1">0</span>, <span class="pl-c1">255</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s1">red</span>, <span class="pl-s1">green</span>, <span class="pl-s1">blue</span>)
+</pre>
+</div> 
+<hr /> 
+
+<pre>
+<zero-md>
+    
+    <script type="text/markdown">
+```python
+
+dhl = u'\u2550' # ═
+dvl = u'\u2551' # ║
+    
+dcc = u'\u256c' # ╬
+dtc = u'\u2566' # ╦
+dbc = u'\u2569' # ╩
+dlc = u'\u2560' # ╠
+drc = u'\u2563' # ╣
+    
+dtl = u'\u2554' # ╔
+dtr = u'\u2557' # ╗
+dbl = u'\u255a' # ╚
+dbr = u'\u255d' # ╝
+    
+shl = u'\u2500' # ─
+svl = u'\u2502' # │
+    
+scc = u'\u253c' # ┼
+stc = u'\u252c' # ┬
+sbc = u'\u2534' # ┴
+slc = u'\u251c' # ├
+src = u'\u2524' # ┤
+    
+stl = u'\u250c' # ┌
+str = u'\u2510' # ┐
+sbl = u'\u2514' # └
+sbr = u'\u2518' # ┘
+    
+    
+my_global_var = 10
+    
+def draw_ascii_table_with_double_lines(row_count=3, column_count=3, row_height=3, column_width=8):
+    # ╔═════
+    # ║ 1 2 ║
+    # ║ 3 4 ║
+    # ╚═════
+    
+    print(dtl + dhl * column_width + dtc + dhl * column_width + dtr)
+    for row in range(row_count):
+        for row_line in range(row_height):
+            print(dvl + svl * column_width + dvl + ' ' * column_width + dvl)
+        if row < row_count - 1:
+            print(slc + shl * column_width + scc + dhl * column_width + src)
+    print(sbl + shl * column_width + sbc + shl * column_width + sbr)
+    
+draw_ascii_table_with_double_lines()
+
+```
+
+    </script>
+
+    
+</zero-md>
+
+</pre>
+
+<!--
+<pre>
+
+    dhl = u'\u2550' # ═
+    dvl = u'\u2551' # ║
+    
+    dcc = u'\u256c' # ╬
+    dtc = u'\u2566' # ╦
+    dbc = u'\u2569' # ╩
+    dlc = u'\u2560' # ╠
+    drc = u'\u2563' # ╣
+    
+    dtl = u'\u2554' # ╔
+    dtr = u'\u2557' # ╗
+    dbl = u'\u255a' # ╚
+    dbr = u'\u255d' # ╝
+    
+    shl = u'\u2500' # ─
+    svl = u'\u2502' # │
+    
+    scc = u'\u253c' # ┼
+    stc = u'\u252c' # ┬
+    sbc = u'\u2534' # ┴
+    slc = u'\u251c' # ├
+    src = u'\u2524' # ┤
+    
+    stl = u'\u250c' # ┌
+    str = u'\u2510' # ┐
+    sbl = u'\u2514' # └
+    sbr = u'\u2518' # ┘
+    
+    
+    my_global_var = 10
+    
+    def draw_ascii_table_with_double_lines(row_count=3, column_count=3, row_height=3, column_width=8):
+    # ╔═════
+    # ║ 1 2 ║
+    # ║ 3 4 ║
+    # ╚═════
+    
+        print(dtl + dhl * column_width + dtc + dhl * column_width + dtr)
+        for row in range(row_count):
+            for row_line in range(row_height):
+                print(dvl + svl * column_width + dvl + ' ' * column_width + dvl)
+            if row < row_count - 1:
+                print(slc + shl * column_width + scc + dhl * column_width + src)
+        print(sbl + shl * column_width + sbc + shl * column_width + sbr)
+    
+    draw_ascii_table_with_double_lines()    
+</pre>
+
+-->
+
+<hr/>
+
+
+<p>Here is my Sudoku generator. modify it to remove cells and write a solver for it.</p>
+
+<pre>
+    <zero-md>
+        
+        <script type="text/markdown">
+```python
+
+import random
+
+lines = []
+l1 = [x for x in range(1,10)]
+l2 = l1[3:10] + l1[0:3]
+l3 = l2[3:10] + l2[0:3]
+
+l4 = l1[1:10] + l1[0:1]
+l5 = l2[1:10] + l2[0:1]
+l6 = l3[1:10] + l3[0:1]
+
+l7 = l4[1:10] + l4[0:1]
+l8 = l5[1:10] + l5[0:1]
+l9 = l6[1:10] + l6[0:1]
+
+lines.append(l1)
+lines.append(l2)
+lines.append(l3)
+lines.append(l4)
+lines.append(l5)
+lines.append(l6)
+lines.append(l7)
+lines.append(l8)
+lines.append(l9)
+
+
+def print_grid():
+
+    for i in range(9):
+
+        print (lines[i])
+
+
+def shuffle_rows():
+
+    for i in range(random.randint(1,6)):
+        line2 = random.randint(1,2)
+        temp_line = lines[0]
+        lines[0] = lines[line2]
+        lines[line2] = temp_line
+
+    for i in range(random.randint(1,6)):
+        line2 = random.randint(4,5)
+        temp_line = lines[3]
+        lines[3] = lines[line2]
+        lines[line2] = temp_line
+
+    for i in range(random.randint(1,6)):
+        line2 = random.randint(7,8)
+        temp_line = lines[6]
+        lines[6] = lines[line2]
+        lines[line2] = temp_line
+
+    for i in range(random.randint(1,6)):
+        block2 = random.randint(1,2)
+
+        temp_line_0 =  lines[0]
+        temp_line_1 = lines[1]
+        temp_line_2 = lines[2]
+
+
+        lines[0] = lines[block2*3]
+        lines[1] = lines[block2 * 3 + 1]
+        lines[2] = lines[block2 * 3 + 2]
+
+        lines[block2*3] = temp_line_0
+        lines[block2 * 3 + 1] = temp_line_1
+        lines[block2 * 3 + 2] = temp_line_2
+
+def shuffle_columns():
+
+        for i in range(random.randint(1,6)):
+            col2 = random.randint(1,2)
+
+            for j in range(9):
+                temp = lines[j][0]
+                lines[j][0] = lines[j][col2]
+                lines[j][col2] = temp
+
+
+        for i in range(random.randint(1,6)):
+            col2 = random.randint(4,5)
+            for j in range(9):
+                temp = lines[j][3]
+                lines[j][3] = lines[j][col2]
+                lines[j][col2] = temp
+
+        for i in range(random.randint(1,6)):
+            col2 = random.randint(7,8)
+            for j in range(9):
+                temp = lines[j][6]
+                lines[j][6] = lines[j][col2]
+                lines[j][col2] = temp
+
+        for i in range(random.randint(1,6)):
+            block2 = random.randint(1,2)
+            for j in range(9):
+                temp = lines[j][0]
+                lines[j][0] = lines[j][block2*3]
+                lines[j][block2*3] = temp
+
+                temp = lines[j][1]
+                lines[j][1] = lines[j][block2*3+1]
+                lines[j][block2*3+1] = temp
+
+                temp = lines[j][2]
+                lines[j][2] = lines[j][block2*3+2]
+                lines[j][block2*3+2] = temp
+
+
+def select_unknown_cells():
+    # select cells randomly and check if the grid is still solvable after removing the cell
+    # if not, then put the cell back and select another one
+
+    pass
+
+
+print_grid()
+print()
+shuffle_rows()
+print_grid()
+print()
+shuffle_columns()
+print_grid()
+print()
+
+
+
+
+    
+```
+
+    </script
+    </zero-md>
+
+</pre>
+
+<hr/>
+
+
+
+
+
+
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Container Data Structures 
+  </p> 
+  <p class="tcTitleSlide"> 
+Dictionary Methods 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Items in a dictionary can be removed by using the <code>pop()</code> method or the <code>del</code> keyword:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">balance_dict</span> <span class="pl-c1">=</span> {
+<span class="pl-s">&quot;Alice&quot;</span>:<span class="pl-c1">1345.345</span>, 
+<span class="pl-s">&quot;Claire&quot;</span>:<span class="pl-c1">15642.432</span>, 
+<span class="pl-s">&quot;Joker&quot;</span>:<span class="pl-c1">14542.782</span>, 
+<span class="pl-s">&quot;Spiderman&quot;</span>:<span class="pl-c1">1234366.4352</span>}
+
+<span class="pl-s1">balance_dict</span>.<span class="pl-en">pop</span>(<span class="pl-s">&quot;Spiderman&quot;</span>)
+<span class="pl-k">del</span> <span class="pl-s1">balance_dict</span>[<span class="pl-s">&quot;Claire&quot;</span>]
+
+<span class="pl-en">print</span>(<span class="pl-s1">balance_dict</span>)
+
+<span class="pl-s1">balance_dict</span>.<span class="pl-en">pop</span>(<span class="pl-s">&quot;Batman&quot;</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="DictionaryMethods.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Dictionary Methods)"> 
+</div> 
+<p>Output:</p> 
+<pre><code>{'Alice': 1345.345, 'Joker': 14542.782}
+Traceback (most recent call last):
+  File ..., line 13, in &lt;module&gt;
+    balance_dict.pop(&quot;Batman&quot;)
+KeyError: 'Batman'
+</code></pre> 
+<p>The contents of a directory or set can be removed entirely by using the <code>clear()</code> method and the <code>del</code> keyword can be used to delete the directory or set variable making it inaccessible:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">balance_dict</span> <span class="pl-c1">=</span> {
+<span class="pl-s">&quot;Alice&quot;</span>:<span class="pl-c1">1345.345</span>,
+<span class="pl-s">&quot;Claire&quot;</span>:<span class="pl-c1">15642.432</span>,
+<span class="pl-s">&quot;Joker&quot;</span>:<span class="pl-c1">14542.782</span>,
+<span class="pl-s">&quot;Spiderman&quot;</span>:<span class="pl-c1">1234366.4352</span>}
+
+<span class="pl-en">print</span>(<span class="pl-s1">balance_dict</span>)
+<span class="pl-s1">balance_dict</span>.<span class="pl-en">clear</span>()
+<span class="pl-en">print</span>(<span class="pl-s1">balance_dict</span>)
+<span class="pl-k">del</span> <span class="pl-s1">balance_dict</span>
+<span class="pl-en">print</span>(<span class="pl-s1">balance_dict</span>)</pre>
+</div> 
+<p>Output:</p> 
+<pre><code>{'Alice': 1345.345, 'Claire': 15642.432, 'Joker': 14542.782, 'Spiderman': 1234366.4352}
+{}
+
+Traceback (most recent call last):
+   ..., line 11, in &lt;module&gt;
+    print(balance_dict)
+NameError: name 'balance_dict' is not defined
+
+</code></pre> 
+
+<pre><code class="lang-python">balance_dict = {
+<span class="hljs-string">"Alice"</span>:<span class="hljs-number">1345.345</span>,
+<span class="hljs-string">"Claire"</span>:<span class="hljs-number">15642.432</span>,
+<span class="hljs-string">"Joker"</span>:<span class="hljs-number">14542.782</span>,
+<span class="hljs-string">"Spiderman"</span>:<span class="hljs-number">1234366.4352</span>}
+
+balance_dict.pop(<span class="hljs-string">"Spiderman"</span>)
+<span class="hljs-selector-tag">del</span> balance_dict[<span class="hljs-string">"Claire"</span>]
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(balance_dict)</span></span>
+
+<span class="hljs-selector-tag">del</span> balance_dict[<span class="hljs-string">"Spiderman"</span>]
+
+<span class="hljs-selector-id">#balance_dict</span>.pop(<span class="hljs-string">"Batman"</span>)
+</code></pre>
+
+
+<hr /> 
+<p>Items can be removed from a <code>set</code> by using the <code>remove()</code>&nbsp;function, however <code>pop()</code> method may remove a random element from the set each time the code is executed, be careful when using:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">students</span> <span class="pl-c1">=</span> {
+<span class="pl-s">&quot;Alice&quot;</span>,
+<span class="pl-s">&quot;Claire&quot;</span>,
+<span class="pl-s">&quot;Joker&quot;</span>,
+<span class="pl-s">&quot;Spiderman&quot;</span>}
+
+<span class="pl-s1">students</span>.<span class="pl-en">remove</span>(<span class="pl-s">&quot;Joker&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">students</span>)</pre>
+</div> 
+<p>Output:</p> 
+<pre><code>{'Spiderman', 'Alice', 'Claire'}, or
+{'Alice', 'Claire', 'Spiderman'}, or other ordering
+</code></pre> 
+<hr /> 
+<p>Using the <code>in</code>&nbsp;keyword, the items in the dictionary can be accessed either directly or by using the <code>keys()</code>&nbsp;method. Similarly the <code>values()</code>&nbsp;method returns the list of values in the dictionary entries. As we have covered earlier, the <code>items()</code>&nbsp;method returns the key-value pairs as iterable tuples which can be assigned to two variables corresponding to key and value respectively:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">balance_dict</span> <span class="pl-c1">=</span> {
+<span class="pl-s">&quot;Alice&quot;</span>:<span class="pl-c1">1345.345</span>,
+<span class="pl-s">&quot;Claire&quot;</span>:<span class="pl-c1">15642.432</span>,
+<span class="pl-s">&quot;Joker&quot;</span>:<span class="pl-c1">14542.782</span>,
+<span class="pl-s">&quot;Spiderman&quot;</span>:<span class="pl-c1">1234366.4352</span>}
+
+<span class="pl-k">for</span> <span class="pl-s1">account_name</span> <span class="pl-c1">in</span> <span class="pl-s1">balance_dict</span>:
+    <span class="pl-en">print</span>(<span class="pl-s1">account_name</span>)
+<span class="pl-en">print</span>()
+
+<span class="pl-k">for</span> <span class="pl-s1">account_name</span> <span class="pl-c1">in</span> <span class="pl-s1">balance_dict</span>.<span class="pl-en">keys</span>():
+    <span class="pl-en">print</span>(<span class="pl-s1">account_name</span>)
+<span class="pl-en">print</span>()
+
+<span class="pl-k">for</span> <span class="pl-s1">balance</span> <span class="pl-c1">in</span> <span class="pl-s1">balance_dict</span>.<span class="pl-en">values</span>():
+    <span class="pl-en">print</span>(<span class="pl-s1">balance</span>)
+<span class="pl-en">print</span>()
+
+<span class="pl-k">for</span> <span class="pl-s1">account_name</span>, <span class="pl-s1">balance</span> <span class="pl-c1">in</span> <span class="pl-s1">balance_dict</span>.<span class="pl-en">items</span>():
+    <span class="pl-en">print</span>(<span class="pl-s1">account_name</span> <span class="pl-c1">+</span> <span class="pl-s">&quot; &quot;</span> <span class="pl-c1">+</span> <span class="pl-en">str</span>(<span class="pl-s1">balance</span>))
+<span class="pl-en">print</span>()</pre>
+</div> 
+<p>Output:</p> 
+<pre><code>Alice
+Claire
+Joker
+Spiderman
+
+Alice
+Claire
+Joker
+Spiderman
+
+1345.345
+15642.432
+14542.782
+1234366.4352
+
+Alice 1345.345
+Claire 15642.432
+Joker 14542.782
+Spiderman 1234366.4352
+</code></pre> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

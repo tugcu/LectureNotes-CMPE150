@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        
+        <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
+
+         <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Container Data Structures 
+  </p> 
+  <p class="tcTitleSlide"> 
+String Methods 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>Using the <code>upper()</code>&nbsp;method, it is possible to convert and entire string to upper case:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot; Introduction to Programming &quot;</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>.<span class="pl-en">upper</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="StringMethods.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (String Methods)"> 
+</div> 
+<p><code>&nbsp;Output: INTRODUCTION TO PROGRAMMING&nbsp;</code></p> 
+<p>Similarly, the <code>lower()</code>&nbsp;method converts the string to lower case:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot; Introduction to Programming &quot;</span>
+
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>.<span class="pl-en">lower</span>())
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>)</pre>
+</div> 
+<p><code>&nbsp;Output: introduction to programming&nbsp;</code></p> 
+<p>When converting the strings, python uses default encoding, however, in some languages such as Turkish converting <code>I</code> to lower case has a different representation, <code>ı</code>, and the uppercase counterpart of <code>i</code> is <code>İ</code> instead of <code>I</code>. This requires usage of other character sets, code pages, or locale and the details are beyond the scope of this section.</p> 
+<p>The <code>strip()</code> method is used for removing the white space characters from the beginning and end of the string:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot; <span class="pl-cce">\n</span>         Introduction to Programming <span class="pl-cce">\n</span> &quot;</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;------------------------------------&quot;</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>)
+<span class="pl-en">print</span>(<span class="pl-s">&quot;------------------------------------&quot;</span>)
+<span class="pl-s1">course_cleared</span> <span class="pl-c1">=</span> <span class="pl-s1">course</span>.<span class="pl-en">strip</span>()
+<span class="pl-en">print</span>(<span class="pl-s1">course_cleared</span>)
+<span class="pl-en">print</span>(<span class="pl-s">&quot;------------------------------------&quot;</span>)</pre>
+</div> 
+<p>producing the following output:</p> 
+<pre><code>------------------------------------
+ 
+         Introduction to Programming 
+ 
+------------------------------------
+Introduction to Programming
+------------------------------------
+
+</code></pre> 
+<p>Substrings and single characters inside a string can be replaced by the <code>replace()</code>&nbsp;method:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot; Introduction to Programming with C/C++ &quot;</span>
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>.<span class="pl-en">replace</span>(<span class="pl-s">&quot;C/C++&quot;</span>, <span class="pl-s">&quot;Java&quot;</span>))
+
+<span class="pl-c">#print(course.replace(&quot;Java&quot;, &quot;Python&quot;))</span>
+<span class="pl-c">#java_course = course.replace(&quot;C/C++&quot;, &quot;Java&quot;)</span>
+<span class="pl-c">#print(java_course.replace(&quot;Java&quot;, &quot;Python&quot;))</span>
+<span class="pl-c">#print(course.replace(&quot;C/C++&quot;, &quot;Python&quot;))</span></pre>
+</div> 
+<p>The <code>split()</code>&nbsp;method can be used to obtain a list of substrings by separating the original list by a specific substring:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">course</span> <span class="pl-c1">=</span> <span class="pl-s">&quot; Introduction to Programming with Python &quot;</span>
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>.<span class="pl-en">split</span>(<span class="pl-s">&quot; &quot;</span>))
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>.<span class="pl-en">strip</span>().<span class="pl-en">split</span>(<span class="pl-s">&quot; &quot;</span>))
+
+<span class="pl-en">print</span>(<span class="pl-s1">course</span>.<span class="pl-en">split</span>(<span class="pl-s">&quot;to&quot;</span>))
+
+<span class="pl-s1">course_list</span> <span class="pl-c1">=</span> [<span class="pl-s">&quot; Introduction to Programming with Python &quot;</span>, <span class="pl-s">&quot; Introduction to Programming with Java &quot;</span>, <span class="pl-s">&quot; Introduction to Programming with C/C++ &quot;</span>]
+
+<span class="pl-k">for</span> <span class="pl-s1">course_name</span> <span class="pl-c1">in</span> <span class="pl-s1">course_list</span>:
+    <span class="pl-en">print</span>(<span class="pl-s1">course_name</span>.<span class="pl-en">split</span>(<span class="pl-s">&quot;with&quot;</span>)[<span class="pl-c1">1</span>])
+
+<span class="pl-k">for</span> <span class="pl-s1">course_name</span> <span class="pl-c1">in</span> <span class="pl-s1">course_list</span>:
+    <span class="pl-en">print</span>(<span class="pl-s1">course_name</span>.<span class="pl-en">split</span>(<span class="pl-s">&quot;with &quot;</span>)[<span class="pl-c1">1</span>])
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ContainerDataStructures" 
+    data-softdev4u-filePath="StringMethods2.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (String Split)"> 
+</div> 
+<p>Output:</p> 
+<pre><code> Introduction to Programming with Python 
+['', 'Introduction', 'to', 'Programming', 'with', 'Python', '']
+['Introduction', 'to', 'Programming', 'with', 'Python']
+[' Introduction ', ' Programming with Python ']
+ Python 
+ Java 
+ C/C++ 
+Python 
+Java 
+C/C++ 
+</code></pre> 
+<p>The methods do not modify the original string, but they may return a new string or a list of substrings instead.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">email_address</span> <span class="pl-c1">=</span> <span class="pl-s">'monty@python.org'</span>
+<span class="pl-s1">user_name</span>, <span class="pl-s1">domain</span> <span class="pl-c1">=</span> <span class="pl-s1">email_address</span>.<span class="pl-en">split</span>(<span class="pl-s">'@'</span>)
+<span class="pl-en">print</span>(<span class="pl-s">&quot;Username:&quot;</span>, <span class="pl-s1">user_name</span>)
+<span class="pl-en">print</span>(<span class="pl-s">&quot;Domain:  &quot;</span>, <span class="pl-s1">domain</span>)
+<span class="pl-en">print</span>(<span class="pl-s">&quot;E-mail:  &quot;</span>, <span class="pl-s1">email_address</span>)</pre>
+</div> 
+<p>The list of string methods for Python3 is provided at <a href="https://docs.python.org/3/library/stdtypes.html#string-methods" rel="nofollow">https://docs.python.org/3/library/stdtypes.html#string-methods</a> and other resources in the web.</p> 
+
+<p>Strings can also be splitted using regular expressions:</p>
+
+<pre>
+<zero-md>
+    <script type="text/markdown">
+```python
+a='Beautiful, is; better*than\nugly'
+import re
+print(re.split('; |, |\*|\n',a))
+
+# ['Beautiful', 'is', 'better', 'than', 'ugly']
+# https://stackoverflow.com/questions/4998629/split-string-with-multiple-delimiters-in-python
+```
+    </script>
+
+</zero-md>
+</pre>
+
+
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Recursive Functions 
+  </p> 
+  <p class="tcTitleSlide"> 
+Recursive Fibonacci 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-k">def</span> <span class="pl-en">fibonacci</span>(<span class="pl-s1">n</span>):
+    <span class="pl-k">if</span> ( <span class="pl-s1">n</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">0</span> ):  <span class="pl-c"># Termination condition</span>
+        <span class="pl-en">print</span>(<span class="pl-s">&quot;Invalid input&quot;</span>)
+        <span class="pl-k">return</span>
+    <span class="pl-k">elif</span> ( <span class="pl-s1">n</span><span class="pl-c1">==</span><span class="pl-c1">0</span> ):  <span class="pl-c"># Termination condition</span>
+        <span class="pl-k">return</span> <span class="pl-c1">0</span>  <span class="pl-c"># First Fibonacci number is 0</span>
+    <span class="pl-k">elif</span> ( <span class="pl-s1">n</span><span class="pl-c1">==</span><span class="pl-c1">1</span> ):  <span class="pl-c"># Termination condition</span>
+        <span class="pl-k">return</span> <span class="pl-c1">1</span>  <span class="pl-c"># Second Fibonacci number is 1</span>
+    <span class="pl-k">else</span>:
+        <span class="pl-k">return</span> <span class="pl-en">fibonacci</span>(<span class="pl-s1">n</span><span class="pl-c1">-</span><span class="pl-c1">1</span>) <span class="pl-c1">+</span> <span class="pl-en">fibonacci</span>(<span class="pl-s1">n</span><span class="pl-c1">-</span><span class="pl-c1">2</span>)  <span class="pl-c"># Recursive Call</span>
+
+
+<span class="pl-en">print</span>(<span class="pl-en">fibonacci</span>(<span class="pl-c1">15</span>))</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ConditionalFlow" 
+    data-softdev4u-filePath="RecursiveFibonacci.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Recursive Fibonacci)"> 
+</div> 
+<p>The recursive flow of execution of the fibonacci (<code>fib</code> for short) function for n = 4 is as follows:</p> 
+<pre><code>
+   fib(4) = fib(3)
+             |  |-&gt; fib(3) = fib(2)
+             |                |  |-&gt; fib(2) = fib(1)
+1.           |                |                |  |-&gt; fib(1) = 1
+3.           |                |               (+)
+             |                |                |
+             |                |               fib(0)
+2.           |                |                   |-&gt; fib(0) = 0
+5.           |               (+)    
+             |                |    
+             |               fib(1)
+4.           |                   |-&gt; fib(1) = 1      
+             |
+9.          (+)
+             |
+            fib(2)
+                |-&gt; fib(2) = fib(1)
+6.                            |  |-&gt; fib(1) = 1
+8.                           (+)
+                              |
+                             fib(0)
+7.                               |-&gt; fib(0) = 0
+
+</code></pre> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

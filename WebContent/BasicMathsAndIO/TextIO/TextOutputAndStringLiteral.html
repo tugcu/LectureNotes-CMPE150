@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Simple Arithmetic, Input and Output in Python 
+  </p> 
+  <p class="tcTitleSlide"> 
+Text Output 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>The built-in <code>print()</code>&nbsp;function of Python is used to display output on the command line terminal. There are alternative uses of this function as shown in :</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-en">print</span> (<span class="pl-s">&quot;Learning Python is interesting.&quot;</span>)</pre>
+</div> 
+<p>Output: Learning Python is interesting.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-en">print</span> (<span class="pl-s">&quot;Learning Python is interesting.&quot;</span>,<span class="pl-s">&quot;Right?&quot;</span>)</pre>
+</div> 
+<p>Output: Learning Python is interesting. Right?</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-en">print</span> (<span class="pl-s">&quot;Learning&quot;</span>,<span class="pl-s">&quot;Python&quot;</span>,<span class="pl-s">&quot;is&quot;</span>,<span class="pl-s">&quot;interesting.&quot;</span>,<span class="pl-s">&quot;Right?&quot;</span>)</pre>
+</div> 
+<p>Output: Learning Python is interesting. Right?</p> 
+<h1> <a id="string-literals" class="anchor" href="#string-literals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>String Literals</h1> 
+<p><span class="tcEmp">String literals</span> are expressed between a pair of double quotation marks.</p> 
+<ul> 
+ <li> <p>Any number of space characters placed in a string literal is part of that string.</p> </li> 
+ <li> <p>Quotation marks can be placed inside a string literal by using a backslash (&quot;\&quot;) character right before the quotation mark, as in <code>\&quot;</code>, without any space in between.</p> 
+  <div class="highlight highlight-source-python">
+   <pre><span class="pl-en">print</span>(<span class="pl-s">&quot;This line contains a pair of <span class="pl-cce">\&quot;</span>quotation marks<span class="pl-cce">\&quot;</span>&quot;</span>)</pre>
+  </div> <p>Output: <code>This line contains a pair of &quot;quotation marks&quot;</code></p> </li> 
+ <li> <p>String literals can be assigned to variables to be used wherever required</p> 
+  <div class="highlight highlight-source-python">
+   <pre>
+<span class="pl-s1">course_code</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Cmpe150&quot;</span>
+<span class="pl-s1">course_name</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;<span class="pl-cce">\&quot;</span>Introduction to Computing<span class="pl-cce">\&quot;</span>&quot;</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;The code of this course is: &quot;</span>, <span class="pl-s1">course_code</span>)
+<span class="pl-en">print</span>(<span class="pl-s">&quot;The full name of this course is: &quot;</span>, <span class="pl-s1">course_code</span>, <span class="pl-s1">course_name</span>)
+
+<span class="pl-s1">course_full_name</span> <span class="pl-c1">=</span> <span class="pl-s1">course_code</span> <span class="pl-c1">+</span> <span class="pl-s1">course_name</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;Alternatively, the full name of this course is: &quot;</span>, <span class="pl-s1">course_full_name</span>)
+
+<span class="pl-s1">course_full_name</span> <span class="pl-c1">=</span> <span class="pl-s1">course_code</span> <span class="pl-c1">+</span> <span class="pl-s">&quot; &quot;</span> <span class="pl-c1">+</span> <span class="pl-s1">course_name</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;The corrected full name of this course is: &quot;</span>, <span class="pl-s1">course_full_name</span>)</pre>
+  </div> </li> 
+</ul> 
+<h1> <a id="escape-characters" class="anchor" href="#escape-characters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Escape Characters</h1> 
+<p>Similar to using quotation marks in a string literal <span class="tcEmp">escaped</span> by the <code>\</code> character, the backslash itself can be used inside the string by escaping it again with another backslash:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-en">print</span>(<span class="pl-s">&quot;Here is a single backslash <span class="pl-cce">\\</span> used in a string literal&quot;</span>)</pre>
+</div> 
+<p>Output: <code>Here is a single backslash \ used in a string literal</code></p> 
+<p>Another escape character is the <code>\n</code> newline character that we can use to split the string literal into multiple lines:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-en">print</span>(<span class="pl-s">&quot;Here is a newline <span class="pl-cce">\n</span> used in a string literal&quot;</span>)</pre>
+</div> 
+<p>Output:</p> 
+<p><code>Here is a newline</code> <br /> <code> used in a string literal</code></p> 
+<p>It is also possible to use <code>\'</code> as the single quote, and <code>\t</code> as a tab character inside the strings.</p> 
+<h1> <a id="print-function-arguments" class="anchor" href="#print-function-arguments" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>print() Function Arguments</h1> The <span class="tcEmp">print()</span> function automatically adds a newline to the end of the output, we can <span class="tcEmp">eliminate that new line at the end</span> using a special format as in: 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;This output does not have a newline at the end&quot;</span>, <span class="pl-s1">end</span><span class="pl-c1">=</span><span class="pl-s">''</span>)
+<span class="pl-en">print</span>(<span class="pl-s">&quot; so that the next call to the print() can continue outputting on the same line.&quot;</span>)</pre>
+</div> 
+<p>Output:</p> 
+<p><code>This output does not have a newline at the end so that the next call to the print() can continue outputting on the same line</code>&nbsp;</p> 
+<p>You can also change the <span class="tcEmp">separator character</span> for the <code>print()</code> function:</p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;this&quot;</span>,<span class="pl-s">&quot;is&quot;</span>,<span class="pl-s">&quot;an&quot;</span>,<span class="pl-s">&quot;example&quot;</span>,<span class="pl-s">&quot;to&quot;</span>,<span class="pl-s">&quot;changing&quot;</span>,<span class="pl-s">&quot;the&quot;</span>,<span class="pl-s">&quot;default&quot;</span>,<span class="pl-s">&quot;separator&quot;</span>,<span class="pl-s">&quot;space&quot;</span>,<span class="pl-s">&quot;character&quot;</span>, <span class="pl-s1">sep</span><span class="pl-c1">=</span><span class="pl-s">'_*_'</span>)</pre>
+</div> 
+<p>Output:</p> 
+<p><code>this_*_is_*_an_*_example_*_to_*_changing_*_the_*_default_*_separator_*_space_*_character</code></p> 
+<div class="highlight highlight-source-python">
+ <pre>
+<span class="pl-en">print</span> (<span class="pl-s">&quot;10 times 2 is&quot;</span>,<span class="pl-c1">10</span><span class="pl-c1">*</span><span class="pl-c1">2</span>)
+<span class="pl-en">print</span> (<span class="pl-s">&quot;2 to the power 3 is&quot;</span>,<span class="pl-c1">2</span><span class="pl-c1">**</span><span class="pl-c1">3</span>)
+<span class="pl-s1">my_age</span> <span class="pl-c1">=</span> <span class="pl-c1">20</span>
+<span class="pl-s1">city</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;Istanbul&quot;</span>
+<span class="pl-en">print</span> (<span class="pl-s">&quot;Age is&quot;</span>,<span class="pl-s1">my_age</span>, <span class="pl-s">&quot;. I live in &quot;</span>, <span class="pl-s1">city</span>)</pre>
+</div> 
+<p>You can experiment with the given source code using the following example:</p> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="BasicMathsAndIO" 
+    data-softdev4u-filePath="TextOutput.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (Strings)"> 
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Control Flow: The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+  </p> 
+  <p class="tcTitleSlide"> 
+The <code>if</code>, <code>elif</code>, <code>else</code> Statements 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p>When we need to check a related sequence of conditions that are more than two, we can use the intermediate <code>elif</code>&nbsp;conditional statements.</p> 
+<ul> 
+ <li>Similar to the <code>else</code> part, the <code>elif</code>&nbsp;part is also optional, i.e. you do not have to include an <code>elif</code>&nbsp;section if it is not required.</li> 
+ <li>Any set of <code>elif</code>&nbsp;statements has to be preceded by a single <code>if</code> statement, starting the conditional sequence.</li> 
+ <li>There can be as many <code>elif</code>&nbsp;statements as necessary in the comparison sequence.</li> 
+ <li>The <code>else</code>&nbsp;statement cannot precede any <code>elif</code>&nbsp;statement in the same conditional control sequence.</li> 
+</ul> 
+<br /> 
+<p>A comparison statement sequence begins with a single <code>if</code>&nbsp;statement, continues with zero or more <code>elif</code> statements, and optionally ends with a single <code>else</code> statement.</p> 
+<p>The <code>else</code>&nbsp;statement does not specify any condition, as it is the default code block to be executed if none of the conditions specified before that <code>else</code>&nbsp;block (inside the same conditional sequence) were evaluated to <code>True</code>.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">y</span> <span class="pl-c1">=</span> <span class="pl-en">int</span>(<span class="pl-en">input</span>(<span class="pl-s">&quot;Enter a number please: &quot;</span>))
+<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">y</span> <span class="pl-c1">+</span> <span class="pl-c1">3</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;x =&quot;</span>, <span class="pl-s1">x</span>)
+
+<span class="pl-k">if</span> (<span class="pl-s1">x</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">10</span>):
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is less than or equal to 10&quot;</span>)
+
+<span class="pl-k">elif</span> (<span class="pl-s1">x</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">20</span>):
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is greater than 10 and less than 20&quot;</span>)
+
+<span class="pl-k">else</span>:
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is greater than or equal to 20&quot;</span>)</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ConditionalFlow" 
+    data-softdev4u-filePath="IfElifElse.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (if-elif-else)"> 
+</div> 
+<div class="tcDivRemark"> 
+<p>All conditional statements in the same <code>if</code>-<code>elif</code>-<code>else</code> sequence are mutually exclusive, i.e. if any one of the conditional statements is evaluated to <code>True</code>, the rest of the conditional statements of the same conditional sequence are skipped no matter if they could also be evaluated to <code>True</code> for that specific case.</p> 
+</div> 
+<p><code>elif</code>&nbsp;represents the case check as <span class="tcEmp">else-if</span> and the following code samples are functionally equivalent:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-en">int</span>(<span class="pl-en">input</span>(<span class="pl-s">&quot;Enter a number please: &quot;</span>))
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;x =&quot;</span>, <span class="pl-s1">x</span>)
+
+<span class="pl-k">if</span> (<span class="pl-s1">x</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">10</span>) :
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is less than 10&quot;</span>)
+
+<span class="pl-k">else</span>:
+    <span class="pl-k">if</span> (<span class="pl-s1">x</span> <span class="pl-c1">%</span> <span class="pl-c1">2</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>):
+        <span class="pl-en">print</span>(<span class="pl-s">&quot;x is an even number&quot;</span>)
+
+    <span class="pl-k">else</span>:
+        <span class="pl-en">print</span>(<span class="pl-s">&quot;x is an odd number&quot;</span>)
+        </pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ConditionalFlow" 
+    data-softdev4u-filePath="IfElifElseAlt1.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (if-elif-else-Alt1)"> 
+</div> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-en">int</span>(<span class="pl-en">input</span>(<span class="pl-s">&quot;Enter a number please: &quot;</span>))
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;x =&quot;</span>, <span class="pl-s1">x</span>)
+
+<span class="pl-k">if</span> (<span class="pl-s1">x</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">10</span>) :
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is less than 10&quot;</span>)
+
+<span class="pl-k">elif</span> (<span class="pl-s1">x</span> <span class="pl-c1">%</span> <span class="pl-c1">2</span> <span class="pl-c1">==</span> <span class="pl-c1">0</span>):
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is an even number&quot;</span>)
+
+<span class="pl-k">else</span>:
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is an odd number&quot;</span>)
+    </pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="ConditionalFlow" 
+    data-softdev4u-filePath="IfElifElseAlt2.py" 
+    data-softdev4u-lineNumber=5
+    data-softdev4u-linkTitle="Switch to Code (if-elif-else-Alt2)"> 
+</div> 
+<p>Attention: Beware of the indentation in both examples.</p> 
+<br /> 
+<p>Inserting statements other than <code>elif</code> or <code>else</code> at the same indentation level as the <code>if</code>&nbsp;statement is not allowed since it would terminate the conditional sequence and any of the following <code>elif</code>&nbsp;and <code>else</code> statements will be detached from the initial <code>if</code>, which they are supposed to be bound to.</p> 
+<p>The following example will cause an error since the <code>print(&quot;Now checking for even odd status&quot;)</code> statement breaks the conditional sequence.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-s1">y</span> <span class="pl-c1">=</span> <span class="pl-en">int</span> ( <span class="pl-en">input</span>(<span class="pl-s">&quot;Enter a number please: &quot;</span>) )  
+<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-s1">y</span> <span class="pl-c1">+</span> <span class="pl-c1">3</span>
+<span class="pl-en">print</span>(<span class="pl-s">&quot;x =&quot;</span>, <span class="pl-s1">x</span>)
+
+<span class="pl-k">if</span> (<span class="pl-s1">x</span> <span class="pl-c1">&lt;=</span> <span class="pl-c1">10</span>) :    
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is less than or equal to 10&quot;</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s">&quot;Now checking for even odd status&quot;</span>)
+
+<span class="pl-en">elif</span> (<span class="pl-s1">x</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">20</span>) :    
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is greater than 10 and less than 20&quot;</span>)
+
+<span class="pl-s1">else</span>:
+    <span class="pl-en">print</span>(<span class="pl-s">&quot;x is greater than or equal to 20&quot;</span>)
+    </pre>
+</div> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>

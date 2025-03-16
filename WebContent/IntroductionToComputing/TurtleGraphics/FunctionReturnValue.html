@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>teaching.codes</title>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/google-code-prettify/prettify.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/bootstrap/css/bootstrap-theme.min.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/markdown.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tc.css"/>
+        <link type="text/css" rel="stylesheet" href="../../tcBundle/css/tcContent.css"/>
+<!--         <script type="text/javascript" src="../../tcBundle/jquery/jquery-2.1.1.min.js"></script> -->
+        <script type="text/javascript" src="../../tcBundle/js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/google-code-prettify/prettify.js"></script>
+        <script type="text/javascript" src="../../tcBundle/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/markdown.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tc.js"></script>
+        <script type="text/javascript" src="../../tcBundle/js/tcContent.js"></script>
+        
+        <script src='../../tcBundle/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+        
+<!--         <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->        <script>
+
+ 			$(function() {
+                prettyPrint();
+                softdev4uContent_init();
+                softdev4u_init();
+            });
+        </script>
+    </head>
+<body onresize="softdev4u_resize()">
+	<div class="softdev4u-page">
+<!-- 		<p class="softdev4u-title">-->
+			<!-- SOFTDEV4U PRETITLE -->
+<div class="tcDivTitle"> 
+ <p class="tcTitleRunning">
+Turtle Graphics 
+  </p> 
+  <p class="tcTitleSlide"> 
+Function Return Value 
+ </p>  
+</div> 
+<div class="softdev4u-oneColumn"> 
+<p><a target="_blank" rel="noopener noreferrer" href="images/SquaresWithFunctionReturn.png"><img src="images/SquaresWithFunctionReturn.png" style="max-width: 100%;" /></a></p> 
+<p>Functions can also <span class="tcEmp">return</span> a value which was calculated or generated inside the function to the calling statement line. The value of <span class="tcEmp">newSize</span> in function <code>drawASquareAndMoveBack</code> is <span class="tcEmp">returned</span> (sent) to the statement line <code>size = drawASquareAndMoveBack(&quot;Red&quot;, size, spacing</code> where the <span class="tcEmp">size</span> variable is assigned to that value after the function completes its execution. So the <span class="tcEmp">return</span> keyword is a reserved word in Python, that is used to send a value back to the calling statement:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-k">import</span> <span class="pl-s1">turtle</span>
+
+<span class="pl-k">def</span> <span class="pl-en">draw_a_square_for_me</span>(<span class="pl-s1">squareSize</span>):
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">squareSize</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">squareSize</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">squareSize</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">squareSize</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+
+<span class="pl-k">def</span> <span class="pl-en">move_turtle_back</span>(<span class="pl-s1">squareSpacing</span>):
+    <span class="pl-s1">turtle</span>.<span class="pl-en">penup</span>()
+    <span class="pl-s1">turtle</span>.<span class="pl-en">backward</span>(<span class="pl-s1">squareSpacing</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">left</span>(<span class="pl-c1">90</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">forward</span>(<span class="pl-s1">squareSpacing</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">right</span>(<span class="pl-c1">90</span>)
+    <span class="pl-s1">turtle</span>.<span class="pl-en">pendown</span>()
+
+<span class="pl-k">def</span> <span class="pl-en">draw_a_square_and_move_back</span>(<span class="pl-s1">square_color</span>, <span class="pl-s1">size_of_square</span>, <span class="pl-s1">space_between_squares</span>):
+    <span class="pl-s1">turtle</span>.<span class="pl-en">pencolor</span>(<span class="pl-s1">square_color</span>)
+    <span class="pl-en">draw_a_square_for_me</span>(<span class="pl-s1">size_of_square</span>)
+    <span class="pl-en">move_turtle_back</span>(<span class="pl-s1">space_between_squares</span>)
+
+    <span class="pl-s1">newSize</span> <span class="pl-c1">=</span> <span class="pl-s1">size_of_square</span> <span class="pl-c1">+</span> <span class="pl-c1">2</span> <span class="pl-c1">*</span> <span class="pl-s1">space_between_squares</span>
+    <span class="pl-k">return</span> <span class="pl-s1">newSize</span>
+
+<span class="pl-s1">size</span> <span class="pl-c1">=</span> <span class="pl-c1">100</span>
+<span class="pl-s1">spacing</span> <span class="pl-c1">=</span> <span class="pl-c1">5</span>
+<span class="pl-s1">turtle</span>.<span class="pl-en">penup</span>()
+<span class="pl-s1">turtle</span>.<span class="pl-en">goto</span>(<span class="pl-c1">-</span><span class="pl-c1">1</span> <span class="pl-c1">*</span> <span class="pl-s1">size</span> <span class="pl-c1">/</span> <span class="pl-c1">2</span>, <span class="pl-s1">size</span> <span class="pl-c1">/</span> <span class="pl-c1">2</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">pendown</span>()
+<span class="pl-s1">turtle</span>.<span class="pl-en">pensize</span>(<span class="pl-c1">5</span>)
+<span class="pl-s1">turtle</span>.<span class="pl-en">speed</span>(<span class="pl-c1">7</span>)
+
+<span class="pl-s1">spacing</span> <span class="pl-c1">=</span> <span class="pl-s1">spacing</span> <span class="pl-c1">+</span> <span class="pl-c1">5</span>
+<span class="pl-s1">size</span> <span class="pl-c1">=</span> <span class="pl-en">draw_a_square_and_move_back</span>(<span class="pl-s">&quot;Red&quot;</span>, <span class="pl-s1">size</span>, <span class="pl-s1">spacing</span>)
+<span class="pl-s1">spacing</span> <span class="pl-c1">=</span> <span class="pl-s1">spacing</span> <span class="pl-c1">+</span> <span class="pl-c1">5</span>
+<span class="pl-s1">size</span> <span class="pl-c1">=</span> <span class="pl-en">draw_a_square_and_move_back</span>(<span class="pl-s">&quot;Blue&quot;</span>, <span class="pl-s1">size</span>, <span class="pl-s1">spacing</span>)
+<span class="pl-s1">spacing</span> <span class="pl-c1">=</span> <span class="pl-s1">spacing</span> <span class="pl-c1">+</span> <span class="pl-c1">5</span>
+<span class="pl-s1">size</span> <span class="pl-c1">=</span> <span class="pl-en">draw_a_square_and_move_back</span>(<span class="pl-s">&quot;Green&quot;</span>, <span class="pl-s1">size</span>, <span class="pl-s1">spacing</span>)
+<span class="pl-s1">spacing</span> <span class="pl-c1">=</span> <span class="pl-s1">spacing</span> <span class="pl-c1">+</span> <span class="pl-c1">5</span>
+<span class="pl-s1">size</span> <span class="pl-c1">=</span> <span class="pl-en">draw_a_square_and_move_back</span>(<span class="pl-s">&quot;Yellow&quot;</span>, <span class="pl-s1">size</span>, <span class="pl-s1">spacing</span>)
+<span class="pl-s1">spacing</span> <span class="pl-c1">=</span> <span class="pl-s1">spacing</span> <span class="pl-c1">+</span> <span class="pl-c1">5</span>
+<span class="pl-s1">size</span> <span class="pl-c1">=</span> <span class="pl-en">draw_a_square_and_move_back</span>(<span class="pl-s">&quot;Orange&quot;</span>, <span class="pl-s1">size</span>, <span class="pl-s1">spacing</span>)
+<span class="pl-s1">spacing</span> <span class="pl-c1">=</span> <span class="pl-s1">spacing</span> <span class="pl-c1">+</span> <span class="pl-c1">5</span>
+<span class="pl-s1">size</span> <span class="pl-c1">=</span> <span class="pl-en">draw_a_square_and_move_back</span>(<span class="pl-s">&quot;Pink&quot;</span>, <span class="pl-s1">size</span>, <span class="pl-s1">spacing</span>)
+
+<span class="pl-s1">turtle</span>.<span class="pl-en">done</span>()
+</pre>
+</div> 
+<div class="softdev4u-openExampleDiv" 
+    data-softdev4u-language="Python" 
+    data-softdev4u-exampleName="SimpleShapesWithTurtle" 
+    data-softdev4u-filePath="DrawingSquaresWithFunctionReturn.py" 
+    data-softdev4u-lineNumber=3
+    data-softdev4u-linkTitle="Switch to Code (Drawing Squares with Function Return)"> 
+</div> 
+<br /> 
+<div class="tcDivRemark"> 
+<p><code>return</code> statement will not output anything on the terminal screen by itself. You should not confuse it with <code>print</code> which is used for outputting its arguments on the terminal. It is possible to <code>print</code> a value <code>returned</code> from a function.</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-k">def</span> <span class="pl-en">square_function</span>(<span class="pl-s1">number</span>):
+   <span class="pl-k">return</span> <span class="pl-s1">number</span> <span class="pl-c1">*</span> <span class="pl-s1">number</span>
+   
+<span class="pl-s1">square_value</span> <span class="pl-c1">=</span> <span class="pl-en">square_function</span>(<span class="pl-c1">5</span>)
+
+<span class="pl-en">print</span>(<span class="pl-s1">square_value</span>)</pre>
+</div> 
+<p>See the following:</p> 
+<div class="highlight highlight-source-python">
+ <pre><span class="pl-k">def</span> <span class="pl-en">some_function</span>():
+   <span class="pl-s1">text1</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;The print was called from&quot;</span>
+   <span class="pl-s1">text2</span> <span class="pl-c1">=</span> <span class="pl-s">&quot;the method named some_function&quot;</span>
+   <span class="pl-en">print</span> (<span class="pl-s1">text1</span>, <span class="pl-s1">text2</span>)
+
+   <span class="pl-k">return</span> <span class="pl-s">&quot;another message&quot;</span>
+
+<span class="pl-s1">text_received</span> <span class="pl-c1">=</span> <span class="pl-en">some_function</span>()
+<span class="pl-en">print</span>(<span class="pl-s1">text_received</span>)</pre>
+</div> 
+<p><strong>print</strong>: Immediate display of the message.</p> 
+<p><strong>return</strong>: Send value to be used by the calling statement.</p> 
+</div> 
+<p>If you do not specify any value after the <code>return</code>&nbsp;keyword it will simply terminate the function without sending any value to the calling statement.</p> 
+<hr /> 
+<br /> 
+</div>
+			<!-- SOFTDEV4U POSTPAGE -->
+<!-- 		</div> -->
+	</div>
+</body>
+</html>
